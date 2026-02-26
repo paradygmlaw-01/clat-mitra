@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tort Law – CLAT Mitra</title>
+  <meta name="description" content="Trespass, Negligence, Nuisance और Vicarious Liability — CLAT Tort Law के core concepts हिंदी में।"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;}
+    html{scroll-behavior:smooth;}
+    .accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .accordion-body.open{max-height:4000px;}
+    .accordion-icon{transition:transform .3s;}
+    .accordion-icon.open{transform:rotate(180deg);}
+    .tab-btn.active{background-color:#FF6B35;color:#fff;border-color:#FF6B35;}
+    .pill{border-left:4px solid #FF6B35;}
+    #rp{position:fixed;top:0;left:0;height:3px;background:#FF6B35;width:0;z-index:999;transition:width .1s linear;}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 max-w-md mx-auto">
+<div id="rp"></div>
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
+  <a href="legal.html" class="text-gray-400 text-xl">←</a>
+  <div class="flex-1"><p class="text-xs text-gray-400">Legal Reasoning</p><h1 class="text-base font-bold">⚖️ Tort Law</h1></div>
+  <a href="../practice/quiz.html?subject=torts" class="text-white text-xs font-bold px-3 py-2 rounded-xl" style="background:#FF6B35">Quiz →</a>
+</header>
+
+<!-- HERO -->
+<section class="px-5 py-6" style="background:linear-gradient(135deg,#fff7ed 0%,#fff 100%)">
+  <div class="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3" style="background:#fff7ed;color:#FF6B35">Legal Reasoning · Tort Law</div>
+  <h2 class="text-2xl font-bold text-gray-900 mb-2">⚖️ Tort Law (अपकृत्य विधि)</h2>
+  <p class="text-sm text-gray-500 leading-relaxed">Trespass, Negligence, Nuisance और Vicarious Liability — CLAT Tort Law के core concepts हिंदी में।</p>
+</section>
+
+<!-- TABS -->
+<section class="px-4 pt-4 mb-4">
+  <div class="flex gap-2 overflow-x-auto pb-1">
+    <button onclick="showTab('concepts')"   id="tb-concepts"   class="tb tab-btn active text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border transition" style="border-color:#FF6B35">📖 Concepts</button>
+    <button onclick="showTab('principles')" id="tb-principles" class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">⚖️ Principles</button>
+    <button onclick="showTab('solved')"     id="tb-solved"     class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">✅ Solved</button>
+    <button onclick="showTab('tips')"       id="tb-tips"       class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">💡 Tips</button>
+  </div>
+</section>
+
+<!-- TAB: CONCEPTS -->
+<div id="tc-concepts" class="px-4 pb-6 tc">
+  <p class="text-xs text-gray-400 mb-4">Tort Law के core ideas — CLAT में कैसे आते हैं।</p>
+  <div class="space-y-3 mb-5" id="concepts-content">
+    
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500">
+      <p class="text-sm font-bold mb-2">Tort क्या होता है?</p>
+      <p class="text-xs text-gray-500 leading-relaxed">Tort एक civil wrong है जो किसी दूसरे को नुकसान पहुंचाता है। इसके लिए criminal law की तरह jail नहीं — बल्कि <strong>compensation (damages)</strong> दिया जाता है।</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+      <p class="text-sm font-bold mb-2">CLAT में Tort के 4 बड़े Topics</p>
+      <div class="space-y-2">
+        <div class="flex gap-2 items-center"><span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full">1</span><p class="text-xs text-gray-600"><strong>Trespass:</strong> बिना permission ज़मीन पर घुसना</p></div>
+        <div class="flex gap-2 items-center"><span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full">2</span><p class="text-xs text-gray-600"><strong>Negligence:</strong> Duty + Breach + Damage</p></div>
+        <div class="flex gap-2 items-center"><span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full">3</span><p class="text-xs text-gray-600"><strong>Vicarious Liability:</strong> Employer की ज़िम्मेदारी</p></div>
+        <div class="flex gap-2 items-center"><span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full">4</span><p class="text-xs text-gray-600"><strong>Nuisance:</strong> दूसरे के land use में interference</p></div>
+      </div>
+    </div>
+    <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-4">
+      <p class="text-xs font-bold text-gray-700 mb-2">⚡ Key Difference याद रखो</p>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="bg-white rounded-xl p-2 text-center"><p class="text-xs font-bold text-red-600">Criminal Law</p><p class="text-xs text-gray-500 mt-1">State vs Person<br/>Punishment</p></div>
+        <div class="bg-white rounded-xl p-2 text-center"><p class="text-xs font-bold text-orange-600">Tort Law</p><p class="text-xs text-gray-500 mt-1">Person vs Person<br/>Compensation</p></div>
+      </div>
+    </div>
+  </div>
+  <button onclick="showTab('principles')" class="w-full text-white py-3 rounded-2xl font-bold text-sm" style="background:#FF6B35">अगला: Principles देखो →</button>
+</div>
+
+<!-- TAB: PRINCIPLES -->
+<div id="tc-principles" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">हर Principle को समझो — IF-THEN-UNLESS में तोड़ो।</p>
+  <div class="space-y-3">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('p1t')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <p class="text-xs font-semibold mb-0.5" style="color:#FF6B35">Principle 01</p>
+          <p class="text-sm font-bold text-gray-800">Trespass to Land</p>
+        </div>
+        <span id="ai-p1t" class="accordion-icon text-gray-400 text-lg">▼</span>
+      </button>
+      <div id="ab-p1t" class="accordion-body">
+        <div class="px-4 pb-4 space-y-3">
+          <div class="rounded-xl p-3 border-l-4" style="background:#fff7ed;border-color:#FF6B35">
+            <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle</p>
+            <p class="text-xs italic text-gray-600 leading-relaxed">Any intentional, direct interference with another person's land without lawful justification amounts to trespass, regardless of whether damage is caused.</p>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में</p>
+            <p class="text-xs text-gray-600 leading-relaxed">किसी की ज़मीन पर बिना permission जानबूझकर घुसना = Trespass। नुकसान हो या न हो — कोई फर्क नहीं।</p>
+          </div>
+          <div class="bg-green-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">📝 Example</p>
+            <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> Sita को लगा यह ज़मीन उसकी है — घुस गई।<br/><strong>Answer:</strong> Trespasser है — honest mistake भी defence नहीं।</p>
+          </div>
+          <div class="bg-yellow-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">⚠️ CLAT Trap</p>
+            <p class="text-xs text-gray-600">"कोई नुकसान नहीं हुआ इसलिए trespass नहीं" — यह option गलत है।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('p2t')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <p class="text-xs font-semibold mb-0.5" style="color:#FF6B35">Principle 02</p>
+          <p class="text-sm font-bold text-gray-800">Negligence</p>
+        </div>
+        <span id="ai-p2t" class="accordion-icon text-gray-400 text-lg">▼</span>
+      </button>
+      <div id="ab-p2t" class="accordion-body">
+        <div class="px-4 pb-4 space-y-3">
+          <div class="rounded-xl p-3 border-l-4" style="background:#fff7ed;border-color:#FF6B35">
+            <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle</p>
+            <p class="text-xs italic text-gray-600 leading-relaxed">A person is liable in negligence if they owe a duty of care, breach that duty, and the breach causes damage.</p>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में</p>
+            <p class="text-xs text-gray-600 leading-relaxed">Negligence के लिए तीन चीज़ें ज़रूरी: Duty of Care + Breach + Damage। तीनों साथ हों तभी liable।</p>
+          </div>
+          <div class="bg-green-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">📝 Example</p>
+            <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> Doctor ने operation में standard of care follow नहीं किया, patient को नुकसान हुआ।<br/><strong>Answer:</strong> Doctor liable — duty था, breach हुई, damage हुआ।</p>
+          </div>
+          <div class="bg-yellow-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">⚠️ CLAT Trap</p>
+            <p class="text-xs text-gray-600">अगर damage न हो — negligence prove नहीं होती, चाहे breach हुई हो।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('p3t')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <p class="text-xs font-semibold mb-0.5" style="color:#FF6B35">Principle 03</p>
+          <p class="text-sm font-bold text-gray-800">Vicarious Liability</p>
+        </div>
+        <span id="ai-p3t" class="accordion-icon text-gray-400 text-lg">▼</span>
+      </button>
+      <div id="ab-p3t" class="accordion-body">
+        <div class="px-4 pb-4 space-y-3">
+          <div class="rounded-xl p-3 border-l-4" style="background:#fff7ed;border-color:#FF6B35">
+            <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle</p>
+            <p class="text-xs italic text-gray-600 leading-relaxed">An employer is liable for the wrongful acts of an employee committed during the course of employment.</p>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में</p>
+            <p class="text-xs text-gray-600 leading-relaxed">मालिक अपने नौकर की गलती के लिए ज़िम्मेदार है — अगर वो गलती काम के दौरान हुई हो।</p>
+          </div>
+          <div class="bg-green-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">📝 Example</p>
+            <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> Bus Driver ने ड्यूटी के दौरान cyclist को टक्कर मारी।<br/><strong>Answer:</strong> Bus Company liable।</p>
+          </div>
+          <div class="bg-yellow-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">⚠️ CLAT Trap</p>
+            <p class="text-xs text-gray-600">Lunch break पर personal trip में हुआ accident — Employer liable नहीं।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('p4t')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <p class="text-xs font-semibold mb-0.5" style="color:#FF6B35">Principle 04</p>
+          <p class="text-sm font-bold text-gray-800">Nuisance</p>
+        </div>
+        <span id="ai-p4t" class="accordion-icon text-gray-400 text-lg">▼</span>
+      </button>
+      <div id="ab-p4t" class="accordion-body">
+        <div class="px-4 pb-4 space-y-3">
+          <div class="rounded-xl p-3 border-l-4" style="background:#fff7ed;border-color:#FF6B35">
+            <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle</p>
+            <p class="text-xs italic text-gray-600 leading-relaxed">A person who unlawfully interferes with another person's use or enjoyment of land, or some right over it, commits a nuisance.</p>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में</p>
+            <p class="text-xs text-gray-600 leading-relaxed">किसी की ज़मीन के इस्तेमाल में unlawful interference = Nuisance।</p>
+          </div>
+          <div class="bg-green-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">📝 Example</p>
+            <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> Factory से निकलने वाले धुएं ने पड़ोसी का रहना मुश्किल कर दिया।<br/><strong>Answer:</strong> Nuisance — पड़ोसी claim कर सकता है।</p>
+          </div>
+          <div class="bg-yellow-50 rounded-xl p-3">
+            <p class="text-xs font-bold text-gray-700 mb-1">⚠️ CLAT Trap</p>
+            <p class="text-xs text-gray-600">Temporary inconvenience हमेशा nuisance नहीं। Interference unreasonable होनी चाहिए।</p>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  <button onclick="showTab('solved')" class="w-full mt-5 text-white py-3 rounded-2xl font-bold text-sm" style="background:#FF6B35">अगला: Solved Sets →</button>
+</div>
+
+<!-- TAB: SOLVED -->
+<div id="tc-solved" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">Option choose करो — तुरंत feedback मिलेगा।</p>
+  
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="tq1">
+    <div class="flex justify-between mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full" style="background:#fff7ed;color:#FF6B35">Q1 · Negligence</span>
+      <span class="text-xs text-gray-400">मध्यम</span>
+    </div>
+    <div class="bg-orange-50 rounded-xl p-3 mb-2"><p class="text-xs font-bold mb-1">Principle:</p><p class="text-xs italic text-gray-600">A person owes a duty of care to all those who might be affected by their actions. Breach of this duty causing damage makes one liable.</p></div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3"><p class="text-xs font-bold mb-1">Facts:</p><p class="text-xs text-gray-600">Rahul एक electrician है। उसने wiring ठीक से नहीं की। Short circuit से Priya के घर में आग लग गई।</p></div>
+    <p class="text-xs font-bold mb-2">क्या Rahul liable है?</p>
+    <div class="space-y-2 mb-3"><button onclick="sol('tq1','A','B')" id="tq1-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) नहीं — आग accident था</button>
+<button onclick="sol('tq1','B','B')" id="tq1-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) हां — duty था, breach हुई, damage हुआ</button>
+<button onclick="sol('tq1','C','B')" id="tq1-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) नहीं — Rahul के घर में आग नहीं लगी</button>
+<button onclick="sol('tq1','D','B')" id="tq1-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) हां — electricians को सबसे ज़्यादा careful रहना चाहिए</button></div>
+    <div id="tq1-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3">
+        <p class="text-xs font-bold text-green-700">Correct: (B)</p>
+        <p class="text-xs text-green-600 mt-1">तीनों elements: Duty ✓ (affected person को) + Breach ✓ (ठीक से नहीं की) + Damage ✓ (आग)। Rahul liable।</p>
+      </div>
+      <div class="bg-red-50 rounded-xl p-3">
+        <p class="text-xs font-bold text-red-700 mb-1">बाकी गलत:</p>
+        <p class="text-xs text-red-600 mb-0.5"><strong>(A):</strong> Accident होना defence नहीं — breach prove हो गई।</p>
+<p class="text-xs text-red-600 mb-0.5"><strong>(C):</strong> Damage Priya को हुआ — यही काफी है।</p>
+<p class="text-xs text-red-600 mb-0.5"><strong>(D):</strong> Extreme reasoning — principle में नहीं।</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="tq2">
+    <div class="flex justify-between mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full" style="background:#fff7ed;color:#FF6B35">Q2 · Trespass</span>
+      <span class="text-xs text-gray-400">आसान</span>
+    </div>
+    <div class="bg-orange-50 rounded-xl p-3 mb-2"><p class="text-xs font-bold mb-1">Principle:</p><p class="text-xs italic text-gray-600">Any intentional entry on another's land without permission is trespass, even without damage.</p></div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3"><p class="text-xs font-bold mb-1">Facts:</p><p class="text-xs text-gray-600">Reena shortcut के लिए रोज़ Suresh के खेत से निकलती है। Suresh ने कभी permission नहीं दी।</p></div>
+    <p class="text-xs font-bold mb-2">क्या Reena trespasser है?</p>
+    <div class="space-y-2 mb-3"><button onclick="sol('tq2','A','C')" id="tq2-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) नहीं — वो तो सिर्फ shortcut ले रही है</button>
+<button onclick="sol('tq2','B','C')" id="tq2-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) नहीं — Suresh ने कभी मना नहीं किया</button>
+<button onclick="sol('tq2','C','C')" id="tq2-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) हां — बिना permission intentional entry = trespass</button>
+<button onclick="sol('tq2','D','C')" id="tq2-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — कोई नुकसान नहीं हुआ</button></div>
+    <div id="tq2-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3">
+        <p class="text-xs font-bold text-green-700">Correct: (C)</p>
+        <p class="text-xs text-green-600 mt-1">Intentional entry + no permission = trespass। Silence permission नहीं है।</p>
+      </div>
+      <div class="bg-red-50 rounded-xl p-3">
+        <p class="text-xs font-bold text-red-700 mb-1">बाकी गलत:</p>
+        <p class="text-xs text-red-600 mb-0.5"><strong>(A):</strong> Purpose irrelevant — entry without permission ही trespass।</p>
+<p class="text-xs text-red-600 mb-0.5"><strong>(B):</strong> Permission explicit होनी चाहिए — silence permission नहीं।</p>
+<p class="text-xs text-red-600 mb-0.5"><strong>(D):</strong> Damage ज़रूरी नहीं।</p>
+      </div>
+    </div>
+  </div>
+  <button onclick="showTab('tips')" class="w-full text-white py-3 rounded-2xl font-bold text-sm" style="background:#FF6B35">अगला: Tips →</button>
+</div>
+
+<!-- TAB: TIPS -->
+<div id="tc-tips" class="px-4 pb-28 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">Tort Law के CLAT-specific tips।</p>
+  <div id="tips-content" class="space-y-3 mb-6">    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500"><p class="text-sm font-bold mb-1">Tip 1 — Negligence में तीनों check करो</p><p class="text-xs text-gray-500">Duty + Breach + Damage — एक भी missing तो liable नहीं।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-400"><p class="text-sm font-bold mb-1">Tip 2 — Trespass में damage ज़रूरी नहीं</p><p class="text-xs text-gray-500">Entry without permission ही काफी है।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-400"><p class="text-sm font-bold mb-1">Tip 3 — Vicarious: "Course of Employment" key है</p><p class="text-xs text-gray-500">Personal काम के दौरान हुई गलती = employer not liable।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-500"><p class="text-sm font-bold mb-1">Tip 4 — Defence ढूंढो</p><p class="text-xs text-gray-500">Consent, Self-defence, Act of God — exceptions check करो।</p></div></div>
+  <div class="rounded-2xl p-5 text-center text-white" style="background:#FF6B35">
+    <p class="text-base font-bold mb-1">दूसरे Topics भी देखो</p>
+    <div class="grid grid-cols-2 gap-2 mt-3">
+      <a href="torts.html"        class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#FF6B35">⚖️ Tort Law</a>
+      <a href="contracts.html"    class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#3b82f6">📝 Contracts</a>
+      <a href="constitution.html" class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#16a34a">🏛️ Constitution</a>
+      <a href="criminal.html"     class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#dc2626">🔒 Criminal Law</a>
+    </div>
+  </div>
+</div>
+
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 shadow-lg z-50">
+  <div class="flex justify-around items-center py-2">
+    <a href="../index.html"          class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">🏠</span><span class="text-xs text-gray-400">Home</span></a>
+    <a href="legal.html"             class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">⚖️</span><span class="text-xs text-gray-400">Legal</span></a>
+    <a href="../practice/quiz.html"  class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">✏️</span><span class="text-xs text-gray-400">Practice</span></a>
+    <a href="../bridge/passage.html" class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">🔤</span><span class="text-xs text-gray-400">English</span></a>
+    <a href="../downloads/index.html"class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">📥</span><span class="text-xs text-gray-400">PDFs</span></a>
+  </div>
+</nav>
+<script>
+  const CONCEPTS = {};
+  const TIPS = {};
+
+  function showTab(n){
+    document.querySelectorAll(".tc").forEach(e=>e.classList.add("hidden"));
+    document.querySelectorAll(".tb").forEach(b=>{b.classList.remove("active");b.classList.add("text-gray-500");});
+    document.getElementById("tc-"+n).classList.remove("hidden");
+    const b=document.getElementById("tb-"+n);
+    b.classList.add("active");b.classList.remove("text-gray-500");
+    b.style.background="#FF6B35"; b.style.color="#fff"; b.style.borderColor="#FF6B35";
+    document.querySelectorAll(".tb:not(.active)").forEach(x=>{x.style.background="";x.style.color="";});
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function acc(id){
+    document.getElementById("ab-"+id).classList.toggle("open");
+    document.getElementById("ai-"+id).classList.toggle("open");
+  }
+  function sol(qid,chosen,correct){
+    ["A","B","C","D"].forEach(l=>{
+      const b=document.getElementById(qid+"-"+l);
+      if(!b)return; b.disabled=true;
+      if(l===correct)b.classList.add("bg-green-100","border-green-400","text-green-800");
+      else if(l===chosen&&chosen!==correct)b.classList.add("bg-red-100","border-red-400","text-red-800");
+    });
+    document.getElementById(qid+"-exp").classList.remove("hidden");
+  }
+  window.addEventListener("scroll",()=>{
+    const d=document.documentElement;
+    document.getElementById("rp").style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+"%";
+  });
+</script>
+</body></html>
