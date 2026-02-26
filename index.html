@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLAT Mitra – Free CLAT Prep in Hindi</title>
+  <meta name="description" content="CLAT Mitra – हिंदी में मुफ़्त CLAT तैयारी। Rural India के छात्रों के लिए।" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saffron: { 50:"#fff7ed", 100:"#ffedd5", 400:"#fb923c", 500:"#FF6B35", 600:"#ea580c" },
+          },
+          fontFamily: {
+            sans: ['"Noto Sans Devanagari"', '"Noto Sans"', "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: "Noto Sans Devanagari", "Noto Sans", sans-serif; }
+    html { scroll-behavior: smooth; }
+    .subject-card { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .subject-card:active { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,53,0.15); }
+    .lang-btn.active { background-color: #FF6B35; color: white; }
+    .progress-fill { transition: width 1s ease-in-out; }
+    @keyframes ticker {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .ticker-text { animation: ticker 20s linear infinite; white-space: nowrap; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 max-w-md mx-auto relative">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="text-2xl">⚖️</span>
+      <div>
+        <span class="text-lg font-bold text-orange-500 leading-none">CLAT Mitra</span>
+        <p class="text-xs text-gray-400 leading-none">आपका मुफ़्त CLAT साथी</p>
+      </div>
+    </div>
+    <div class="flex gap-1 bg-gray-100 rounded-full p-1">
+      <button onclick="setLang('hi')" id="btn-hi" class="lang-btn active text-xs font-semibold px-3 py-1 rounded-full transition">हिंदी</button>
+      <button onclick="setLang('en')" id="btn-en" class="lang-btn text-xs font-semibold px-3 py-1 rounded-full text-gray-500 transition">EN</button>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="bg-orange-500 text-white text-xs py-1.5 overflow-hidden">
+    <p class="ticker-text px-4">
+      🎯 CLAT की तैयारी अभी शुरू करो &nbsp;|&nbsp;
+      📥 इस हफ़्ते का Practice Pack Download करो &nbsp;|&nbsp;
+      🆕 Legal Reasoning के नए Solved Sets Available हैं &nbsp;|&nbsp;
+      🌟 बिल्कुल मुफ़्त — कोई Fees नहीं, कोई Sign-up नहीं
+    </p>
+  </div>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-orange-50 to-white px-5 pt-8 pb-6 text-center">
+    <div class="inline-block bg-orange-100 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+      🇮🇳 Rural India के लिए बना — हिंदी में
+    </div>
+    <h1 id="hero-title" class="text-3xl font-bold text-gray-900 leading-tight mb-3">
+      हर छात्र का हक़ है NLU 🎓
+    </h1>
+    <p id="hero-sub" class="text-gray-500 text-base leading-relaxed mb-6">
+      हिंदी में सीखो, NLU में पढ़ो।<br/>
+      कोई fees नहीं · कोई sign-up नहीं · बस पढ़ो और बढ़ो।
+    </p>
+    <div class="flex flex-col gap-3 mb-6">
+      <a href="learn/legal.html" class="bg-orange-500 text-white py-3.5 rounded-2xl text-base font-bold shadow-md active:scale-95 transition">
+        अभी पढ़ना शुरू करो →
+      </a>
+      <a href="practice/quiz.html" class="bg-white border-2 border-orange-500 text-orange-500 py-3 rounded-2xl text-base font-semibold active:scale-95 transition">
+        ✏️ Practice Quiz लो
+      </a>
+    </div>
+    <div class="flex justify-center gap-4 text-xs text-gray-400">
+      <span>✅ 100% मुफ़्त</span>
+      <span>📱 Mobile-friendly</span>
+      <span>🌐 Offline PDFs</span>
+    </div>
+  </section>
+
+  <!-- STREAK -->
+  <section class="mx-4 my-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+    <div class="flex items-center justify-between mb-2">
+      <div>
+        <p class="text-sm font-semibold text-gray-700">🔥 आज का लक्ष्य</p>
+        <p class="text-xs text-gray-400">10 में से 6 सवाल हो गए</p>
+      </div>
+      <span class="text-2xl font-bold text-orange-500">60%</span>
+    </div>
+    <div class="w-full bg-gray-100 rounded-full h-2.5">
+      <div class="bg-orange-500 h-2.5 rounded-full progress-fill" style="width:0%"></div>
+    </div>
+    <p class="text-xs text-gray-400 mt-2">4 और सवाल करो — आज का target पूरा होगा! 💪</p>
+  </section>
+
+  <!-- SUBJECT CARDS -->
+  <section class="px-4 mb-6">
+    <h2 class="text-base font-bold text-gray-700 mb-3">📚 क्या पढ़ोगे?</h2>
+    <div class="grid grid-cols-2 gap-3">
+
+      <a href="learn/legal.html" class="subject-card bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center block">
+        <div class="text-3xl mb-2">⚖️</div>
+        <p class="text-sm font-bold text-gray-800">Legal Reasoning</p>
+        <p class="text-xs text-gray-400 mt-1">Principles · Cases · Application</p>
+        <span class="inline-block mt-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">✓ हिंदी में</span>
+      </a>
+
+      <a href="learn/english.html" class="subject-card bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center block">
+        <div class="text-3xl mb-2">📝</div>
+        <p class="text-sm font-bold text-gray-800">English</p>
+        <p class="text-xs text-gray-400 mt-1">Comprehension · Vocabulary</p>
+        <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Bilingual</span>
+      </a>
+
+      <a href="learn/logical.html" class="subject-card bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center block">
+        <div class="text-3xl mb-2">🧠</div>
+        <p class="text-sm font-bold text-gray-800">Logical Reasoning</p>
+        <p class="text-xs text-gray-400 mt-1">Sets · Syllogisms · Puzzles</p>
+        <span class="inline-block mt-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">✓ हिंदी में</span>
+      </a>
+
+      <a href="learn/quant.html" class="subject-card bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center block">
+        <div class="text-3xl mb-2">🔢</div>
+        <p class="text-sm font-bold text-gray-800">Quantitative</p>
+        <p class="text-xs text-gray-400 mt-1">Basics · Shortcuts · Drills</p>
+        <span class="inline-block mt-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">✓ हिंदी में</span>
+      </a>
+
+      <a href="learn/gk.html" class="subject-card bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center block">
+        <div class="text-3xl mb-2">🌏</div>
+        <p class="text-sm font-bold text-gray-800">GK / Current Affairs</p>
+        <p class="text-xs text-gray-400 mt-1">Weekly Capsules · Hindi</p>
+        <span class="inline-block mt-2 text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">Weekly Update</span>
+      </a>
+
+      <a href="mock/test.html" class="subject-card bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center block">
+        <div class="text-3xl mb-2">📋</div>
+        <p class="text-sm font-bold text-gray-800">Full Mock Test</p>
+        <p class="text-xs text-gray-400 mt-1">120 Qs · 120 Min · Monthly</p>
+        <span class="inline-block mt-2 text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Mock →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BRIDGE TOOLS -->
+  <section class="mx-4 mb-6">
+    <div class="bg-indigo-700 rounded-2xl p-5 text-white">
+      <p class="text-xs font-semibold uppercase tracking-wide text-indigo-200 mb-1">English से डर लगता है?</p>
+      <h3 class="text-lg font-bold mb-1">Bridge Tools 🔤</h3>
+      <p class="text-sm text-indigo-100 mb-4 leading-relaxed">
+        Passage पढ़ो → Hindi meaning पाओ।<br/>धीरे-धीरे CLAT-level तक पहुँचो।
+      </p>
+      <a href="bridge/passage.html" class="inline-block bg-white text-indigo-700 font-bold text-sm px-5 py-2.5 rounded-xl active:scale-95 transition">
+        शुरू करो →
+      </a>
+    </div>
+  </section>
+
+  <!-- DAILY VOCAB CARD -->
+  <section class="mx-4 mb-6">
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-base font-bold text-gray-700">💡 आज का Word</h2>
+      <span id="vocab-date" class="text-xs text-gray-400"></span>
+    </div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500">
+      <div class="flex items-start justify-between">
+        <div>
+          <p id="vocab-word"  class="text-xl font-bold text-gray-900"></p>
+          <p id="vocab-hindi" class="text-sm text-orange-500 font-semibold mt-0.5"></p>
+        </div>
+        <span class="text-2xl">📌</span>
+      </div>
+      <p id="vocab-example" class="text-xs text-gray-500 mt-2 leading-relaxed"></p>
+      <div id="vocab-related" class="mt-3 flex gap-2 flex-wrap"></div>
+      <a href="bridge/vocab.html" class="block text-center mt-3 text-xs text-orange-500 font-semibold">
+        सभी words देखो →
+      </a>
+    </div>
+  </section>
+
+  <!-- WEEKLY DOWNLOAD -->
+  <section class="mx-4 mb-6">
+    <div class="bg-green-50 border border-green-200 rounded-2xl p-4 flex items-center gap-4">
+      <div class="text-4xl">📥</div>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-gray-800">इस हफ़्ते का Practice Pack</p>
+        <p class="text-xs text-gray-500 mt-0.5">20 GK Facts · 1 Passage · 30 Questions</p>
+        <p class="text-xs text-green-600 font-semibold mt-1">Free PDF · Offline पढ़ो</p>
+      </div>
+      <a href="downloads/index.html" class="bg-green-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl shrink-0 active:scale-95 transition">
+        Download
+      </a>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mx-4 mb-24 bg-orange-50 rounded-2xl p-5 text-center">
+    <p class="text-2xl mb-2">🤝</p>
+    <h3 class="text-sm font-bold text-gray-800 mb-2">CLAT Mitra क्यों?</h3>
+    <p class="text-xs text-gray-500 leading-relaxed">
+      हम मानते हैं कि एक अच्छी कोचिंग न पा सकना किसी की काबिलियत की कमी नहीं है।
+      CLAT Mitra Tier 2, Tier 3 शहरों और गाँवों के हर होनहार छात्र का मित्र है —
+      बिल्कुल मुफ़्त, बिना किसी शर्त के।
+    </p>
+  </section>
+
+  <!-- BOTTOM NAV -->
+  <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 shadow-lg z-50">
+    <div class="flex justify-around items-center py-2">
+      <a href="index.html"           class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">🏠</span><span class="text-xs font-semibold text-orange-500">Home</span></a>
+      <a href="learn/legal.html"     class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">📖</span><span class="text-xs text-gray-400">सीखो</span></a>
+      <a href="practice/quiz.html"   class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">✏️</span><span class="text-xs text-gray-400">Practice</span></a>
+      <a href="bridge/passage.html"  class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">🔤</span><span class="text-xs text-gray-400">English</span></a>
+      <a href="downloads/index.html" class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">📥</span><span class="text-xs text-gray-400">PDFs</span></a>
+    </div>
+  </nav>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // 30-Word Bank
+    const wordBank = [
+      { word:"Coerce",        hindi:"दबाव डालना / ज़बरदस्ती करना",   example:"Court ने कहा कि confession coerced थी — इसलिए मान्य नहीं।",             related:["duress","compulsion","force"] },
+      { word:"Abdicate",      hindi:"त्याग करना / पद छोड़ना",        example:"King ने throne abdicate किया और constitutional crisis आई।",               related:["renounce","relinquish","resign"] },
+      { word:"Acquit",        hindi:"बरी करना",                      example:"Jury ने सबूत न होने पर accused को acquit कर दिया।",                       related:["exonerate","discharge","absolve"] },
+      { word:"Arbitration",   hindi:"मध्यस्थता",                     example:"Dispute को court से बाहर arbitration से सुलझाया गया।",                   related:["mediation","conciliation","settlement"] },
+      { word:"Cognizance",    hindi:"संज्ञान लेना",                   example:"Supreme Court ने suo motu cognizance लिया।",                              related:["notice","awareness","jurisdiction"] },
+      { word:"Contempt",      hindi:"अवमानना",                       example:"Court के order को न मानना contempt of court है।",                         related:["defiance","disrespect","disobedience"] },
+      { word:"Conviction",    hindi:"दोषसिद्धि",                     example:"Trial के बाद accused की conviction हुई और सज़ा सुनाई गई।",                related:["guilt","sentence","verdict"] },
+      { word:"Culpable",      hindi:"दोषी / ज़िम्मेदार",             example:"Culpable homicide में murder से कम intent होता है।",                      related:["guilty","liable","blameworthy"] },
+      { word:"Defamation",    hindi:"मानहानि",                       example:"False statement publish करने से उसकी defamation हुई।",                    related:["libel","slander","calumny"] },
+      { word:"Detain",        hindi:"हिरासत में लेना",                example:"Police ने suspect को 24 घंटे detain किया।",                              related:["arrest","confine","custody"] },
+      { word:"Embargo",       hindi:"प्रतिबंध",                      example:"UN ने उस देश पर trade embargo लगाया।",                                   related:["ban","prohibition","sanction"] },
+      { word:"Extradite",     hindi:"प्रत्यर्पण करना",               example:"India ने fugitive को extradite करने की माँग की।",                         related:["deport","transfer","surrender"] },
+      { word:"Habeas Corpus", hindi:"बंदी प्रत्यक्षीकरण",            example:"Unlawful detention के खिलाफ Habeas Corpus petition दाखिल की।",            related:["writ","liberty","detention"] },
+      { word:"Immunity",      hindi:"उन्मुक्ति / छूट",              example:"Diplomatic immunity से वो arrest से बचे।",                               related:["exemption","privilege","protection"] },
+      { word:"Injunction",    hindi:"निषेधाज्ञा",                    example:"Court ने injunction देकर construction रोक दी।",                           related:["restraint","stay order","prohibition"] },
+      { word:"Jurisdiction",  hindi:"अधिकार क्षेत्र",                example:"इस मामले में High Court की jurisdiction है।",                             related:["authority","competence","power"] },
+      { word:"Lien",          hindi:"ग्रहणाधिकार",                  example:"Loan न चुकाने पर bank का property पर lien रहा।",                          related:["claim","charge","mortgage"] },
+      { word:"Litigation",    hindi:"मुकदमेबाज़ी",                   example:"Lengthy litigation से दोनों पक्ष थक गए।",                                related:["lawsuit","dispute","proceedings"] },
+      { word:"Malice",        hindi:"द्वेष / बुरी नीयत",             example:"Crime में malice aforethought साबित करना ज़रूरी है।",                     related:["intent","spite","ill-will"] },
+      { word:"Mandate",       hindi:"आदेश / जनादेश",                 example:"Court ने state को mandate दिया।",                                         related:["order","directive","instruction"] },
+      { word:"Mitigation",    hindi:"शमन / कमी",                    example:"Good behaviour से sentence में mitigation मिली।",                          related:["reduction","relief","lessening"] },
+      { word:"Perjury",       hindi:"झूठी गवाही देना",               example:"Court में झूठ बोलना perjury है — यह अपराध है।",                           related:["false testimony","lying","deceit"] },
+      { word:"Plaintiff",     hindi:"वादी / मुद्दई",                  example:"Plaintiff ने damages के लिए civil suit दाखिल की।",                       related:["claimant","petitioner","complainant"] },
+      { word:"Precedent",     hindi:"मिसाल / पूर्व निर्णय",          example:"इस case ने एक important legal precedent set किया।",                      related:["ruling","judgement","stare decisis"] },
+      { word:"Promulgate",    hindi:"प्रख्यापित करना",               example:"President ने नया ordinance promulgate किया।",                            related:["announce","enact","publish"] },
+      { word:"Ratify",        hindi:"अनुसमर्थन / मंज़ूरी देना",      example:"Parliament ने international treaty ratify की।",                           related:["approve","confirm","endorse"] },
+      { word:"Subpoena",      hindi:"समन / तलब करना",                example:"Witness को court में बुलाने के लिए subpoena भेजा गया।",                  related:["summons","notice","call"] },
+      { word:"Tort",          hindi:"अपकृत्य (Civil wrong)",         example:"Negligence एक tort है — criminal offence नहीं।",                          related:["wrong","liability","damage"] },
+      { word:"Voidable",      hindi:"शून्यकरणीय",                   example:"Minor द्वारा किया गया contract voidable होता है।",                        related:["invalid","cancellable","unenforceable"] },
+      { word:"Warrant",       hindi:"वारंट / आदेश पत्र",             example:"Police को arrest करने के लिए court से warrant लेना होगा।",                related:["order","authorization","writ"] }
+    ];
+
+    // Pick word by day of year
+    function getDayOfYear() {
+      const now = new Date();
+      const start = new Date(now.getFullYear(), 0, 0);
+      return Math.floor((now - start) / 86400000);
+    }
+
+    function loadVocab() {
+      const w = wordBank[getDayOfYear() % wordBank.length];
+      const now = new Date();
+      const days = ["रवि","सोम","मंगल","बुध","गुरु","शुक्र","शनि"];
+      document.getElementById("vocab-date").textContent  = days[now.getDay()] + " " + now.getDate() + "/" + (now.getMonth()+1);
+      document.getElementById("vocab-word").textContent  = w.word;
+      document.getElementById("vocab-hindi").textContent = w.hindi;
+      document.getElementById("vocab-example").innerHTML = "<span class='font-semibold'>उदाहरण:</span> " + w.example;
+      document.getElementById("vocab-related").innerHTML = w.related.map(function(r){
+        return "<span class='text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full'>" + r + "</span>";
+      }).join("");
+    }
+
+    // Language toggle
+    const uiText = {
+      hi: { title:"हर छात्र का हक़ है NLU 🎓", sub:"हिंदी में सीखो, NLU में पढ़ो।<br/>कोई fees नहीं · कोई sign-up नहीं · बस पढ़ो और बढ़ो।" },
+      en: { title:"Every Student Deserves an NLU 🎓", sub:"Learn in Hindi, study at NLU.<br/>No fees · No sign-up · Just learn and grow." }
+    };
+    function setLang(lang) {
+      document.getElementById("hero-title").innerHTML = uiText[lang].title;
+      document.getElementById("hero-sub").innerHTML   = uiText[lang].sub;
+      document.getElementById("btn-hi").classList.toggle("active", lang === "hi");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+    }
+
+    // On load
+    window.addEventListener("load", function() {
+      loadVocab();
+      setTimeout(function() {
+        document.querySelector(".progress-fill").style.width = "60%";
+      }, 300);
+    });
+
+  </script>
+
+</body>
+</html>
