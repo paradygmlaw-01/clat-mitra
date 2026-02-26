@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Reasoning – CLAT Mitra</title>
+  <meta name="description" content="CLAT के लिए Legal Reasoning — हिंदी में सीखो। Principles, examples, solved questions." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saffron: { 50:'#fff7ed', 100:'#ffedd5', 400:'#fb923c', 500:'#FF6B35', 600:'#ea580c' },
+          },
+          fontFamily: {
+            sans: ['"Noto Sans Devanagari"', '"Noto Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: "Noto Sans Devanagari", "Noto Sans", sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Accordion */
+    .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .accordion-body.open { max-height: 2000px; }
+    .accordion-icon { transition: transform 0.3s ease; }
+    .accordion-icon.open { transform: rotate(180deg); }
+
+    /* Tab active */
+    .tab-btn.active {
+      background-color: #FF6B35;
+      color: white;
+    }
+
+    /* Progress step */
+    .step-done { background-color: #FF6B35; color: white; }
+    .step-active { border: 2px solid #FF6B35; color: #FF6B35; }
+    .step-todo { background-color: #e5e7eb; color: #9ca3af; }
+
+    /* Highlight box */
+    .principle-card { border-left: 4px solid #FF6B35; }
+
+    /* Sticky progress bar */
+    #read-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: #FF6B35; width: 0%; z-index: 999;
+      transition: width 0.1s linear;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 max-w-md mx-auto">
+
+  <!-- Reading progress bar -->
+  <div id="read-progress"></div>
+
+  <!-- ══════════════════════════════════
+       HEADER
+  ══════════════════════════════════ -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
+    <a href="../index.html" class="text-gray-400 text-xl">←</a>
+    <div class="flex-1">
+      <p class="text-xs text-gray-400">CLAT Mitra · सीखो</p>
+      <h1 class="text-base font-bold text-gray-800">⚖️ Legal Reasoning</h1>
+    </div>
+    <a href="../practice/quiz.html?subject=legal"
+       class="bg-saffron-500 text-white text-xs font-bold px-3 py-2 rounded-xl">
+      Quiz लो →
+    </a>
+  </header>
+
+  <!-- ══════════════════════════════════
+       HERO STRIP
+  ══════════════════════════════════ -->
+  <section class="bg-gradient-to-br from-saffron-50 to-white px-5 py-6">
+    <div class="inline-block bg-saffron-100 text-saffron-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+      CLAT 2026 · 35–40 Questions
+    </div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">Legal Reasoning क्या है?</h2>
+    <p class="text-sm text-gray-500 leading-relaxed mb-4">
+      CLAT में Legal Reasoning का मतलब है — दिए गए <strong>Principle</strong> को एक <strong>Fact situation</strong> पर apply करना।
+      आपको पहले से कोई law याद नहीं करनी। बस दिया गया principle पढ़ो और सही answer निकालो।
+    </p>
+
+    <!-- Key formula box -->
+    <div class="bg-white border-2 border-saffron-500 rounded-2xl p-4 text-center">
+      <p class="text-xs text-gray-400 mb-1">CLAT का Golden Formula</p>
+      <p class="text-lg font-bold text-gray-800">
+        Principle &nbsp;+&nbsp; Facts &nbsp;=&nbsp; <span class="text-saffron-500">Answer</span>
+      </p>
+      <p class="text-xs text-gray-500 mt-2">Principle हमेशा सच मानो — चाहे वो सही लगे या गलत</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       PROGRESS TRACKER
+  ══════════════════════════════════ -->
+  <section class="px-4 py-4">
+    <p class="text-xs text-gray-400 mb-3 font-semibold uppercase tracking-wide">तुम्हारी Progress</p>
+    <div class="flex items-center gap-1">
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-8 h-8 rounded-full step-done flex items-center justify-center text-xs font-bold">1</div>
+        <p class="text-xs text-saffron-500 font-semibold text-center" style="font-size:10px">Basics</p>
+      </div>
+      <div class="flex-1 h-0.5 bg-saffron-500"></div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-8 h-8 rounded-full step-active flex items-center justify-center text-xs font-bold">2</div>
+        <p class="text-xs text-saffron-500 text-center" style="font-size:10px">Principles</p>
+      </div>
+      <div class="flex-1 h-0.5 bg-gray-200"></div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-8 h-8 rounded-full step-todo flex items-center justify-center text-xs font-bold">3</div>
+        <p class="text-xs text-gray-400 text-center" style="font-size:10px">Solved Sets</p>
+      </div>
+      <div class="flex-1 h-0.5 bg-gray-200"></div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-8 h-8 rounded-full step-todo flex items-center justify-center text-xs font-bold">4</div>
+        <p class="text-xs text-gray-400 text-center" style="font-size:10px">Practice</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       TAB NAVIGATION
+  ══════════════════════════════════ -->
+  <section class="px-4 mb-4">
+    <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+      <button onclick="showTab('basics')"    id="tab-basics"    class="tab-btn active text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-saffron-500 transition">📖 Basics</button>
+      <button onclick="showTab('principles')" id="tab-principles" class="tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">⚖️ Principles</button>
+      <button onclick="showTab('solved')"    id="tab-solved"    class="tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">✅ Solved Sets</button>
+      <button onclick="showTab('tips')"      id="tab-tips"      class="tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">💡 CLAT Tips</button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       TAB: BASICS
+  ══════════════════════════════════ -->
+  <div id="tab-basics-content" class="px-4 pb-6 tab-content">
+
+    <h3 class="text-base font-bold text-gray-800 mb-3">Legal Reasoning कैसे काम करता है?</h3>
+
+    <!-- Step by step -->
+    <div class="space-y-3 mb-6">
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+        <div class="flex gap-3 items-start">
+          <span class="bg-saffron-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">1</span>
+          <div>
+            <p class="text-sm font-bold text-gray-800">Principle पढ़ो</p>
+            <p class="text-xs text-gray-500 mt-1 leading-relaxed">Question में एक या दो Principles दिए होंगे। इन्हें ध्यान से पढ़ो। इन्हें सच मानो — चाहे तुम्हें सही न लगें।</p>
+            <div class="mt-2 bg-saffron-50 rounded-xl p-3 text-xs text-gray-700 italic border-l-2 border-saffron-400">
+              उदाहरण: "Principle: जो व्यक्ति किसी और की ज़मीन पर बिना permission के enters करता है, वो trespasser है।"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+        <div class="flex gap-3 items-start">
+          <span class="bg-saffron-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">2</span>
+          <div>
+            <p class="text-sm font-bold text-gray-800">Facts पढ़ो</p>
+            <p class="text-xs text-gray-500 mt-1 leading-relaxed">एक छोटी-सी कहानी या situation दी जाएगी। इसमें असली लोग और घटनाएँ होंगी।</p>
+            <div class="mt-2 bg-blue-50 rounded-xl p-3 text-xs text-gray-700 italic border-l-2 border-blue-400">
+              उदाहरण: "Ramesh बिना बताए अपने पड़ोसी की ज़मीन से गुज़रा ताकि अपनी बकरी वापस ला सके।"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+        <div class="flex gap-3 items-start">
+          <span class="bg-saffron-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">3</span>
+          <div>
+            <p class="text-sm font-bold text-gray-800">Principle को Facts पर Apply करो</p>
+            <p class="text-xs text-gray-500 mt-1 leading-relaxed">अब पूछो — क्या Facts में वो condition पूरी होती है जो Principle कहता है?</p>
+            <div class="mt-2 bg-green-50 rounded-xl p-3 text-xs text-gray-700 border-l-2 border-green-400">
+              ✅ Ramesh ने बिना permission enter किया → Principle लागू होता है → वो Trespasser है।
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+        <div class="flex gap-3 items-start">
+          <span class="bg-saffron-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">4</span>
+          <div>
+            <p class="text-sm font-bold text-gray-800">Answer चुनो</p>
+            <p class="text-xs text-gray-500 mt-1 leading-relaxed">अपनी moral feeling नहीं — Principle के हिसाब से answer चुनो। भले ही तुम्हें लगे Ramesh सही था।</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Common mistake box -->
+    <div class="bg-red-50 border border-red-200 rounded-2xl p-4 mb-4">
+      <p class="text-sm font-bold text-red-700 mb-2">🚫 सबसे बड़ी गलती जो छात्र करते हैं</p>
+      <p class="text-xs text-red-600 leading-relaxed">
+        अपनी personal opinion या common sense से answer चुनना। CLAT में सिर्फ Principle मायने रखता है — बाकी सब ignore करो।
+      </p>
+    </div>
+
+    <button onclick="showTab('principles')"
+      class="w-full bg-saffron-500 text-white py-3 rounded-2xl font-bold text-sm">
+      अगला: Legal Principles सीखो →
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TAB: PRINCIPLES
+  ══════════════════════════════════ -->
+  <div id="tab-principles-content" class="px-4 pb-6 tab-content hidden">
+
+    <p class="text-xs text-gray-400 mb-4">इन Principles को CLAT में बार-बार पूछा जाता है। हर एक को समझो — रटो नहीं।</p>
+
+    <!-- Accordion Principles -->
+    <div class="space-y-3">
+
+      <!-- Principle 1 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <button onclick="toggleAccordion('p1')" class="w-full flex justify-between items-center px-4 py-4">
+          <div class="text-left">
+            <p class="text-xs text-saffron-500 font-semibold">Principle 01 · Tort Law</p>
+            <p class="text-sm font-bold text-gray-800">Trespass to Land</p>
+          </div>
+          <span id="icon-p1" class="accordion-icon text-gray-400 text-lg">▼</span>
+        </button>
+        <div id="body-p1" class="accordion-body">
+          <div class="px-4 pb-4 space-y-3">
+            <div class="principle-card bg-saffron-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle (English)</p>
+              <p class="text-xs text-gray-600 italic leading-relaxed">"Any intentional, direct interference with another person's land without lawful justification amounts to trespass, regardless of whether damage is caused."</p>
+            </div>
+            <div class="bg-blue-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में समझो</p>
+              <p class="text-xs text-gray-600 leading-relaxed">अगर कोई जानबूझकर किसी की ज़मीन पर बिना permission या legal reason के enters करता है — तो यह trespass है। इससे कोई नुकसान हो या न हो — कोई फर्क नहीं।</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📝 CLAT Example</p>
+              <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> Sita को लगा यह ज़मीन उसकी है — इसलिए वो घुस गई।<br/><strong>Question:</strong> क्या Sita trespasser है?<br/><strong>Answer:</strong> ✅ हाँ — honest mistake भी trespass माना जाता है।</p>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">⚠️ CLAT Trap</p>
+              <p class="text-xs text-gray-600 leading-relaxed">अगर option में आए — "Sita को कोई नुकसान नहीं पहुँचाया इसलिए वो trespasser नहीं है" — यह गलत है। Damage ज़रूरी नहीं।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principle 2 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <button onclick="toggleAccordion('p2')" class="w-full flex justify-between items-center px-4 py-4">
+          <div class="text-left">
+            <p class="text-xs text-saffron-500 font-semibold">Principle 02 · Tort Law</p>
+            <p class="text-sm font-bold text-gray-800">Vicarious Liability</p>
+          </div>
+          <span id="icon-p2" class="accordion-icon text-gray-400 text-lg">▼</span>
+        </button>
+        <div id="body-p2" class="accordion-body">
+          <div class="px-4 pb-4 space-y-3">
+            <div class="principle-card bg-saffron-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle (English)</p>
+              <p class="text-xs text-gray-600 italic leading-relaxed">"An employer is liable for the wrongful acts of an employee committed during the course of employment."</p>
+            </div>
+            <div class="bg-blue-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में समझो</p>
+              <p class="text-xs text-gray-600 leading-relaxed">मालिक (employer) अपने नौकर (employee) की गलती के लिए ज़िम्मेदार है — अगर वो गलती काम के दौरान हुई हो। इसे Vicarious Liability कहते हैं — मतलब दूसरे की गलती की ज़िम्मेदारी।</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📝 CLAT Example</p>
+              <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> एक Bus Driver ने तेज़ गाड़ी चलाते हुए किसी को टक्कर मारी — ड्यूटी के दौरान।<br/><strong>Question:</strong> कौन ज़िम्मेदार है?<br/><strong>Answer:</strong> ✅ Bus Company — क्योंकि driver ड्यूटी पर था।</p>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">⚠️ CLAT Trap</p>
+              <p class="text-xs text-gray-600 leading-relaxed">अगर driver ने यही काम lunch break पर personal trip में किया — तब employer ज़िम्मेदार नहीं। Key phrase: <strong>"course of employment"</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principle 3 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <button onclick="toggleAccordion('p3')" class="w-full flex justify-between items-center px-4 py-4">
+          <div class="text-left">
+            <p class="text-xs text-saffron-500 font-semibold">Principle 03 · Contract Law</p>
+            <p class="text-sm font-bold text-gray-800">Offer और Acceptance</p>
+          </div>
+          <span id="icon-p3" class="accordion-icon text-gray-400 text-lg">▼</span>
+        </button>
+        <div id="body-p3" class="accordion-body">
+          <div class="px-4 pb-4 space-y-3">
+            <div class="principle-card bg-saffron-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle (English)</p>
+              <p class="text-xs text-gray-600 italic leading-relaxed">"A contract is formed when a valid offer is accepted unconditionally. A counter-offer amounts to rejection of the original offer."</p>
+            </div>
+            <div class="bg-blue-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में समझो</p>
+              <p class="text-xs text-gray-600 leading-relaxed">Contract तब बनता है जब Offer को बिना किसी बदलाव के Accept किया जाए। अगर कोई कहे "हाँ, लेकिन थोड़ा कम दाम में" — तो यह Acceptance नहीं, Counter-offer है — और पहला Offer खत्म हो जाता है।</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📝 CLAT Example</p>
+              <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> A ने B को ₹5000 में साइकिल बेचने की offer दी। B ने कहा "₹4500 में दे दो।"<br/><strong>Question:</strong> क्या Contract बना?<br/><strong>Answer:</strong> ❌ नहीं — B का जवाब Counter-offer है, Acceptance नहीं।</p>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">⚠️ CLAT Trap</p>
+              <p class="text-xs text-gray-600 leading-relaxed">Counter-offer के बाद अगर B वापस कहे "ठीक है ₹5000 में ले लूँगा" — तो अब A bound नहीं है। Original offer खत्म हो चुकी है।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principle 4 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <button onclick="toggleAccordion('p4')" class="w-full flex justify-between items-center px-4 py-4">
+          <div class="text-left">
+            <p class="text-xs text-saffron-500 font-semibold">Principle 04 · Criminal Law</p>
+            <p class="text-sm font-bold text-gray-800">Mens Rea — बुरी नीयत</p>
+          </div>
+          <span id="icon-p4" class="accordion-icon text-gray-400 text-lg">▼</span>
+        </button>
+        <div id="body-p4" class="accordion-body">
+          <div class="px-4 pb-4 space-y-3">
+            <div class="principle-card bg-saffron-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle (English)</p>
+              <p class="text-xs text-gray-600 italic leading-relaxed">"An act does not make a person guilty unless the mind is also guilty. (Actus non facit reum nisi mens sit rea)"</p>
+            </div>
+            <div class="bg-blue-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में समझो</p>
+              <p class="text-xs text-gray-600 leading-relaxed">Crime के लिए दो चीज़ें ज़रूरी हैं — <strong>Actus Reus</strong> (गलत काम) और <strong>Mens Rea</strong> (गलत इरादा)। अगर इरादा न हो — तो आम तौर पर crime नहीं माना जाता।</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📝 CLAT Example</p>
+              <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> Arjun ने अँधेरे में सोचा कि यह उसका umbrella है — और उठा लिया। वो किसी और का था।<br/><strong>Question:</strong> क्या यह theft है?<br/><strong>Answer:</strong> ❌ नहीं — इरादा नहीं था, इसलिए Mens Rea absent है।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principle 5 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <button onclick="toggleAccordion('p5')" class="w-full flex justify-between items-center px-4 py-4">
+          <div class="text-left">
+            <p class="text-xs text-saffron-500 font-semibold">Principle 05 · Constitutional Law</p>
+            <p class="text-sm font-bold text-gray-800">Fundamental Rights</p>
+          </div>
+          <span id="icon-p5" class="accordion-icon text-gray-400 text-lg">▼</span>
+        </button>
+        <div id="body-p5" class="accordion-body">
+          <div class="px-4 pb-4 space-y-3">
+            <div class="principle-card bg-saffron-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📜 Principle (English)</p>
+              <p class="text-xs text-gray-600 italic leading-relaxed">"The State shall not deny to any person equality before the law or equal protection of the laws within the territory of India. (Article 14)"</p>
+            </div>
+            <div class="bg-blue-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">🇮🇳 हिंदी में समझो</p>
+              <p class="text-xs text-gray-600 leading-relaxed">Article 14 कहता है — सरकार किसी के साथ भेदभाव नहीं कर सकती। लेकिन "reasonable classification" allowed है — यानी अगर अलग treat करने का कोई valid reason हो तो ठीक है।</p>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3">
+              <p class="text-xs font-bold text-gray-700 mb-1">📝 CLAT Example</p>
+              <p class="text-xs text-gray-600 leading-relaxed"><strong>Facts:</strong> Govt ने एक rule बनाया कि सिर्फ 40 साल से ऊपर के doctors को senior posts मिलेंगी।<br/><strong>Question:</strong> क्या यह Article 14 violate करता है?<br/><strong>Answer:</strong> ❌ नहीं — Age-based classification reasonable है।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button onclick="showTab('solved')"
+      class="w-full mt-5 bg-saffron-500 text-white py-3 rounded-2xl font-bold text-sm">
+      अगला: Solved Sets देखो →
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TAB: SOLVED SETS
+  ══════════════════════════════════ -->
+  <div id="tab-solved-content" class="px-4 pb-6 tab-content hidden">
+
+    <p class="text-xs text-gray-400 mb-4">हर solved question में देखो — सही answer क्यों सही है और बाकी क्यों गलत।</p>
+
+    <!-- Solved Question 1 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="sq1">
+      <div class="flex justify-between items-start mb-3">
+        <span class="text-xs bg-saffron-100 text-saffron-600 font-semibold px-2 py-1 rounded-full">Q1 · Trespass</span>
+        <span class="text-xs text-gray-400">आसान</span>
+      </div>
+
+      <div class="bg-saffron-50 rounded-xl p-3 mb-3">
+        <p class="text-xs font-bold text-gray-700 mb-1">Principle:</p>
+        <p class="text-xs text-gray-600 italic">A person who enters another's land without permission is a trespasser, even if no damage is caused.</p>
+      </div>
+
+      <div class="bg-blue-50 rounded-xl p-3 mb-3">
+        <p class="text-xs font-bold text-gray-700 mb-1">Facts:</p>
+        <p class="text-xs text-gray-600">Raju की गेंद पड़ोसी Sharma ji के बगीचे में चली गई। Raju बिना पूछे उनके बगीचे में घुस गया और गेंद उठा लाया। उसने कुछ नुकसान नहीं किया।</p>
+      </div>
+
+      <p class="text-xs font-bold text-gray-700 mb-2">Question: क्या Raju trespasser है?</p>
+
+      <div class="space-y-2 mb-4" id="sq1-options">
+        <button onclick="selectSolved('sq1','A')" id="sq1-A" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (A) नहीं — उसने कोई नुकसान नहीं किया
+        </button>
+        <button onclick="selectSolved('sq1','B')" id="sq1-B" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (B) हाँ — उसने बिना permission enter किया ✓
+        </button>
+        <button onclick="selectSolved('sq1','C')" id="sq1-C" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (C) नहीं — वो तो सिर्फ गेंद लेने गया था
+        </button>
+        <button onclick="selectSolved('sq1','D')" id="sq1-D" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (D) नहीं — उसका इरादा बुरा नहीं था
+        </button>
+      </div>
+
+      <div id="sq1-explanation" class="hidden space-y-2">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-3">
+          <p class="text-xs font-bold text-green-700">✅ सही जवाब: (B)</p>
+          <p class="text-xs text-green-600 mt-1">Principle clearly कहता है — बिना permission enter करना = trespass। Damage होना ज़रूरी नहीं।</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-xl p-3">
+          <p class="text-xs font-bold text-red-700 mb-2">❌ बाकी options गलत क्यों?</p>
+          <p class="text-xs text-red-600 mb-1"><strong>(A) गलत:</strong> Principle खुद कहता है "even if no damage is caused" — तो नुकसान न होना defence नहीं है।</p>
+          <p class="text-xs text-red-600 mb-1"><strong>(C) गलत:</strong> Reason या purpose matter नहीं करता — entry without permission ही trespass है।</p>
+          <p class="text-xs text-red-600"><strong>(D) गलत:</strong> इरादा (intent) Trespass में defence नहीं है — यह Mens Rea वाला rule यहाँ apply नहीं होता।</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solved Question 2 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="sq2">
+      <div class="flex justify-between items-start mb-3">
+        <span class="text-xs bg-saffron-100 text-saffron-600 font-semibold px-2 py-1 rounded-full">Q2 · Vicarious Liability</span>
+        <span class="text-xs text-gray-400">मध्यम</span>
+      </div>
+
+      <div class="bg-saffron-50 rounded-xl p-3 mb-3">
+        <p class="text-xs font-bold text-gray-700 mb-1">Principle:</p>
+        <p class="text-xs text-gray-600 italic">An employer is liable for wrongs committed by an employee in the course of employment.</p>
+      </div>
+
+      <div class="bg-blue-50 rounded-xl p-3 mb-3">
+        <p class="text-xs font-bold text-gray-700 mb-1">Facts:</p>
+        <p class="text-xs text-gray-600">Mohan एक delivery company का driver है। Lunch break पर वो अपने दोस्त के घर जा रहा था — company की van में — और उसने एक cyclist को टक्कर मार दी।</p>
+      </div>
+
+      <p class="text-xs font-bold text-gray-700 mb-2">Question: क्या Company liable है?</p>
+
+      <div class="space-y-2 mb-4" id="sq2-options">
+        <button onclick="selectSolved('sq2','A')" id="sq2-A" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (A) हाँ — van company की थी
+        </button>
+        <button onclick="selectSolved('sq2','B')" id="sq2-B" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (B) हाँ — Mohan company का employee है
+        </button>
+        <button onclick="selectSolved('sq2','C')" id="sq2-C" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (C) नहीं — यह काम "course of employment" में नहीं था ✓
+        </button>
+        <button onclick="selectSolved('sq2','D')" id="sq2-D" class="solved-opt w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">
+          (D) नहीं — cyclist की अपनी गलती थी
+        </button>
+      </div>
+
+      <div id="sq2-explanation" class="hidden space-y-2">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-3">
+          <p class="text-xs font-bold text-green-700">✅ सही जवाब: (C)</p>
+          <p class="text-xs text-green-600 mt-1">Mohan lunch break पर personal काम के लिए जा रहा था — यह "course of employment" नहीं है। इसलिए Company liable नहीं।</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-xl p-3">
+          <p class="text-xs font-bold text-red-700 mb-2">❌ बाकी options गलत क्यों?</p>
+          <p class="text-xs text-red-600 mb-1"><strong>(A) गलत:</strong> Van का ownership liability नहीं बनाता — "course of employment" देखना होगा।</p>
+          <p class="text-xs text-red-600 mb-1"><strong>(B) गलत:</strong> Employee होना काफी नहीं — गलती काम के दौरान होनी चाहिए।</p>
+          <p class="text-xs text-red-600"><strong>(D) गलत:</strong> यह information facts में नहीं दी गई — हम facts से बाहर नहीं जा सकते।</p>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="showTab('tips')"
+      class="w-full bg-saffron-500 text-white py-3 rounded-2xl font-bold text-sm">
+      अगला: CLAT Tips देखो →
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TAB: CLAT TIPS
+  ══════════════════════════════════ -->
+  <div id="tab-tips-content" class="px-4 pb-28 tab-content hidden">
+
+    <p class="text-xs text-gray-400 mb-4">ये shortcuts CLAT toppers इस्तेमाल करते हैं।</p>
+
+    <div class="space-y-3">
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-saffron-500">
+        <p class="text-sm font-bold text-gray-800 mb-1">💡 Tip 1 — Principle God है</p>
+        <p class="text-xs text-gray-500 leading-relaxed">Principle को हमेशा सच मानो — चाहे वो तुम्हें legally गलत लगे। CLAT test करता है कि तुम principle apply कर सकते हो — law knowledge नहीं।</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-400">
+        <p class="text-sm font-bold text-gray-800 mb-1">💡 Tip 2 — Facts से बाहर मत जाओ</p>
+        <p class="text-xs text-gray-500 leading-relaxed">जो facts में नहीं दिया — वो assume मत करो। "शायद उसका इरादा यह रहा होगा" — यह CLAT में नहीं चलता।</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-400">
+        <p class="text-sm font-bold text-gray-800 mb-1">💡 Tip 3 — Exception ढूँढो</p>
+        <p class="text-xs text-gray-500 leading-relaxed">CLAT के hard questions में Principle एक exception देता है। उस exception को facts पर check करो — वहीं answer छिपा होता है।</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-purple-400">
+        <p class="text-sm font-bold text-gray-800 mb-1">💡 Tip 4 — दो Principles हों तो?</p>
+        <p class="text-xs text-gray-500 leading-relaxed">कुछ questions में 2 principles होते हैं। पहले decide करो — कौन-सा principle facts पर apply होता है। दोनों एक साथ apply करने की ज़रूरत नहीं।</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-yellow-400">
+        <p class="text-sm font-bold text-gray-800 mb-1">💡 Tip 5 — 3 मिनट का rule</p>
+        <p class="text-xs text-gray-500 leading-relaxed">CLAT में हर question के लिए ~1 मिनट मिलता है। Legal Reasoning passages लंबे होते हैं — पहले principle पढ़ो, फिर सीधे question पढ़ो, फिर facts। इससे time बचता है।</p>
+      </div>
+
+    </div>
+
+    <!-- CTA to Practice -->
+    <div class="mt-6 bg-saffron-500 rounded-2xl p-5 text-center text-white">
+      <p class="text-lg font-bold mb-1">तैयार हो? 🎯</p>
+      <p class="text-sm text-saffron-100 mb-4">अब इन concepts को Practice Quiz में apply करो</p>
+      <a href="../practice/quiz.html?subject=legal"
+        class="inline-block bg-white text-saffron-500 font-bold text-sm px-6 py-3 rounded-xl">
+        Legal Reasoning Quiz लो →
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════
+       BOTTOM NAVIGATION BAR
+  ══════════════════════════════════ -->
+  <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 shadow-lg z-50">
+    <div class="flex justify-around items-center py-2">
+      <a href="../index.html" class="flex flex-col items-center gap-0.5 px-2 py-1">
+        <span class="text-xl">🏠</span><span class="text-xs text-gray-400">Home</span>
+      </a>
+      <a href="../learn/legal.html" class="flex flex-col items-center gap-0.5 px-2 py-1">
+        <span class="text-xl">📖</span><span class="text-xs font-semibold text-saffron-500">सीखो</span>
+      </a>
+      <a href="../practice/quiz.html" class="flex flex-col items-center gap-0.5 px-2 py-1">
+        <span class="text-xl">✏️</span><span class="text-xs text-gray-400">Practice</span>
+      </a>
+      <a href="../bridge/passage.html" class="flex flex-col items-center gap-0.5 px-2 py-1">
+        <span class="text-xl">🔤</span><span class="text-xs text-gray-400">English</span>
+      </a>
+      <a href="../downloads/index.html" class="flex flex-col items-center gap-0.5 px-2 py-1">
+        <span class="text-xl">📥</span><span class="text-xs text-gray-400">PDFs</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════ -->
+  <script>
+    // ── Tab switching ──────────────────────────
+    function showTab(name) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-gray-500');
+        btn.classList.remove('text-white');
+        btn.classList.replace('border-saffron-500','border-gray-200');
+      });
+      document.getElementById('tab-' + name + '-content').classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-' + name);
+      activeBtn.classList.add('active');
+      activeBtn.classList.replace('border-gray-200','border-saffron-500');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ── Accordion ──────────────────────────────
+    function toggleAccordion(id) {
+      const body = document.getElementById('body-' + id);
+      const icon = document.getElementById('icon-' + id);
+      body.classList.toggle('open');
+      icon.classList.toggle('open');
+    }
+
+    // ── Solved question answer reveal ──────────
+    function selectSolved(qid, chosen) {
+      const correct = { sq1: 'B', sq2: 'C' };
+      const opts = document.querySelectorAll('#' + qid + '-options .solved-opt');
+      opts.forEach(btn => {
+        btn.disabled = true;
+        const letter = btn.id.replace(qid + '-', '');
+        if (letter === correct[qid]) {
+          btn.classList.add('bg-green-100','border-green-400','text-green-800');
+        } else if (letter === chosen && chosen !== correct[qid]) {
+          btn.classList.add('bg-red-100','border-red-400','text-red-800');
+        }
+      });
+      document.getElementById(qid + '-explanation').classList.remove('hidden');
+    }
+
+    // ── Reading progress bar ────────────────────
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const scrolled = doc.scrollTop;
+      const total = doc.scrollHeight - doc.clientHeight;
+      document.getElementById('read-progress').style.width = (scrolled / total * 100) + '%';
+    });
+  </script>
+
+</body>
+</html>
