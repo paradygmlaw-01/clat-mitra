@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal Reasoning – CLAT Mitra</title>
+  <meta name="description" content="CLAT के लिए Legal Reasoning — हिंदी में सीखो।"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;}
+    html{scroll-behavior:smooth;}
+    .accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .accordion-body.open{max-height:4000px;}
+    .accordion-icon{transition:transform .3s;}
+    .accordion-icon.open{transform:rotate(180deg);}
+    .tab-btn.active{background-color:#FF6B35;color:#fff;border-color:#FF6B35;}
+    .pill{border-left:4px solid #FF6B35;}
+    #rp{position:fixed;top:0;left:0;height:3px;background:#FF6B35;width:0;z-index:999;transition:width .1s linear;}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 max-w-md mx-auto">
+<div id="rp"></div>
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
+  <a href="../index.html" class="text-gray-400 text-xl">←</a>
+  <div class="flex-1"><p class="text-xs text-gray-400">CLAT Mitra</p><h1 class="text-base font-bold">⚖️ Legal Reasoning</h1></div>
+  <a href="../practice/quiz.html?subject=legal" class="bg-orange-500 text-white text-xs font-bold px-3 py-2 rounded-xl">Quiz लो →</a>
+</header>
+
+<!-- HERO -->
+<section class="bg-gradient-to-br from-orange-50 to-white px-5 py-6">
+  <div class="inline-block bg-orange-100 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">CLAT · 35-40 Questions</div>
+  <h2 class="text-2xl font-bold text-gray-900 mb-2">Legal Reasoning क्या है?</h2>
+  <p class="text-sm text-gray-500 leading-relaxed mb-4">CLAT में Legal Reasoning ऐसे सवाल होते हैं जो <strong>rule-based puzzle</strong> जैसे होते हैं — एक <strong>Principle</strong>, एक <strong>Fact situation</strong>, और तुम्हें <strong>Conclusion</strong> निकालना है।</p>
+  <div class="bg-white border-2 border-orange-500 rounded-2xl p-4 text-center">
+    <p class="text-xs text-gray-400 mb-1">CLAT का Golden Formula</p>
+    <p class="text-lg font-bold text-gray-800">Principle + Facts = <span class="text-orange-500">Conclusion</span></p>
+    <p class="text-xs text-gray-500 mt-2">Principle हमेशा सच मानो — चाहे सही लगे या गलत</p>
+  </div>
+</section>
+
+<!-- TOPIC CARDS (always visible, above tabs) -->
+<section class="px-4 py-4">
+  <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">📂 Topics — गहराई से सीखो</p>
+  <div class="grid grid-cols-2 gap-3">
+    <a href="torts.html" class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col items-start gap-2 active:scale-95 transition-transform">
+      <span class="text-2xl">⚖️</span>
+      <div><p class="text-sm font-bold text-gray-800">Tort Law</p><p class="text-xs text-gray-400 mt-0.5">Trespass, Negligence, Nuisance...</p></div>
+      <span class="text-xs bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full font-semibold mt-1">Open →</span>
+    </a>
+    <a href="contracts.html" class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col items-start gap-2 active:scale-95 transition-transform">
+      <span class="text-2xl">📝</span>
+      <div><p class="text-sm font-bold text-gray-800">Contract Law</p><p class="text-xs text-gray-400 mt-0.5">Offer, Acceptance, Consideration...</p></div>
+      <span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-semibold mt-1">Open →</span>
+    </a>
+    <a href="constitution.html" class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col items-start gap-2 active:scale-95 transition-transform">
+      <span class="text-2xl">🏛️</span>
+      <div><p class="text-sm font-bold text-gray-800">Constitution</p><p class="text-xs text-gray-400 mt-0.5">Fundamental Rights, Art 14, 19, 21...</p></div>
+      <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full font-semibold mt-1">Open →</span>
+    </a>
+    <a href="criminal.html" class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col items-start gap-2 active:scale-95 transition-transform">
+      <span class="text-2xl">🔒</span>
+      <div><p class="text-sm font-bold text-gray-800">Criminal Law</p><p class="text-xs text-gray-400 mt-0.5">Mens Rea, IPC, Defences...</p></div>
+      <span class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-semibold mt-1">Open →</span>
+    </a>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="px-4 mb-2"><div class="border-t border-dashed border-gray-200"></div><p class="text-xs text-gray-400 text-center mt-2">— या नीचे Basics से शुरू करो —</p></div>
+
+<!-- TABS -->
+<section class="px-4 mb-4">
+  <div class="flex gap-2 overflow-x-auto pb-1">
+    <button onclick="showTab('intro')"      id="tb-intro"      class="tb tab-btn active text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-orange-500 transition">📖 Intro</button>
+    <button onclick="showTab('ifthen')"     id="tb-ifthen"     class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">🔀 IF-THEN</button>
+    <button onclick="showTab('principles')" id="tb-principles" class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">⚖️ Principles</button>
+    <button onclick="showTab('solved')"     id="tb-solved"     class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">✅ Solved</button>
+    <button onclick="showTab('tips')"       id="tb-tips"       class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">💡 Tips</button>
+  </div>
+</section>
+
+<!-- TAB 1: INTRO -->
+<div id="tc-intro" class="px-4 pb-6 tc">
+  <h3 class="text-base font-bold text-gray-800 mb-3">1) Legal Reasoning क्या है?</h3>
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+    <p class="text-xs text-gray-600 leading-relaxed mb-3"><strong>आपको पहले से कानून जानना जरूरी नहीं</strong> — जो principle दिया है, उसी के आधार पर answer देना है।</p>
+    <div class="grid grid-cols-3 gap-2">
+      <div class="bg-orange-50 rounded-xl p-3 text-center border border-orange-200"><p class="text-lg mb-1">📜</p><p class="text-xs font-bold text-orange-600">Principle</p><p class="text-xs text-gray-500 mt-1">दिया गया Rule</p></div>
+      <div class="bg-blue-50 rounded-xl p-3 text-center border border-blue-200"><p class="text-lg mb-1">📋</p><p class="text-xs font-bold text-blue-600">Facts</p><p class="text-xs text-gray-500 mt-1">क्या हुआ</p></div>
+      <div class="bg-green-50 rounded-xl p-3 text-center border border-green-200"><p class="text-lg mb-1">✅</p><p class="text-xs font-bold text-green-600">Conclusion</p><p class="text-xs text-gray-500 mt-1">Result</p></div>
+    </div>
+  </div>
+  <h3 class="text-base font-bold text-gray-800 mb-3">2) तीन मुख्य हिस्से</h3>
+  <div class="space-y-3 mb-5">
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500">
+      <p class="text-sm font-bold mb-1">A) Principle (सिद्धांत)</p>
+      <p class="text-xs text-gray-500 mb-2">Question की 'mini-law' — इसे हमेशा सच मानो।</p>
+      <div class="space-y-1">
+        <div class="bg-orange-50 rounded-lg px-3 py-1.5 text-xs italic text-gray-600">"यदि X करता है, तो Y होगा।"</div>
+        <div class="bg-orange-50 rounded-lg px-3 py-1.5 text-xs italic text-gray-600">"जो X करता है, वह liable होगा।"</div>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-400">
+      <p class="text-sm font-bold mb-1">B) Facts (तथ्य)</p>
+      <p class="text-xs text-gray-500">किसने क्या किया, intention था या नहीं — ये input होते हैं, rule नहीं।</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-400">
+      <p class="text-sm font-bold mb-1">C) Conclusion (निष्कर्ष)</p>
+      <div class="space-y-1 mt-2">
+        <div class="bg-green-50 rounded-lg px-3 py-1.5 text-xs text-gray-600">"A liable है।"</div>
+        <div class="bg-green-50 rounded-lg px-3 py-1.5 text-xs text-gray-600">"A liable नहीं है।"</div>
+        <div class="bg-green-50 rounded-lg px-3 py-1.5 text-xs text-gray-600">"B claim कर सकता है।"</div>
+      </div>
+    </div>
+  </div>
+  <h3 class="text-base font-bold mb-3">3) Golden Rule</h3>
+  <div class="grid grid-cols-2 gap-3 mb-5">
+    <div class="bg-red-50 rounded-xl p-3 border border-red-200"><p class="text-xs font-bold text-red-700 mb-1">❌ Wrong</p><p class="text-xs text-red-600">"Real law में ऐसा नहीं होता…"<br/>"यह unfair है…"</p></div>
+    <div class="bg-green-50 rounded-xl p-3 border border-green-200"><p class="text-xs font-bold text-green-700 mb-1">✅ Right</p><p class="text-xs text-green-600">"Given principle के अनुसार condition satisfy है…"</p></div>
+  </div>
+  <h3 class="text-base font-bold mb-3">4) 7 Common Traps ⚠️</h3>
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-5 space-y-2">
+    <div class="flex gap-2 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">T1</span><div><p class="text-xs font-bold">Principle के बाहर</p><p class="text-xs text-gray-500">Option में नया rule जो principle में नहीं</p></div></div>
+    <div class="flex gap-2 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">T2</span><div><p class="text-xs font-bold">Moral Opinion</p><p class="text-xs text-gray-500">"यह गलत है इसलिए punish करो"</p></div></div>
+    <div class="flex gap-2 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">T3</span><div><p class="text-xs font-bold">Extreme Words</p><p class="text-xs text-gray-500">always / never / only — अक्सर trap</p></div></div>
+    <div class="flex gap-2 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">T4</span><div><p class="text-xs font-bold">Exception Ignore</p><p class="text-xs text-gray-500">unless / except भूल गए</p></div></div>
+    <div class="flex gap-2 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">T5</span><div><p class="text-xs font-bold">Facts Distort</p><p class="text-xs text-gray-500">Option ने key fact बदल दिया</p></div></div>
+    <div class="flex gap-2 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">T6</span><div><p class="text-xs font-bold">Wrong Person</p><p class="text-xs text-gray-500">गलत व्यक्ति को liable बताया</p></div></div>
+    <div class="flex gap-2 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">T7</span><div><p class="text-xs font-bold">Reverse Logic</p><p class="text-xs text-gray-500">Necessary vs sufficient confuse</p></div></div>
+    <div class="mt-3 bg-yellow-50 border border-yellow-200 rounded-xl p-3"><p class="text-xs text-yellow-800">💬 Principle का reference देकर एक line में explain कर सको — तो वही सही option है।</p></div>
+  </div>
+  <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-4 text-white mb-5">
+    <p class="text-xs font-bold mb-2">One-Page Summary</p>
+    <div class="space-y-1.5 text-xs">
+      <p>📜 Principle = rule (नियम)</p>
+      <p>📋 Facts = situation (घटना)</p>
+      <p>✅ Conclusion = result (निष्कर्ष)</p>
+      <p>🔀 Principle को IF-THEN में बदलो, UNLESS note करो</p>
+      <p>🚫 बाहर का law या opinion नहीं — सिर्फ given principle</p>
+    </div>
+  </div>
+  <button onclick="showTab('ifthen')" class="w-full bg-orange-500 text-white py-3 rounded-2xl font-bold text-sm">अगला: IF-THEN Method →</button>
+</div>
+
+<!-- TAB 2: IF-THEN -->
+<div id="tc-ifthen" class="px-4 pb-6 tc hidden">
+  <h3 class="text-base font-bold mb-1">Principle को IF-THEN में बदलो</h3>
+  <p class="text-xs text-gray-400 mb-4">CLAT legal reasoning का सबसे powerful तरीका।</p>
+  <div class="space-y-3 mb-5">
+    <div class="bg-white rounded-2xl p-4 shadow-sm flex gap-3 items-start"><span class="bg-orange-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">1</span><div><p class="text-sm font-bold">Condition ढूंढो (IF)</p><p class="text-xs text-gray-500 mt-1">शर्त क्या है जो पूरी होनी चाहिए?</p></div></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm flex gap-3 items-start"><span class="bg-orange-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">2</span><div><p class="text-sm font-bold">Result पहचानो (THEN)</p><p class="text-xs text-gray-500 mt-1">शर्त पूरी होने पर क्या होगा?</p></div></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm flex gap-3 items-start"><span class="bg-red-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">3</span><div><p class="text-sm font-bold">Exception ढूंढो (UNLESS)</p><p class="text-xs text-gray-500 mt-1">unless · except · provided that · only if · however<br/>(जब तक कि · अपवाद · बशर्ते · केवल तभी)</p></div></div>
+  </div>
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-3">
+    <p class="text-xs font-bold text-orange-500 mb-2">Example 1 — Simple IF-THEN</p>
+    <div class="bg-orange-50 rounded-xl p-3 mb-3 text-xs italic text-gray-600 border-l-2 border-orange-400">"यदि कोई जानबूझकर नुकसान पहुंचाता है, तो वह liable होगा।"</div>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="bg-blue-50 rounded-xl p-2 text-center"><p class="text-xs font-bold text-blue-600">IF</p><p class="text-xs text-gray-600 mt-0.5">जानबूझकर नुकसान</p></div>
+      <div class="bg-green-50 rounded-xl p-2 text-center"><p class="text-xs font-bold text-green-600">THEN</p><p class="text-xs text-gray-600 mt-0.5">liable</p></div>
+    </div>
+  </div>
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-5">
+    <p class="text-xs font-bold text-orange-500 mb-2">Example 2 — UNLESS के साथ</p>
+    <div class="bg-orange-50 rounded-xl p-3 mb-3 text-xs italic text-gray-600 border-l-2 border-orange-400">"यदि नुकसान पहुंचाता है, तो liable होगा, <strong>जब तक कि</strong> self-defence न हो।"</div>
+    <div class="grid grid-cols-3 gap-2">
+      <div class="bg-blue-50 rounded-xl p-2 text-center"><p class="text-xs font-bold text-blue-600">IF</p><p class="text-xs text-gray-600 mt-0.5">नुकसान</p></div>
+      <div class="bg-green-50 rounded-xl p-2 text-center"><p class="text-xs font-bold text-green-600">THEN</p><p class="text-xs text-gray-600 mt-0.5">liable</p></div>
+      <div class="bg-red-50 rounded-xl p-2 text-center"><p class="text-xs font-bold text-red-600">UNLESS</p><p class="text-xs text-gray-600 mt-0.5">self-defence</p></div>
+    </div>
+  </div>
+  <h3 class="text-base font-bold mb-3">4-Step Method (हर question में)</h3>
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-4 space-y-3">
+    <div class="flex gap-3 items-start"><span class="bg-orange-100 text-orange-600 text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">1</span><p class="text-xs text-gray-600">Principle में <strong>condition + result</strong> underline करें</p></div>
+    <div class="flex gap-3 items-start"><span class="bg-orange-100 text-orange-600 text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">2</span><p class="text-xs text-gray-600">Facts में <strong>relevant facts</strong> underline करें</p></div>
+    <div class="flex gap-3 items-start"><span class="bg-red-100 text-red-600 text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">3</span><p class="text-xs text-gray-600"><strong>Exception check करें</strong></p></div>
+    <div class="flex gap-3 items-start"><span class="bg-green-100 text-green-600 text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">4</span><p class="text-xs text-gray-600">Principle + Facts से match करने वाला option चुनें</p></div>
+  </div>
+  <div class="bg-white rounded-2xl p-4 shadow-sm mb-5">
+    <p class="text-xs font-bold text-orange-500 mb-3">Worked Example</p>
+    <div class="bg-orange-50 rounded-xl p-3 mb-2 border-l-2 border-orange-400"><p class="text-xs font-bold text-gray-700 mb-1">Principle:</p><p class="text-xs italic text-gray-600">"यदि कोई जानबूझकर खिड़की तोड़ता है, तो उसे भरपाई करनी होगी।"</p></div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-2 border-l-2 border-blue-400"><p class="text-xs font-bold text-gray-700 mb-1">Facts:</p><p class="text-xs italic text-gray-600">"C ने D को डराने के लिए पत्थर फेंका, D की खिड़की टूट गई।"</p></div>
+    <div class="bg-green-50 rounded-xl p-3 border border-green-200"><p class="text-xs font-bold text-green-700 mb-1">Apply:</p><p class="text-xs text-green-600 mb-0.5">Condition satisfied? हां — जानबूझकर</p><p class="text-xs text-green-600 mb-0.5">Exception? नहीं</p><p class="text-xs font-bold text-green-700">Conclusion: C को भरपाई करनी होगी ✔</p></div>
+  </div>
+  <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-4 mb-5">
+    <p class="text-sm font-bold mb-3">🧠 Mini Self-Check</p>
+    <div class="space-y-2">
+      <div class="bg-white rounded-xl p-3"><p class="text-xs font-bold mb-1">Q1 — "यदि जानबूझकर चोरी करता है, तो liable होगा।"</p><p class="text-xs text-orange-600 font-semibold">IF part? THEN part?</p></div>
+      <div class="bg-white rounded-xl p-3"><p class="text-xs font-bold mb-1">Q2 — "A liable होगा, जब तक कि necessity में न हो।"</p><p class="text-xs text-orange-600 font-semibold">Facts में क्या ढूंढना है?</p></div>
+      <div class="bg-white rounded-xl p-3"><p class="text-xs font-bold mb-1">Q3 — "यह unfair है इसलिए punish करो"</p><p class="text-xs text-orange-600 font-semibold">कौन-सा trap है?</p></div>
+    </div>
+  </div>
+  <button onclick="showTab('principles')" class="w-full bg-orange-500 text-white py-3 rounded-2xl font-bold text-sm">अगला: Legal Principles →</button>
+</div>
+
+<!-- TAB 3: PRINCIPLES (overview cards with links to sub-pages) -->
+<div id="tc-principles" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">हर topic को depth में पढ़ने के लिए उसका card open करो।</p>
+  <div class="space-y-3">
+    <a href="torts.html" class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500 flex justify-between items-center">
+      <div><p class="text-xs text-orange-500 font-semibold mb-0.5">Topic 01</p><p class="text-sm font-bold">⚖️ Tort Law</p><p class="text-xs text-gray-400 mt-0.5">Trespass · Negligence · Nuisance · Vicarious Liability</p></div><span class="text-gray-300 text-xl">›</span>
+    </a>
+    <a href="contracts.html" class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-400 flex justify-between items-center">
+      <div><p class="text-xs text-blue-500 font-semibold mb-0.5">Topic 02</p><p class="text-sm font-bold">📝 Contract Law</p><p class="text-xs text-gray-400 mt-0.5">Offer · Acceptance · Consideration · Void/Voidable</p></div><span class="text-gray-300 text-xl">›</span>
+    </a>
+    <a href="constitution.html" class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-500 flex justify-between items-center">
+      <div><p class="text-xs text-green-600 font-semibold mb-0.5">Topic 03</p><p class="text-sm font-bold">🏛️ Constitution</p><p class="text-xs text-gray-400 mt-0.5">Art 14 · 19 · 21 · Directive Principles · Amendments</p></div><span class="text-gray-300 text-xl">›</span>
+    </a>
+    <a href="criminal.html" class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-500 flex justify-between items-center">
+      <div><p class="text-xs text-red-500 font-semibold mb-0.5">Topic 04</p><p class="text-sm font-bold">🔒 Criminal Law</p><p class="text-xs text-gray-400 mt-0.5">Mens Rea · Actus Reus · IPC · Defences</p></div><span class="text-gray-300 text-xl">›</span>
+    </a>
+  </div>
+  <button onclick="showTab('solved')" class="w-full mt-5 bg-orange-500 text-white py-3 rounded-2xl font-bold text-sm">अगला: Solved Sets →</button>
+</div>
+
+<!-- TAB 4: SOLVED SETS -->
+<div id="tc-solved" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">Option choose करो — तुरंत feedback मिलेगा।</p>
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="sq1">
+    <div class="flex justify-between mb-3"><span class="text-xs bg-orange-100 text-orange-600 font-semibold px-2 py-1 rounded-full">Q1 · Trespass</span><span class="text-xs text-gray-400">आसान</span></div>
+    <div class="bg-orange-50 rounded-xl p-3 mb-2"><p class="text-xs font-bold mb-1">Principle:</p><p class="text-xs italic text-gray-600">A person who enters another's land without permission is a trespasser, even if no damage is caused.</p></div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3"><p class="text-xs font-bold mb-1">Facts:</p><p class="text-xs text-gray-600">Raju की गेंद Sharma ji के बगीचे में गई। Raju बिना पूछे घुस गया और गेंद ले आया। नुकसान नहीं हुआ।</p></div>
+    <p class="text-xs font-bold mb-2">क्या Raju trespasser है?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('sq1','A','B')" id="sq1-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) नहीं — कोई नुकसान नहीं हुआ</button>
+      <button onclick="sol('sq1','B','B')" id="sq1-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) हां — बिना permission enter किया</button>
+      <button onclick="sol('sq1','C','B')" id="sq1-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) नहीं — सिर्फ गेंद लेने गया था</button>
+      <button onclick="sol('sq1','D','B')" id="sq1-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — बुरा इरादा नहीं था</button>
+    </div>
+    <div id="sq1-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">Correct: (B)</p><p class="text-xs text-green-600 mt-1">Principle: "even if no damage" — बिना permission entry = trespass।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">बाकी गलत:</p><p class="text-xs text-red-600">(A) Damage जरूरी नहीं। (C) Purpose matter नहीं। (D) Trespass में इरादा defence नहीं।</p></div>
+    </div>
+  </div>
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="sq2">
+    <div class="flex justify-between mb-3"><span class="text-xs bg-orange-100 text-orange-600 font-semibold px-2 py-1 rounded-full">Q2 · Vicarious Liability</span><span class="text-xs text-gray-400">मध्यम</span></div>
+    <div class="bg-orange-50 rounded-xl p-3 mb-2"><p class="text-xs font-bold mb-1">Principle:</p><p class="text-xs italic text-gray-600">An employer is liable for wrongs committed by an employee in the course of employment.</p></div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3"><p class="text-xs font-bold mb-1">Facts:</p><p class="text-xs text-gray-600">Mohan delivery company का driver है। Lunch break पर company van में दोस्त के घर जा रहा था — cyclist को टक्कर मार दी।</p></div>
+    <p class="text-xs font-bold mb-2">क्या Company liable है?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('sq2','A','C')" id="sq2-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) हां — van company की थी</button>
+      <button onclick="sol('sq2','B','C')" id="sq2-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) हां — Mohan company का employee है</button>
+      <button onclick="sol('sq2','C','C')" id="sq2-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) नहीं — "course of employment" में नहीं था</button>
+      <button onclick="sol('sq2','D','C')" id="sq2-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — cyclist की गलती थी</button>
+    </div>
+    <div id="sq2-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">Correct: (C)</p><p class="text-xs text-green-600 mt-1">Lunch break personal trip = "course of employment" नहीं।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">बाकी गलत:</p><p class="text-xs text-red-600">(A) Ownership liability नहीं बनाता। (B) Employee होना काफी नहीं। (D) Facts में नहीं दिया।</p></div>
+    </div>
+  </div>
+  <button onclick="showTab('tips')" class="w-full bg-orange-500 text-white py-3 rounded-2xl font-bold text-sm">अगला: CLAT Tips →</button>
+</div>
+
+<!-- TAB 5: TIPS -->
+<div id="tc-tips" class="px-4 pb-28 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">ये shortcuts CLAT toppers इस्तेमाल करते हैं।</p>
+  <div class="space-y-3">
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500"><p class="text-sm font-bold mb-1">💡 Tip 1 — Principle God है</p><p class="text-xs text-gray-500">Principle को हमेशा सच मानो — real law जाननी जरूरी नहीं।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-400"><p class="text-sm font-bold mb-1">💡 Tip 2 — Facts से बाहर मत जाओ</p><p class="text-xs text-gray-500">जो facts में नहीं दिया, assume मत करो।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-400"><p class="text-sm font-bold mb-1">💡 Tip 3 — UNLESS पहले ढूंढो</p><p class="text-xs text-gray-500">Hard questions का answer अक्सर exception में होता है।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-purple-400"><p class="text-sm font-bold mb-1">💡 Tip 4 — दो Principles हों तो?</p><p class="text-xs text-gray-500">Decide करो — कौन-सा principle facts पर apply होता है।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-yellow-400"><p class="text-sm font-bold mb-1">💡 Tip 5 — Reading Order</p><p class="text-xs text-gray-500">पहले Principle → फिर Question → फिर Facts।</p></div>
+  </div>
+  <div class="mt-6 bg-orange-500 rounded-2xl p-5 text-center text-white">
+    <p class="text-lg font-bold mb-1">Topic-wise और गहराई से पढ़ो</p>
+    <p class="text-sm text-orange-100 mb-4">नीचे किसी एक topic पर जाओ</p>
+    <div class="grid grid-cols-2 gap-2">
+      <a href="torts.html"        class="bg-white text-orange-500 font-bold text-xs px-3 py-2 rounded-xl">⚖️ Tort Law</a>
+      <a href="contracts.html"    class="bg-white text-blue-500 font-bold text-xs px-3 py-2 rounded-xl">📝 Contracts</a>
+      <a href="constitution.html" class="bg-white text-green-600 font-bold text-xs px-3 py-2 rounded-xl">🏛️ Constitution</a>
+      <a href="criminal.html"     class="bg-white text-red-500 font-bold text-xs px-3 py-2 rounded-xl">🔒 Criminal Law</a>
+    </div>
+  </div>
+</div>
+
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 shadow-lg z-50">
+  <div class="flex justify-around items-center py-2">
+    <a href="../index.html"          class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">🏠</span><span class="text-xs text-gray-400">Home</span></a>
+    <a href="legal.html"             class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">⚖️</span><span class="text-xs text-gray-400">Legal</span></a>
+    <a href="../practice/quiz.html"  class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">✏️</span><span class="text-xs text-gray-400">Practice</span></a>
+    <a href="../bridge/passage.html" class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">🔤</span><span class="text-xs text-gray-400">English</span></a>
+    <a href="../downloads/index.html"class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">📥</span><span class="text-xs text-gray-400">PDFs</span></a>
+  </div>
+</nav>
+<script>
+  function showTab(n){
+    document.querySelectorAll(".tc").forEach(e=>e.classList.add("hidden"));
+    document.querySelectorAll(".tb").forEach(b=>{b.classList.remove("active");b.classList.add("text-gray-500");});
+    document.getElementById("tc-"+n).classList.remove("hidden");
+    const b=document.getElementById("tb-"+n);
+    b.classList.add("active");b.classList.remove("text-gray-500");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function acc(id){
+    document.getElementById("ab-"+id).classList.toggle("open");
+    document.getElementById("ai-"+id).classList.toggle("open");
+  }
+  function sol(qid,chosen,correct){
+    ["A","B","C","D"].forEach(l=>{
+      const b=document.getElementById(qid+"-"+l);
+      if(!b)return; b.disabled=true;
+      if(l===correct)b.classList.add("bg-green-100","border-green-400","text-green-800");
+      else if(l===chosen&&chosen!==correct)b.classList.add("bg-red-100","border-red-400","text-red-800");
+    });
+    document.getElementById(qid+"-exp").classList.remove("hidden");
+  }
+  window.addEventListener("scroll",()=>{
+    const d=document.documentElement;
+    document.getElementById("rp").style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+"%";
+  });
+</script>
+</body></html>
