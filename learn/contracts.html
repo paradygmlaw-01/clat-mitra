@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contract Law &#8211; CLAT मित्र</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;}
+    html{scroll-behavior:smooth;}
+    .accordion-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+    .accordion-body.open{max-height:5000px;}
+    .accordion-icon{transition:transform .3s;}
+    .accordion-icon.open{transform:rotate(180deg);}
+    .tab-btn.active{background-color:#2563eb;color:#fff;border-color:#2563eb;}
+    #rp{position:fixed;top:0;left:0;height:3px;background:#2563eb;width:0;z-index:999;}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 max-w-md mx-auto">
+<div id="rp"></div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
+  <a href="legal.html" class="text-gray-400 text-xl">&#8592;</a>
+  <div class="flex-1">
+    <p class="text-xs text-gray-400">कानूनी तर्क</p>
+    <h1 class="text-base font-bold">&#128221; अनुबंध विधि</h1>
+  </div>
+  <a href="../practice/quiz.html?subject=contracts" class="bg-blue-600 text-white text-xs font-bold px-3 py-2 rounded-xl">Quiz &#8594;</a>
+</header>
+
+<!-- HERO -->
+<section class="px-5 py-6" style="background:linear-gradient(135deg,#eff6ff 0%,#fff 100%)">
+  <div class="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3 bg-blue-100 text-blue-600">कानूनी तर्क &middot; अनुबंध विधि</div>
+  <h2 class="text-2xl font-bold text-gray-900 mb-2">&#128221; अनुबंध विधि</h2>
+  <p class="text-sm text-gray-500 leading-relaxed mb-4">Offer, Acceptance, Consideration, Free Consent, Void बनाम Voidable — CLAT के लिए सब कुछ एक जगह।</p>
+  <div class="bg-white border-2 border-blue-500 rounded-2xl p-4 text-center">
+    <p class="text-xs text-gray-400 mb-1">अनुबंध का सूत्र</p>
+    <p class="text-base font-bold text-gray-800">Agreement + <span class="text-blue-600">कानूनी प्रवर्तनीयता</span> = Contract</p>
+    <p class="text-xs text-gray-500 mt-2">Agreement बिना contract के हो सकता है — contract बिना enforceability के नहीं।</p>
+  </div>
+</section>
+
+<!-- TABS -->
+<section class="px-4 pt-4 mb-4">
+  <div class="flex gap-2 overflow-x-auto pb-1">
+    <button onclick="showTab('concepts')"   id="tb-concepts"   class="tb tab-btn active text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-blue-600 transition">&#128214; अवधारणाएँ</button>
+    <button onclick="showTab('principles')" id="tb-principles" class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#9878;&#65039; सिद्धांत</button>
+    <button onclick="showTab('solved')"     id="tb-solved"     class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#9989; हल प्रश्न</button>
+    <button onclick="showTab('selfcheck')"  id="tb-selfcheck"  class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#129504; स्वयं जाँचें</button>
+    <button onclick="showTab('tips')"       id="tb-tips"       class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#128161; सुझाव</button>
+  </div>
+</section>
+
+<!-- ===== TAB: अवधारणाएँ ===== -->
+<div id="tc-concepts" class="px-4 pb-6 tc">
+  <p class="text-xs text-gray-400 mb-4">अनुबंध विधि के मूल concepts — एक-एक स्पष्ट रूप से समझें।</p>
+
+  <!-- Essentials -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-3">&#10024; Valid Contract की ८ आवश्यक शर्तें</p>
+    <div class="space-y-2">
+      <div class="flex gap-2 items-center"><span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">१</span><p class="text-xs text-gray-700"><strong>Offer (प्रस्ताव)</strong> — एक वैध प्रस्ताव</p></div>
+      <div class="flex gap-2 items-center"><span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">२</span><p class="text-xs text-gray-700"><strong>Acceptance (स्वीकृति)</strong> — बिना शर्त "हाँ"</p></div>
+      <div class="flex gap-2 items-center"><span class="bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">३</span><p class="text-xs text-gray-700"><strong>Consideration (प्रतिफल)</strong> — बदले में कुछ</p></div>
+      <div class="flex gap-2 items-center"><span class="bg-blue-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">४</span><p class="text-xs text-gray-700"><strong>Capacity (योग्यता)</strong> — कानूनी क्षमता</p></div>
+      <div class="flex gap-2 items-center"><span class="bg-blue-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">५</span><p class="text-xs text-gray-700"><strong>Free Consent (स्वतंत्र सहमति)</strong> — बिना दबाव के</p></div>
+      <div class="flex gap-2 items-center"><span class="bg-blue-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">६</span><p class="text-xs text-gray-700"><strong>Legality of Object (वैध उद्देश्य)</strong> — कार्य कानूनी होना चाहिए</p></div>
+      <div class="flex gap-2 items-center"><span class="bg-blue-400 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">७</span><p class="text-xs text-gray-700"><strong>Certainty (निश्चितता)</strong> — शर्तें स्पष्ट होनी चाहिए</p></div>
+      <div class="flex gap-2 items-center"><span class="bg-blue-400 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">८</span><p class="text-xs text-gray-700"><strong>Intention (कानूनी संबंध बनाने की इच्छा)</strong></p></div>
+    </div>
+    <div class="mt-3 bg-blue-50 rounded-xl p-3 border border-blue-200">
+      <p class="text-xs font-bold text-blue-700 mb-1">CLAT में सबसे सामान्य तीन</p>
+      <p class="text-xs text-blue-600">Offer + Acceptance + Consideration — ये तीन सबसे अधिक आते हैं। Free Consent और Legality अक्सर "twist point" बनते हैं।</p>
+    </div>
+  </div>
+
+  <!-- Offer -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-500 mb-3">
+    <p class="text-sm font-bold mb-2">&#128221; Offer (प्रस्ताव)</p>
+    <p class="text-xs text-gray-500 mb-2">कोई व्यक्ति स्पष्ट रूप से कहे कि वह कुछ करेगा/नहीं करेगा, और चाहे कि दूसरा स्वीकार करे तो बात binding हो जाए।</p>
+    <div class="space-y-1 mb-3">
+      <p class="text-xs text-gray-600">&#10003; शर्तें <strong>स्पष्ट</strong> होनी चाहिए</p>
+      <p class="text-xs text-gray-600">&#10003; Offer <strong>communicate</strong> किया गया हो</p>
+    </div>
+    <div class="bg-yellow-50 rounded-xl p-3 border border-yellow-200">
+      <p class="text-xs font-bold text-yellow-800 mb-1">&#9888; Offer बनाम Invitation to Offer (CLAT में सामान्य भ्रम)</p>
+      <p class="text-xs text-yellow-700 mb-0.5"><strong>Offer:</strong> "मैं अपना phone ₹५,००० में बेचूँगा।"</p>
+      <p class="text-xs text-yellow-700"><strong>Invitation:</strong> विज्ञापन / price tag / menu card — दूसरों को offer देने के लिए आमंत्रण। <em>हमेशा passage के principle को follow करें।</em></p>
+    </div>
+  </div>
+
+  <!-- Acceptance -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-500 mb-3">
+    <p class="text-sm font-bold mb-2">&#9989; Acceptance (स्वीकृति)</p>
+    <p class="text-xs text-gray-500 mb-2">Offer को <strong>जैसा है वैसा</strong> स्वीकार करना।</p>
+    <div class="space-y-1 mb-3">
+      <p class="text-xs text-gray-600">&#10003; <strong>Communicate</strong> होनी चाहिए — चुप रहना सामान्यतः स्वीकृति नहीं</p>
+      <p class="text-xs text-gray-600">&#10003; <strong>Unconditional</strong> होनी चाहिए</p>
+      <p class="text-xs text-gray-600">&#10003; निर्धारित <strong>समय-सीमा</strong> के भीतर होनी चाहिए</p>
+    </div>
+    <div class="bg-red-50 rounded-xl p-3 border border-red-200">
+      <p class="text-xs font-bold text-red-700 mb-1">Counter-offer (बहुत महत्वपूर्ण)</p>
+      <p class="text-xs text-red-600 mb-2">यदि उत्तर में शर्तें बदल दी गई — वह स्वीकृति नहीं, <strong>counter-offer</strong> है। मूल offer समाप्त हो जाती है।</p>
+      <div class="bg-white rounded-lg p-2 text-xs text-gray-600">
+        Offer: "₹५,००० में बेचूँगा।"<br/>
+        उत्तर: "₹४,५०० में दें तो ठीक है।" &#8594; <strong>Counter-offer</strong> — मूल offer समाप्त!
+      </div>
+    </div>
+  </div>
+
+  <!-- Consideration -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-500 mb-3">
+    <p class="text-sm font-bold mb-2">&#128182; Consideration (प्रतिफल)</p>
+    <p class="text-xs text-gray-500 mb-2">"कुछ बदले में" — यह हो सकता है:</p>
+    <div class="grid grid-cols-2 gap-2 mb-3">
+      <div class="bg-blue-50 rounded-xl p-2 text-center"><p class="text-xs text-gray-600">&#128181; धन (पैसा)</p></div>
+      <div class="bg-blue-50 rounded-xl p-2 text-center"><p class="text-xs text-gray-600">&#128736;&#65039; सेवा</p></div>
+      <div class="bg-blue-50 rounded-xl p-2 text-center"><p class="text-xs text-gray-600">&#128203; वादा (Promise)</p></div>
+      <div class="bg-blue-50 rounded-xl p-2 text-center"><p class="text-xs text-gray-600">&#128683; कुछ न करना</p></div>
+    </div>
+    <div class="bg-red-50 rounded-xl p-3 border border-red-200">
+      <p class="text-xs font-bold text-red-700">Consideration नहीं &#8594; सामान्यतः contract नहीं</p>
+      <p class="text-xs text-red-600 mt-0.5">(जब तक principle में exception न दिया हो)</p>
+    </div>
+  </div>
+
+  <!-- Capacity -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-400 mb-3">
+    <p class="text-sm font-bold mb-2">&#128100; Capacity (कानूनी योग्यता)</p>
+    <p class="text-xs text-gray-500 mb-2">CLAT principles में सामान्य capacity-संबंधी समस्याएँ:</p>
+    <div class="space-y-1 mb-2">
+      <div class="flex gap-2"><span class="text-red-500 text-xs shrink-0">&#9679;</span><p class="text-xs text-gray-600"><strong>नाबालिग (Minor)</strong> — १८ वर्ष से कम</p></div>
+      <div class="flex gap-2"><span class="text-red-500 text-xs shrink-0">&#9679;</span><p class="text-xs text-gray-600"><strong>अस्वस्थ मन (Unsound Mind)</strong> — contract के समय</p></div>
+      <div class="flex gap-2"><span class="text-red-500 text-xs shrink-0">&#9679;</span><p class="text-xs text-gray-600"><strong>नशे की अवस्था</strong> — principle पर निर्भर</p></div>
+    </div>
+    <div class="bg-yellow-50 rounded-xl p-2"><p class="text-xs text-yellow-700"><strong>CLAT स्मरण:</strong> बाहर के कानूनी विवरण मत जोड़िए — principle जो दे, वही लगाइए।</p></div>
+  </div>
+
+  <!-- Free Consent -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-500 mb-3">
+    <p class="text-sm font-bold mb-2">&#127358; Free Consent (स्वतंत्र सहमति)</p>
+    <p class="text-xs text-gray-500 mb-3">सहमति तब "स्वतंत्र" नहीं मानी जाती जब:</p>
+    <div class="space-y-2">
+      <div class="bg-red-50 rounded-xl px-3 py-2.5">
+        <p class="text-xs font-bold text-red-700">Coercion (जबरदस्ती / धमकी)</p>
+        <p class="text-xs text-gray-500 mt-0.5">डराकर या बल प्रयोग से agreement करवाना</p>
+      </div>
+      <div class="bg-red-50 rounded-xl px-3 py-2.5">
+        <p class="text-xs font-bold text-red-700">Fraud (धोखाधड़ी)</p>
+        <p class="text-xs text-gray-500 mt-0.5">जानबूझकर झूठ बोलकर सहमति लेना</p>
+      </div>
+      <div class="bg-orange-50 rounded-xl px-3 py-2.5">
+        <p class="text-xs font-bold text-orange-700">Misrepresentation (गलत बयान)</p>
+        <p class="text-xs text-gray-500 mt-0.5">झूठी बात — पर धोखा देने का इरादा नहीं (फिर भी असत्य)</p>
+      </div>
+      <div class="bg-orange-50 rounded-xl px-3 py-2.5">
+        <p class="text-xs font-bold text-orange-700">Undue Influence (अनुचित प्रभाव)</p>
+        <p class="text-xs text-gray-500 mt-0.5">शक्ति-संबंध में दबाव: शिक्षक–छात्र, चिकित्सक–रोगी, अभिभावक–वार्ड</p>
+      </div>
+    </div>
+    <div class="mt-3 bg-yellow-50 border border-yellow-200 rounded-xl p-3">
+      <p class="text-xs font-bold text-yellow-800">CLAT में सामान्य परिणाम</p>
+      <p class="text-xs text-yellow-700 mt-0.5">ऐसे मामलों में contract <strong>voidable</strong> होता है — पीड़ित पक्ष चाहे तो रद्द कर सकता है।</p>
+    </div>
+  </div>
+
+  <!-- Legality of Object -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-gray-500 mb-3">
+    <p class="text-sm font-bold mb-2">&#128683; उद्देश्य की वैधता (Legality of Object)</p>
+    <p class="text-xs text-gray-500 mb-2">Agreement का उद्देश्य <strong>कानूनी</strong> होना चाहिए। अवैध उद्देश्य &#8594; <strong>Void</strong>।</p>
+    <div class="space-y-1 mb-3">
+      <p class="text-xs text-gray-600">&#9679; अपराध करने का contract</p>
+      <p class="text-xs text-gray-600">&#9679; रिश्वत देने / दिलाने का contract</p>
+      <p class="text-xs text-gray-600">&#9679; कानून द्वारा निषिद्ध कार्य का contract</p>
+    </div>
+    <div class="bg-red-50 rounded-xl p-3 border border-red-200">
+      <p class="text-xs font-bold text-red-700">&#9888; CLAT Trap</p>
+      <p class="text-xs text-red-600 mt-0.5">Offer + Acceptance + Consideration होने पर भी — अवैध उद्देश्य agreement को unenforceable बना देता है।</p>
+    </div>
+  </div>
+
+  <!-- Void vs Voidable -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+    <p class="text-sm font-bold mb-3">Void बनाम Voidable — CLAT में सबसे सामान्य भ्रम</p>
+    <div class="grid grid-cols-2 gap-3 mb-3">
+      <div class="bg-red-50 rounded-xl p-3 border border-red-300">
+        <p class="text-xs font-bold text-red-700 mb-1">VOID — शुरुआत से अमान्य</p>
+        <p class="text-xs text-gray-600 mb-1">शुरू से ही invalid — कोई कानूनी प्रभाव नहीं।</p>
+        <p class="text-xs text-gray-500">कारण: अवैध उद्देश्य, क्षमता का अभाव, impossibility</p>
+        <p class="text-xs font-bold text-red-600 mt-1">कोई भी पक्ष enforce नहीं कर सकता।</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl p-3 border border-yellow-300">
+        <p class="text-xs font-bold text-yellow-800 mb-1">VOIDABLE — रद्द किया जा सकता है</p>
+        <p class="text-xs text-gray-600 mb-1">Valid रहता है जब तक प्रभावित पक्ष रद्द न करे।</p>
+        <p class="text-xs text-gray-500">कारण: coercion, fraud, undue influence, misrepresentation</p>
+        <p class="text-xs font-bold text-yellow-700 mt-1">प्रभावित पक्ष का विकल्प है।</p>
+      </div>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 border border-blue-200">
+      <p class="text-xs font-bold text-blue-700 mb-1">&#129504; याद करने की तरकीब</p>
+      <p class="text-xs text-blue-600">Void = शुरुआत से <strong>मृत</strong> &nbsp;|&nbsp; Voidable = <strong>जीवित</strong>, पर रद्द करने योग्य</p>
+    </div>
+  </div>
+
+  <button onclick="showTab('principles')" class="w-full bg-blue-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: सिद्धांत देखें &#8594;</button>
+</div>
+
+<!-- ===== TAB: सिद्धांत ===== -->
+<div id="tc-principles" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">प्रत्येक सिद्धांत को IF-THEN-UNLESS में तोड़ें।</p>
+  <div class="space-y-3">
+
+    <!-- P1 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cp1')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs font-semibold text-blue-600 mb-0.5">सिद्धांत ०१</p><p class="text-sm font-bold">Offer + Acceptance + Consideration</p></div>
+        <span id="ai-cp1" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cp1" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-blue-50 rounded-xl p-3 border-l-4 border-blue-600">
+          <p class="text-xs font-bold mb-1">सिद्धांत</p>
+          <p class="text-xs italic text-gray-600">"Contract तब बनता है जब valid offer को बिना शर्त स्वीकार किया जाए और consideration मौजूद हो।"</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>तथ्य:</strong> रवि ने सीमा को offer दी — "मेरी car ₹२ लाख में लो।" सीमा ने कहा "ठीक है।" रवि ने car देने से मना किया।<br/><strong>उत्तर:</strong> Valid contract बन गया — रवि breach के लिए उत्तरदायी है।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">Counter-offer = मूल offer अस्वीकृत हो जाती है। फिर "मूल शर्तों पर हाँ" — binding नहीं करती।</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">IF–THEN–UNLESS</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-blue-700">यदि (IF)</p><p class="text-xs text-gray-600 mt-0.5">Valid offer + बिना शर्त स्वीकृति + consideration</p></div>
+            <div class="bg-green-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-green-700">तो (THEN)</p><p class="text-xs text-gray-600 mt-0.5">Valid contract — दोनों पर बाध्यकारी</p></div>
+            <div class="bg-red-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-red-700">जब तक नहीं (UNLESS)</p><p class="text-xs text-gray-600 mt-0.5">Counter-offer / consideration नहीं / अक्षमता</p></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P2 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cp2')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs font-semibold text-blue-600 mb-0.5">सिद्धांत ०२</p><p class="text-sm font-bold">Counter-offer = अस्वीकृति</p></div>
+        <span id="ai-cp2" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cp2" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-blue-50 rounded-xl p-3 border-l-4 border-blue-600">
+          <p class="text-xs font-bold mb-1">सिद्धांत</p>
+          <p class="text-xs italic text-gray-600">"स्वीकृति बिना शर्त होनी चाहिए। Offer की शर्तें बदलने वाला उत्तर counter-offer है, जो मूल offer की अस्वीकृति के समान है।"</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>तथ्य:</strong> A ने ₹५,००० में offer दी। B ने ₹४,५०० कहा। A ने मना किया। B ने फिर ₹५,००० पर हाँ कहा।<br/><strong>उत्तर:</strong> Contract नहीं बना — counter-offer से मूल offer समाप्त हो गई थी। A बाध्य नहीं।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"अंत में मूल शर्तों पर सहमति हुई" — गलत। एक बार मूल offer अस्वीकृत होने पर, स्वीकृति से वह पुनर्जीवित नहीं होती।</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P3 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cp3')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs font-semibold text-blue-600 mb-0.5">सिद्धांत ०३</p><p class="text-sm font-bold">स्वतंत्र सहमति — Fraud और Coercion</p></div>
+        <span id="ai-cp3" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cp3" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-blue-50 rounded-xl p-3 border-l-4 border-blue-600">
+          <p class="text-xs font-bold mb-1">सिद्धांत</p>
+          <p class="text-xs italic text-gray-600">"जबरदस्ती या धोखे से प्राप्त contract, पीड़ित पक्ष के विकल्प पर voidable होता है।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">Coercion बनाम Fraud</p>
+          <div class="space-y-1">
+            <p class="text-xs text-gray-600"><strong>Coercion:</strong> धमकी / बल से सहमति लेना</p>
+            <p class="text-xs text-gray-600"><strong>Fraud:</strong> जानबूझकर झूठ बोलकर सहमति लेना</p>
+            <p class="text-xs font-bold text-blue-700 mt-1">दोनों में परिणाम: Voidable contract</p>
+          </div>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>तथ्य:</strong> विक्रम ने अनिता को धमकी दी — "दस्तावेज़ sign नहीं किया तो परिवार को नुकसान होगा।" अनिता ने डरकर sign किया।<br/><strong>उत्तर:</strong> Voidable — अनिता के पास रद्द करने का विकल्प है।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">Coercion = Voidable, Void नहीं। ध्यान रखें — दोनों अलग हैं।</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">IF–THEN–UNLESS</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-blue-700">यदि (IF)</p><p class="text-xs text-gray-600 mt-0.5">Coercion / Fraud से सहमति ली</p></div>
+            <div class="bg-green-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-green-700">तो (THEN)</p><p class="text-xs text-gray-600 mt-0.5">Contract voidable</p></div>
+            <div class="bg-red-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-red-700">जब तक नहीं (UNLESS)</p><p class="text-xs text-gray-600 mt-0.5">प्रभावित पक्ष स्वीकृति दे दे</p></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P4 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cp4')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs font-semibold text-blue-600 mb-0.5">सिद्धांत ०४</p><p class="text-sm font-bold">अवैध उद्देश्य — Void Agreement</p></div>
+        <span id="ai-cp4" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cp4" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-blue-50 rounded-xl p-3 border-l-4 border-blue-600">
+          <p class="text-xs font-bold mb-1">सिद्धांत</p>
+          <p class="text-xs italic text-gray-600">"जिस agreement का उद्देश्य अवैध या अनैतिक हो, वह void है और किसी भी पक्ष द्वारा enforce नहीं किया जा सकता।"</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>तथ्य:</strong> A ने B को एक अधिकारी को रिश्वत दिलाने के लिए ₹५०,००० दिए। B ने पैसे लिए पर काम नहीं किया। A ने न्यायालय में धन वापस माँगा।<br/><strong>उत्तर:</strong> Void agreement — A न्यायालय में दावा नहीं कर सकता। कोई भी पक्ष enforce नहीं कर सकता।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">Offer + Acceptance + Consideration था — फिर भी अवैध उद्देश्य = void। सभी तत्व होने पर भी।</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P5 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cp5')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs font-semibold text-blue-600 mb-0.5">सिद्धांत ०५</p><p class="text-sm font-bold">Breach of Contract — उपाय</p></div>
+        <span id="ai-cp5" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cp5" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-blue-50 rounded-xl p-3 border-l-4 border-blue-600">
+          <p class="text-xs font-bold mb-1">सिद्धांत</p>
+          <p class="text-xs italic text-gray-600">"जब कोई पक्ष contractual दायित्व पूरा नहीं करता, तो breach होती है और पीड़ित पक्ष उपाय का अधिकारी होता है।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">Breach के दो प्रकार</p>
+          <div class="space-y-1">
+            <p class="text-xs text-gray-600"><strong>वास्तविक Breach (Actual):</strong> नियत तिथि पर कार्य नहीं किया</p>
+            <p class="text-xs text-gray-600"><strong>प्रत्याशित Breach (Anticipatory):</strong> पहले ही बता दिया कि कार्य नहीं करेंगे</p>
+          </div>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">उपाय (जो passage में दिए हों)</p>
+          <div class="space-y-1">
+            <p class="text-xs text-gray-600">&#9679; <strong>Damages (हर्जाना / मुआवज़ा)</strong></p>
+            <p class="text-xs text-gray-600">&#9679; <strong>Specific Performance</strong> — वादा किया गया कार्य करो</p>
+            <p class="text-xs text-gray-600">&#9679; <strong>Rescission</strong> — contract रद्द</p>
+            <p class="text-xs text-gray-600">&#9679; <strong>Injunction</strong> — किसी कार्य को रोकने का आदेश</p>
+          </div>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT स्मरण</p>
+          <p class="text-xs text-gray-600">Principle में जो उपाय दिया हो, वही लगाएँ — बाहर से मत जोड़ें।</p>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+  <button onclick="showTab('solved')" class="w-full mt-5 bg-blue-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: हल प्रश्न &#8594;</button>
+</div>
+
+<!-- ===== TAB: हल प्रश्न ===== -->
+<div id="tc-solved" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">विकल्प चुनें — तुरंत प्रतिक्रिया मिलेगी।</p>
+
+  <!-- Q1 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="cq1">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-blue-50 text-blue-600">प्रश्न १ &middot; Counter-Offer</span>
+      <span class="text-xs text-gray-400">सरल</span>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">सिद्धांत:</p>
+      <p class="text-xs italic text-gray-600">Contract तब बनता है जब valid offer को बिना शर्त स्वीकार किया जाए। Counter-offer मूल offer की अस्वीकृति के समान है।</p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">तथ्य:</p>
+      <p class="text-xs text-gray-600">रवि ने सीमा को offer दी — "मेरी car ₹२ लाख में लो।" सीमा ने कहा "₹१.८ लाख में दोगे?" रवि ने मना किया। सीमा ने फिर कहा "ठीक है, ₹२ लाख में ले लेती हूँ।"</p>
+    </div>
+    <p class="text-xs font-bold mb-2">क्या valid contract बना?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('cq1','A','B')" id="cq1-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) हाँ — सीमा ने अंततः स्वीकार कर लिया</button>
+      <button onclick="sol('cq1','B','B')" id="cq1-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) नहीं — सीमा की counter-offer ने मूल offer अस्वीकृत कर दी</button>
+      <button onclick="sol('cq1','C','B')" id="cq1-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) हाँ — राशि में थोड़ा ही अंतर था</button>
+      <button onclick="sol('cq1','D','B')" id="cq1-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — क्योंकि रवि ने पहले मना किया था</button>
+    </div>
+    <div id="cq1-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (B)</p><p class="text-xs text-green-600 mt-1">Counter-offer ने मूल offer समाप्त कर दी। बाद में ₹२ लाख पर हाँ कहना एक नई offer है — रवि बाध्य नहीं।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): मूल offer एक बार अस्वीकृत होने पर पुनर्जीवित नहीं होती।</p><p class="text-xs text-red-600 mb-0.5">(C): राशि नहीं — स्वीकृति बिना शर्त होनी चाहिए।</p><p class="text-xs text-red-600">(D): कारण गलत — वास्तविक कारण counter-offer है।</p></div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="cq2">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-blue-50 text-blue-600">प्रश्न २ &middot; स्वतंत्र सहमति</span>
+      <span class="text-xs text-gray-400">मध्यम</span>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">सिद्धांत:</p>
+      <p class="text-xs italic text-gray-600">जबरदस्ती (coercion) से प्राप्त contract पीड़ित पक्ष के विकल्प पर voidable होता है।</p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">तथ्य:</p>
+      <p class="text-xs text-gray-600">विक्रम ने अनिता को धमकी दी — "यदि यह दस्तावेज़ sign नहीं किया तो परिवार को नुकसान होगा।" अनिता ने भयभीत होकर sign किया।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">इस contract की क्या स्थिति है?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('cq2','A','C')" id="cq2-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) Void — जबरदस्ती से बना था</button>
+      <button onclick="sol('cq2','B','C')" id="cq2-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) Valid — अनिता ने sign किया था</button>
+      <button onclick="sol('cq2','C','C')" id="cq2-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) Voidable — अनिता के पास रद्द करने का विकल्प है</button>
+      <button onclick="sol('cq2','D','C')" id="cq2-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) Void — दस्तावेज़ अवैध था</button>
+    </div>
+    <div id="cq2-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (C)</p><p class="text-xs text-green-600 mt-1">Coercion = Voidable। अनिता चुन सकती है — contract रखे या रद्द करे।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): Voidable और Void अलग हैं — coercion = voidable।</p><p class="text-xs text-red-600 mb-0.5">(B): दबाव में sign करना = स्वतंत्र सहमति नहीं।</p><p class="text-xs text-red-600">(D): दस्तावेज़ के अवैध होने का उल्लेख तथ्यों में नहीं है।</p></div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="cq3">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-blue-50 text-blue-600">प्रश्न ३ &middot; अवैध उद्देश्य</span>
+      <span class="text-xs text-gray-400">मध्यम</span>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">सिद्धांत:</p>
+      <p class="text-xs italic text-gray-600">जिस agreement का उद्देश्य अवैध हो, वह void है और किसी भी न्यायालय द्वारा enforce नहीं किया जा सकता।</p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">तथ्य:</p>
+      <p class="text-xs text-gray-600">A ने B को एक अधिकारी को रिश्वत दिलाने के लिए ₹५०,००० दिए। B ने पैसे ले लिए लेकिन काम नहीं किया। A ने न्यायालय में धन वापस माँगा।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">क्या A को धन वापस मिलेगा?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('cq3','A','C')" id="cq3-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) हाँ — B ने काम नहीं किया इसलिए breach हुई</button>
+      <button onclick="sol('cq3','B','C')" id="cq3-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) हाँ — consideration दिया था, इसलिए A अधिकारी है</button>
+      <button onclick="sol('cq3','C','C')" id="cq3-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) नहीं — agreement void है क्योंकि उद्देश्य अवैध था</button>
+      <button onclick="sol('cq3','D','C')" id="cq3-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — A ने B पर विश्वास किया था</button>
+    </div>
+    <div id="cq3-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (C)</p><p class="text-xs text-green-600 mt-1">उद्देश्य अवैध (रिश्वत) &#8594; Agreement void &#8594; कोई भी पक्ष न्यायालय में दावा नहीं कर सकता।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): Breach तब होती जब valid contract हो। यह void agreement है।</p><p class="text-xs text-red-600 mb-0.5">(B): Consideration पर्याप्त नहीं — उद्देश्य कानूनी होना चाहिए।</p><p class="text-xs text-red-600">(D): विश्वास करना कोई कानूनी उपाय नहीं है।</p></div>
+    </div>
+  </div>
+
+  <button onclick="showTab('selfcheck')" class="w-full bg-blue-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: स्वयं जाँचें &#8594;</button>
+</div>
+
+<!-- ===== TAB: स्वयं जाँचें ===== -->
+<div id="tc-selfcheck" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">५ लघु प्रश्न — स्वयं सोचें, फिर उत्तर देखें।</p>
+  <div class="space-y-3">
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('sc1')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs text-blue-500 font-semibold mb-0.5">स्वयं जाँचें १ &middot; स्वीकृति</p><p class="text-sm font-bold text-gray-700">A: "Laptop ₹३०,००० में।" B: "स्वीकार है — पर आज ही deliver करो।" स्वीकृति है या counter-offer?</p></div>
+        <span id="ai-sc1" class="accordion-icon text-gray-300 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-sc1" class="accordion-body"><div class="px-4 pb-4">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700 mb-1">उत्तर: Counter-offer</p><p class="text-xs text-green-600">B ने एक नई शर्त जोड़ी ("आज deliver करो") — यह बिना शर्त स्वीकृति नहीं। मूल offer अस्वीकृत हुई।</p></div>
+      </div></div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('sc2')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs text-blue-500 font-semibold mb-0.5">स्वयं जाँचें २ &middot; प्रतिफल</p><p class="text-sm font-bold text-gray-700">A ने B को बिना किसी कारण ₹१०,००० उपहार देने का वादा किया। क्या consideration है?</p></div>
+        <span id="ai-sc2" class="accordion-icon text-gray-300 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-sc2" class="accordion-body"><div class="px-4 pb-4">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700 mb-1">उत्तर: कोई consideration नहीं</p><p class="text-xs text-green-600">एकतरफा उपहार वादा — B ने बदले में कुछ नहीं दिया। Consideration का अभाव = सामान्यतः valid contract नहीं।</p></div>
+      </div></div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('sc3')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs text-blue-500 font-semibold mb-0.5">स्वयं जाँचें ३ &middot; Fraud</p><p class="text-sm font-bold text-gray-700">B ने एक महत्वपूर्ण तथ्य पर झूठ बोला। A ने उसी आधार पर contract sign किया। Void है या Voidable?</p></div>
+        <span id="ai-sc3" class="accordion-icon text-gray-300 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-sc3" class="accordion-body"><div class="px-4 pb-4">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700 mb-1">उत्तर: Voidable (सिद्धांत के अनुसार)</p><p class="text-xs text-green-600">Fraud से प्रेरित contract — A के विकल्प पर Voidable। A चुन सकता है — contract रखे या रद्द करे।</p></div>
+      </div></div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('sc4')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs text-blue-500 font-semibold mb-0.5">स्वयं जाँचें ४ &middot; अवैध उद्देश्य</p><p class="text-sm font-bold text-gray-700">A और B ने रिश्वत देने के लिए agreement किया। क्या यह enforceable होगा?</p></div>
+        <span id="ai-sc4" class="accordion-icon text-gray-300 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-sc4" class="accordion-body"><div class="px-4 pb-4">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700 mb-1">उत्तर: नहीं — Void agreement</p><p class="text-xs text-green-600">अवैध उद्देश्य = Void agreement। कोई भी पक्ष न्यायालय में enforce नहीं कर सकता।</p></div>
+      </div></div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('sc5')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs text-blue-500 font-semibold mb-0.5">स्वयं जाँचें ५ &middot; Breach</p><p class="text-sm font-bold text-gray-700">A ने तय तारीख पर माल देने से मना कर दिया। क्या हुआ और क्या उपाय हो सकता है?</p></div>
+        <span id="ai-sc5" class="accordion-icon text-gray-300 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-sc5" class="accordion-body"><div class="px-4 pb-4">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700 mb-1">उत्तर: वास्तविक Breach — B हर्जाना माँग सकता है</p><p class="text-xs text-green-600">तय तारीख पर कार्य न करना = Actual Breach। पीड़ित पक्ष (B) सिद्धांत के अनुसार damages / specific performance माँग सकता है।</p></div>
+      </div></div>
+    </div>
+
+  </div>
+  <button onclick="showTab('tips')" class="w-full mt-5 bg-blue-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: सुझाव &#8594;</button>
+</div>
+
+<!-- ===== TAB: सुझाव ===== -->
+<div id="tc-tips" class="px-4 pb-28 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">CLAT के लिए Contract Law के विशेष सुझाव।</p>
+  <div class="space-y-3 mb-5">
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-600"><p class="text-sm font-bold mb-1">&#128161; सुझाव १ — Counter-offer = अस्वीकृति</p><p class="text-xs text-gray-500">जैसे ही counter-offer आई — मूल offer समाप्त। फिर "मूल पर हाँ" = नई offer, स्वीकृति नहीं।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500"><p class="text-sm font-bold mb-1">&#128161; सुझाव २ — Void बनाम Voidable</p><p class="text-xs text-gray-500">Coercion / Fraud = Voidable। अवैध उद्देश्य / अक्षमता = Void। CLAT में यही सबसे बड़ा trap है।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-500"><p class="text-sm font-bold mb-1">&#128161; सुझाव ३ — मौन = स्वीकृति नहीं</p><p class="text-xs text-gray-500">Offer का जवाब न देना स्वीकृति नहीं है — जब तक principle में ऐसा न कहा हो।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-500"><p class="text-sm font-bold mb-1">&#128161; सुझाव ४ — अवैध उद्देश्य सबसे बड़ा trap</p><p class="text-xs text-gray-500">सभी तत्व (offer, acceptance, consideration) होने पर भी — अवैध उद्देश्य = void। कोई enforce नहीं कर सकता।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-purple-500"><p class="text-sm font-bold mb-1">&#128161; सुझाव ५ — उपाय केवल principle से</p><p class="text-xs text-gray-500">Breach के विकल्प: damages, specific performance, rescission, injunction — जो principle दे वही लगाएँ।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-yellow-500"><p class="text-sm font-bold mb-1">&#128161; सुझाव ६ — Invitation to Offer ≠ Offer</p><p class="text-xs text-gray-500">विज्ञापन, price tag, menu = केवल निमंत्रण। दुकानदार का "मना करना" सामान्यतः breach नहीं। Principle follow करें।</p></div>
+  </div>
+
+  <!-- Quick Reference -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+    <p class="text-sm font-bold mb-3">&#128203; Contract स्थिति — त्वरित संदर्भ</p>
+    <div class="space-y-2">
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs text-gray-700">Coercion / Fraud</p><span class="text-xs font-bold text-yellow-700 bg-yellow-50 px-2 py-0.5 rounded-full">Voidable</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs text-gray-700">Misrepresentation / अनुचित प्रभाव</p><span class="text-xs font-bold text-yellow-700 bg-yellow-50 px-2 py-0.5 rounded-full">Voidable</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs text-gray-700">अवैध उद्देश्य</p><span class="text-xs font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Void</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs text-gray-700">Consideration का अभाव</p><span class="text-xs font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Void</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs text-gray-700">नाबालिग / अक्षमता</p><span class="text-xs font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Void</span></div>
+      <div class="flex justify-between items-center py-1.5"><p class="text-xs text-gray-700">Valid Offer + Acceptance + Consideration + स्वतंत्र सहमति</p><span class="text-xs font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded-full">Valid &#10003;</span></div>
+    </div>
+  </div>
+
+  <div class="bg-blue-600 rounded-2xl p-5 text-center text-white">
+    <p class="text-base font-bold mb-3">अन्य विषय भी देखें</p>
+    <div class="grid grid-cols-2 gap-2">
+      <a href="torts.html"        class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#FF6B35">&#9878;&#65039; अपकृत्य विधि</a>
+      <a href="constitution.html" class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#16a34a">&#127963;&#65039; संवैधानिक विधि</a>
+      <a href="criminal.html"     class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#dc2626">&#128274; आपराधिक विधि</a>
+      <a href="legal.html"        class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#6b7280">&#8592; कानूनी केंद्र</a>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 shadow-lg z-50">
+  <div class="flex justify-around items-center py-2">
+    <a href="../index.html"           class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#127968;</span><span class="text-xs text-gray-400">होम</span></a>
+    <a href="legal.html"              class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#9878;&#65039;</span><span class="text-xs text-gray-400">कानूनी</span></a>
+    <a href="../practice/quiz.html"   class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#9999;&#65039;</span><span class="text-xs text-gray-400">अभ्यास</span></a>
+    <a href="../bridge/passage.html"  class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#128292;</span><span class="text-xs text-gray-400">अंग्रेज़ी</span></a>
+    <a href="../downloads/index.html" class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#128229;</span><span class="text-xs text-gray-400">PDF</span></div>
+  </div>
+</nav>
+
+<script>
+  function showTab(n){
+    document.querySelectorAll(".tc").forEach(function(e){e.classList.add("hidden");});
+    document.querySelectorAll(".tb").forEach(function(b){
+      b.classList.remove("active"); b.classList.add("text-gray-500");
+      b.style.background=""; b.style.color=""; b.style.borderColor="";
+    });
+    document.getElementById("tc-"+n).classList.remove("hidden");
+    var b=document.getElementById("tb-"+n);
+    b.classList.add("active"); b.classList.remove("text-gray-500");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function acc(id){
+    document.getElementById("ab-"+id).classList.toggle("open");
+    document.getElementById("ai-"+id).classList.toggle("open");
+  }
+  function sol(qid,chosen,correct){
+    ["A","B","C","D"].forEach(function(l){
+      var b=document.getElementById(qid+"-"+l);
+      if(!b)return; b.disabled=true;
+      if(l===correct) b.classList.add("bg-green-100","border-green-400","text-green-800");
+      else if(l===chosen && chosen!==correct) b.classList.add("bg-red-100","border-red-400","text-red-800");
+    });
+    document.getElementById(qid+"-exp").classList.remove("hidden");
+  }
+  window.addEventListener("scroll",function(){
+    var d=document.documentElement;
+    document.getElementById("rp").style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+"%";
+  });
+</script>
+</body>
+</html>
