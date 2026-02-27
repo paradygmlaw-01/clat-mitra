@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criminal Law &#8211; CLAT मित्र</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;}
+    html{scroll-behavior:smooth;}
+    .accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .accordion-body.open{max-height:4000px;}
+    .accordion-icon{transition:transform .3s;}
+    .accordion-icon.open{transform:rotate(180deg);}
+    .tab-btn.active{background-color:#dc2626;color:#fff;border-color:#dc2626;}
+    #rp{position:fixed;top:0;left:0;height:3px;background:#dc2626;width:0;z-index:999;}
+    .ib{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;}
+    .ri{background:#fee2e2;color:#dc2626;}
+    .bi{background:#fef9c3;color:#854d0e;}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 max-w-md mx-auto">
+<div id="rp"></div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
+  <a href="legal.html" class="text-gray-400 text-xl">&#8592;</a>
+  <div class="flex-1">
+    <p class="text-xs text-gray-400">कानूनी तर्क</p>
+    <h1 class="text-base font-bold">&#128274; आपराधिक विधि</h1>
+  </div>
+  <a href="../practice/quiz.html?subject=criminal" class="bg-red-600 text-white text-xs font-bold px-3 py-2 rounded-xl">Quiz &#8594;</a>
+</header>
+
+<!-- HERO -->
+<section class="px-5 py-6" style="background:linear-gradient(135deg,#fef2f2 0%,#fff 100%)">
+  <div class="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3 bg-red-100 text-red-600">कानूनी तर्क &middot; आपराधिक विधि</div>
+  <h2 class="text-2xl font-bold text-gray-900 mb-2">&#128274; आपराधिक विधि</h2>
+  <p class="text-sm text-gray-500 leading-relaxed mb-3">Mens Rea, Actus Reus, बचाव के आधार — IPC और BNS दोनों धाराओं के साथ।</p>
+  <div class="bg-yellow-50 border border-yellow-300 rounded-xl px-3 py-2.5 flex gap-2 items-start">
+    <span class="text-base shrink-0">&#9888;&#65039;</span>
+    <div>
+      <p class="text-xs font-bold text-yellow-800 mb-0.5">IPC &#8594; BNS (1 July 2024 से)</p>
+      <p class="text-xs text-yellow-700">भारतीय न्याय संहिता (BNS) 2023 ने IPC का स्थान लिया। इस पृष्ठ पर दोनों दिए गए हैं।</p>
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section class="px-4 pt-4 mb-4">
+  <div class="flex gap-2 overflow-x-auto pb-1">
+    <button onclick="showTab('concepts')"   id="tb-concepts"   class="tb tab-btn active text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-red-600 transition">&#128214; Concepts</button>
+    <button onclick="showTab('principles')" id="tb-principles" class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#9878;&#65039; Principles</button>
+    <button onclick="showTab('solved')"     id="tb-solved"     class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#9989; Solved MCQs</button>
+    <button onclick="showTab('tips')"       id="tb-tips"       class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#128161; Tips</button>
+  </div>
+</section>
+
+<!-- ===== TAB: Concepts ===== -->
+<div id="tc-concepts" class="px-4 pb-6 tc">
+  <p class="text-xs text-gray-400 mb-4">आपराधिक विधि के मूल concepts।</p>
+
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-500 mb-3">
+    <p class="text-sm font-bold mb-2">आपराधिक विधि क्या है?</p>
+    <p class="text-xs text-gray-500 leading-relaxed">आपराधिक विधि समाज के विरुद्ध किए गए अपराधों को परिभाषित और दंडित करती है। यह <strong>राज्य बनाम व्यक्ति</strong> होता है। भारत में अब यह <strong>BNS 2023</strong> के अंतर्गत आता है (पहले IPC 1860)।</p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-3">IPC बनाम BNS — एक नज़र में</p>
+    <div class="grid grid-cols-2 gap-3">
+      <div class="bg-red-50 rounded-xl p-3 border border-red-200">
+        <p class="text-xs font-bold text-red-700 mb-1">IPC 1860</p>
+        <p class="text-xs text-gray-600">511 sections, 23 chapters</p>
+        <p class="text-xs text-gray-400 mt-1">1 July 2024 से पहले के अपराध</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl p-3 border border-yellow-300">
+        <p class="text-xs font-bold text-yellow-800 mb-1">BNS 2023 &#10003; वर्तमान</p>
+        <p class="text-xs text-gray-600">358 sections, 20 chapters</p>
+        <p class="text-xs text-gray-400 mt-1">1 July 2024 के बाद के अपराध</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-3">अपराध के 2 आवश्यक तत्त्व</p>
+    <div class="grid grid-cols-2 gap-3">
+      <div class="bg-red-50 rounded-xl p-3 border border-red-200 text-center">
+        <p class="text-xs font-bold text-red-700 mb-1">Actus Reus</p>
+        <p class="text-xs text-gray-600">दोषपूर्ण कार्य (physical act)</p>
+        <p class="text-xs text-gray-400 mt-1 italic">"क्या किया"</p>
+      </div>
+      <div class="bg-orange-50 rounded-xl p-3 border border-orange-200 text-center">
+        <p class="text-xs font-bold text-orange-700 mb-1">Mens Rea</p>
+        <p class="text-xs text-gray-600">दोषपूर्ण मंशा (guilty mind)</p>
+        <p class="text-xs text-gray-400 mt-1 italic">"क्यों किया"</p>
+      </div>
+    </div>
+    <div class="mt-3 bg-gray-50 rounded-xl p-3">
+      <p class="text-xs font-bold mb-1">Latin Formula</p>
+      <p class="text-xs italic text-gray-600">"Actus non facit reum nisi mens sit rea"</p>
+      <p class="text-xs text-gray-500 mt-1">कार्य तब तक दोषपूर्ण नहीं जब तक मन दोषपूर्ण न हो।</p>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-3">सामान्य बचाव — IPC और BNS धाराएँ</p>
+    <div class="space-y-2">
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-start mb-1 flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Private Defence (व्यक्तिगत प्रतिरक्षा)</p>
+          <div class="flex gap-1"><span class="ib ri">IPC 96-97</span><span class="ib bi">BNS 34-35</span></div>
+        </div>
+        <p class="text-xs text-gray-500">अपनी रक्षा — आनुपातिक बल आवश्यक</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-start mb-1 flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Mistake of Fact (तथ्य की भूल)</p>
+          <div class="flex gap-1"><span class="ib ri">IPC 76</span><span class="ib bi">BNS 14</span></div>
+        </div>
+        <p class="text-xs text-gray-500">वास्तविक तथ्य की भूल = Mens Rea अनुपस्थित = अपराध नहीं</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-start mb-1 flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Necessity (आवश्यकता)</p>
+          <div class="flex gap-1"><span class="ib ri">IPC 81</span><span class="ib bi">BNS 19</span></div>
+        </div>
+        <p class="text-xs text-gray-500">बड़ी हानि रोकने के लिए छोटी हानि की गई</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-start mb-1 flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Insanity (विकृत-चित्त)</p>
+          <div class="flex gap-1"><span class="ib ri">IPC 84</span><span class="ib bi">BNS 22</span></div>
+        </div>
+        <p class="text-xs text-gray-500">कार्य के समय उचित-अनुचित का ज्ञान अनुपस्थित</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-start mb-1 flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Consent (सहमति)</p>
+          <div class="flex gap-1"><span class="ib ri">IPC 87</span><span class="ib bi">BNS 25</span></div>
+        </div>
+        <p class="text-xs text-gray-500">पीड़ित ने स्वेच्छा से सहमति दी थी</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-red-50 border border-red-200 rounded-2xl p-4 mb-5">
+    <p class="text-xs font-bold text-gray-700 mb-2">Mistake of Fact बनाम Mistake of Law</p>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="bg-white rounded-xl p-2">
+        <p class="text-xs font-bold text-green-600">Mistake of Fact &#10003;</p>
+        <p class="text-xs text-gray-500 mt-1">वैध बचाव — Mens Rea अनुपस्थित (IPC 76 / BNS 14)</p>
+      </div>
+      <div class="bg-white rounded-xl p-2">
+        <p class="text-xs font-bold text-red-600">Mistake of Law &#10007;</p>
+        <p class="text-xs text-gray-500 mt-1">बचाव नहीं — "कानून की अज्ञानता क्षम्य नहीं"</p>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="showTab('principles')" class="w-full bg-red-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: Principles &#8594;</button>
+</div>
+
+<!-- ===== TAB: Principles ===== -->
+<div id="tc-principles" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-1">प्रत्येक principle को IF-THEN-UNLESS में तोड़ें।</p>
+  <div class="flex gap-2 mb-4"><span class="ib ri">IPC = पुराना कानून</span><span class="ib bi">BNS = वर्तमान (July 2024+)</span></div>
+  <div class="space-y-3">
+
+    <!-- P1: Mens Rea -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cr1')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left"><p class="text-xs font-semibold text-red-600 mb-0.5">Principle 01 — General</p><p class="text-sm font-bold">Mens Rea — दोषपूर्ण मंशा</p></div>
+        <span id="ai-cr1" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cr1" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-red-50 rounded-xl p-3 border-l-4 border-red-600">
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"कोई कार्य किसी व्यक्ति को तब तक दोषी नहीं बनाता जब तक उसका मन भी दोषपूर्ण न हो।"</p>
+          <p class="text-xs text-gray-400 mt-1 italic">Actus non facit reum nisi mens sit rea</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">सरल शब्दों में</p>
+          <p class="text-xs text-gray-600">अपराध के लिए <strong>Actus Reus + Mens Rea दोनों आवश्यक।</strong> केवल कार्य करने से अपराध नहीं बनता।</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> अर्जुन ने सोचा यह उसकी छतरी है — उठा ली। वास्तव में विजय की थी।<br/><strong>उत्तर:</strong> चोरी नहीं — Mens Rea अनुपस्थित। वास्तविक तथ्य की भूल।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"कार्य हुआ = अपराध" — गलत। Mens Rea ज़रूर जाँचें।</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">IF–THEN–UNLESS</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-blue-700">IF</p><p class="text-xs text-gray-600 mt-0.5">Actus Reus + Mens Rea दोनों</p></div>
+            <div class="bg-green-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-green-700">THEN</p><p class="text-xs text-gray-600 mt-0.5">आपराधिक दायित्व</p></div>
+            <div class="bg-red-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-red-700">UNLESS</p><p class="text-xs text-gray-600 mt-0.5">वैध बचाव लागू</p></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P2: Private Defence -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cr2')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ri">IPC 96-97</span><span class="ib bi">BNS 34-35</span></div>
+          <p class="text-sm font-bold">Private Defence (व्यक्तिगत प्रतिरक्षा)</p>
+        </div>
+        <span id="ai-cr2" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cr2" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-red-50 rounded-xl p-3 border-l-4 border-red-600">
+          <div class="flex gap-2 mb-2"><span class="ib ri">IPC 96-97</span><span class="ib bi">BNS 34-35</span></div>
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"प्रत्येक व्यक्ति को किसी अवैध कार्य के विरुद्ध अपने शरीर या संपत्ति की रक्षा का अधिकार है, बशर्ते प्रयुक्त बल आवश्यकता से अधिक न हो।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">सरल शब्दों में</p>
+          <p class="text-xs text-gray-600">आत्मरक्षा वैध है — लेकिन बल <strong>आनुपातिक</strong> होना चाहिए। अत्यधिक बल = बचाव का अधिकार समाप्त।</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> संजय पर राजा ने मुट्ठी से हमला किया। संजय ने चाकू से वार किया।<br/><strong>उत्तर:</strong> अत्यधिक बचाव — आनुपातिक नहीं। संजय उत्तरदायी (IPC 97 / BNS 35)।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"आत्मरक्षा में कुछ भी किया = स्वतः मुक्त" — गलत। बल आनुपातिक होना आवश्यक।</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">IF–THEN–UNLESS</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-blue-700">IF</p><p class="text-xs text-gray-600 mt-0.5">अवैध आक्रमण + आनुपातिक प्रतिक्रिया</p></div>
+            <div class="bg-green-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-green-700">THEN</p><p class="text-xs text-gray-600 mt-0.5">दोषी नहीं</p></div>
+            <div class="bg-red-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-red-700">UNLESS</p><p class="text-xs text-gray-600 mt-0.5">अत्यधिक बल प्रयोग</p></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P3: Insanity -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cr3')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ri">IPC 84</span><span class="ib bi">BNS 22</span></div>
+          <p class="text-sm font-bold">Insanity (विकृत-चित्त / मानसिक रोग)</p>
+        </div>
+        <span id="ai-cr3" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cr3" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-red-50 rounded-xl p-3 border-l-4 border-red-600">
+          <div class="flex gap-2 mb-2"><span class="ib ri">IPC 84</span><span class="ib bi">BNS 22</span></div>
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"कोई भी कार्य अपराध नहीं है यदि उसे करने वाला व्यक्ति, कार्य के समय, मानसिक रोग के कारण उस कार्य की प्रकृति या उसके उचित-अनुचित होने का ज्ञान रखने में असमर्थ हो।"</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3 border border-yellow-200">
+          <p class="text-xs font-bold text-yellow-800 mb-1">IPC 84 बनाम BNS 22</p>
+          <p class="text-xs text-yellow-700">BNS 22 में "unsoundness of mind" की जगह <strong>"mental illness"</strong> शब्द प्रयोग हुआ। कानून वही, भाषा अद्यतन।</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> रवि मानसिक रोग के कारण नहीं जानता था कि वह किसी को चोट पहुँचा रहा है।<br/><strong>उत्तर:</strong> दोषी नहीं (IPC 84 / BNS 22) — insanity defence।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"मानसिक रोग है = स्वतः बचाव" — गलत। उस सटीक क्षण उचित-अनुचित का ज्ञान अनुपस्थित होना चाहिए।<br/>Legal insanity &#8800; Medical insanity।</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P4: Abetment -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cr4')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ri">IPC 107-108</span><span class="ib bi">BNS 45-46</span></div>
+          <p class="text-sm font-bold">Abetment (दुष्प्रेरण)</p>
+        </div>
+        <span id="ai-cr4" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cr4" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-red-50 rounded-xl p-3 border-l-4 border-red-600">
+          <div class="flex gap-2 mb-2"><span class="ib ri">IPC 107 = BNS 45</span><span class="ib bi">IPC 108 = BNS 46</span></div>
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"कोई व्यक्ति किसी कार्य का दुष्प्रेरण करता है यदि वह किसी को उकसाता है, षड्यंत्र रचता है, या जानबूझकर सहायता करता है।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">Abetment के 3 तरीके</p>
+          <div class="space-y-1">
+            <p class="text-xs text-gray-600">1. <strong>Instigation (उकसाना)</strong></p>
+            <p class="text-xs text-gray-600">2. <strong>Conspiracy (षड्यंत्र)</strong></p>
+            <p class="text-xs text-gray-600">3. <strong>Aid (सहायता)</strong> — जानबूझकर</p>
+          </div>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> प्रिया ने दीपक को बताया कि शाम को सुरेश अकेला होगा। दीपक ने डकैती की।<br/><strong>उत्तर:</strong> प्रिया — Abetment (IPC 107 / BNS 45)। समान रूप से उत्तरदायी।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"मैंने स्वयं अपराध नहीं किया" — बचाव नहीं। Abettor समान रूप से उत्तरदायी है।</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P5: Attempt -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('cr5')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ri">IPC 511</span><span class="ib bi">BNS 62</span></div>
+          <p class="text-sm font-bold">Criminal Attempt (आपराधिक प्रयास)</p>
+        </div>
+        <span id="ai-cr5" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-cr5" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-red-50 rounded-xl p-3 border-l-4 border-red-600">
+          <div class="flex gap-2 mb-2"><span class="ib ri">IPC 511</span><span class="ib bi">BNS 62</span></div>
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"जो कोई किसी अपराध को करने का प्रयास करता है और उसकी ओर कोई कार्य करता है, वह दंडनीय होगा, भले ही अपराध पूरा न हो।"</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> करण ने बैंक लूटने की कोशिश की — अलार्म बजा, भाग गया।<br/><strong>उत्तर:</strong> Criminal Attempt (IPC 511 / BNS 62) — करण उत्तरदायी।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"अपराध पूरा नहीं हुआ = कोई दंड नहीं" — गलत। Attempt दंडनीय है।</p>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+  <button onclick="showTab('solved')" class="w-full mt-5 bg-red-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: Solved MCQs &#8594;</button>
+</div>
+
+<!-- ===== TAB: Solved MCQs ===== -->
+<div id="tc-solved" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">विकल्प चुनें — तुरंत प्रतिक्रिया मिलेगी।</p>
+
+  <!-- Q1 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="crq1">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-red-50 text-red-600">Question 1 &middot; Mens Rea</span>
+      <span class="text-xs text-gray-400">सरल</span>
+    </div>
+    <div class="bg-red-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">Principle:</p>
+      <p class="text-xs italic text-gray-600">कोई कार्य किसी व्यक्ति को तब तक दोषी नहीं बनाता जब तक उसका मन दोषपूर्ण न हो। वास्तविक तथ्य की भूल Mens Rea को समाप्त करती है।</p>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">Facts:</p>
+      <p class="text-xs text-gray-600">मीना ने एक जैकेट उठाई — उसने सोचा यह उसकी पुरानी जैकेट है। वास्तव में वह रेखा की थी।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">क्या मीना चोरी की दोषी है?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('crq1','A','C')" id="crq1-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) हाँ — उसने दूसरे की वस्तु उठाई</button>
+      <button onclick="sol('crq1','B','C')" id="crq1-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) हाँ — चोरी में intent आवश्यक नहीं</button>
+      <button onclick="sol('crq1','C','C')" id="crq1-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) नहीं — वास्तविक तथ्य की भूल से Mens Rea अनुपस्थित (IPC 76 / BNS 14)</button>
+      <button onclick="sol('crq1','D','C')" id="crq1-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — क्योंकि जैकेट उसकी पुरानी थी</button>
+    </div>
+    <div id="crq1-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (C)</p><p class="text-xs text-green-600 mt-1">Mistake of fact = Mens Rea अनुपस्थित = अपराध नहीं। IPC 76 / BNS 14 के अंतर्गत संरक्षित।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): केवल physical act = अपराध नहीं। Guilty mind आवश्यक।</p><p class="text-xs text-red-600 mb-0.5">(B): चोरी में dishonest intent आवश्यक है।</p><p class="text-xs text-red-600">(D): कारण गलत — वास्तविक कारण Mens Rea का अभाव है।</p></div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="crq2">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-red-50 text-red-600">Question 2 &middot; Private Defence</span>
+      <div class="flex gap-1"><span class="ib ri">IPC 96-97</span><span class="ib bi">BNS 34-35</span></div>
+    </div>
+    <div class="bg-red-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">Principle:</p>
+      <p class="text-xs italic text-gray-600">प्रत्येक व्यक्ति को अपनी रक्षा का अधिकार है, बशर्ते प्रयुक्त बल आवश्यकता से अधिक न हो। (IPC 96-97 / BNS 34-35)</p>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">Facts:</p>
+      <p class="text-xs text-gray-600">अजय ने बंटी को एक थप्पड़ मारा। बंटी ने क्रोध में अजय को पत्थर से सिर पर मारा — अजय गंभीर रूप से घायल हो गया।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">क्या बंटी private defence में था?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('crq2','A','B')" id="crq2-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) हाँ — अजय ने पहले आक्रमण किया</button>
+      <button onclick="sol('crq2','B','B')" id="crq2-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) नहीं — बल अनुपातहीन था, private defence का अधिकार अतिक्रमित</button>
+      <button onclick="sol('crq2','C','B')" id="crq2-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) हाँ — बंटी को अपनी रक्षा का पूरा अधिकार था</button>
+      <button onclick="sol('crq2','D','B')" id="crq2-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — बंटी को कोई अधिकार नहीं था</button>
+    </div>
+    <div id="crq2-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (B)</p><p class="text-xs text-green-600 mt-1">थप्पड़ का जवाब पत्थर से = अनुपातहीन। IPC 96/BNS 34: बल "आवश्यकता से अधिक नहीं।" Defence exceeded।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): पहला आक्रमण = अधिकार था, पर केवल आनुपातिक प्रतिक्रिया तक।</p><p class="text-xs text-red-600 mb-0.5">(C): अधिकार था — लेकिन exceed किया।</p><p class="text-xs text-red-600">(D): अधिकार था — कारण गलत है।</p></div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="crq3">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-red-50 text-red-600">Question 3 &middot; Abetment</span>
+      <div class="flex gap-1"><span class="ib ri">IPC 107</span><span class="ib bi">BNS 45</span></div>
+    </div>
+    <div class="bg-red-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">Principle:</p>
+      <p class="text-xs italic text-gray-600">जो जानबूझकर किसी अपराध में सहायता करता है, वह abetment का दोषी है और समान रूप से उत्तरदायी है। (IPC 107 / BNS 45)</p>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">Facts:</p>
+      <p class="text-xs text-gray-600">निशा जानती थी कि राहुल उसके पड़ोसी के घर चोरी करना चाहता है। निशा ने राहुल को पड़ोसी की छुट्टी की तारीख और घर का नक्शा बता दिया। राहुल ने चोरी की।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">क्या निशा उत्तरदायी है?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('crq3','A','C')" id="crq3-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) नहीं — उसने स्वयं चोरी नहीं की</button>
+      <button onclick="sol('crq3','B','C')" id="crq3-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) नहीं — उसने केवल information दी</button>
+      <button onclick="sol('crq3','C','C')" id="crq3-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) हाँ — जानबूझकर aid = Abetment (IPC 107 / BNS 45)</button>
+      <button onclick="sol('crq3','D','C')" id="crq3-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) नहीं — राहुल ने स्वतंत्र रूप से निर्णय लिया था</button>
+    </div>
+    <div id="crq3-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (C)</p><p class="text-xs text-green-600 mt-1">जानबूझकर aid = Abetment। IPC 107 / BNS 45: abettor समान रूप से liable। खुद अपराध करना ज़रूरी नहीं।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): IPC 108/BNS 46 — abettor equally liable।</p><p class="text-xs text-red-600 mb-0.5">(B): Information देना = जानबूझकर aid = Abetment।</p><p class="text-xs text-red-600">(D): राहुल का independent decision निशा की liability को समाप्त नहीं करता।</p></div>
+    </div>
+  </div>
+
+  <button onclick="showTab('tips')" class="w-full bg-red-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: Tips &#8594;</button>
+</div>
+
+<!-- ===== TAB: Tips ===== -->
+<div id="tc-tips" class="px-4 pb-28 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">Criminal Law के CLAT-विशिष्ट सुझाव।</p>
+  <div class="space-y-3 mb-4">
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-600"><p class="text-sm font-bold mb-1">&#128161; Tip 1 — सदैव Mens Rea जाँचें</p><p class="text-xs text-gray-500">अपराध = Actus Reus + Mens Rea। केवल कार्य हुआ &#8800; दोषी।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500"><p class="text-sm font-bold mb-1">&#128161; Tip 2 — Mistake of Fact vs Law</p><p class="text-xs text-gray-500">Mistake of Fact = वैध बचाव (IPC 76 / BNS 14)। Mistake of Law = बचाव नहीं।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-yellow-500"><p class="text-sm font-bold mb-1">&#128161; Tip 3 — Private Defence: Proportionate Force</p><p class="text-xs text-gray-500">अत्यधिक बल = IPC 96-97 / BNS 34-35 का अधिकार समाप्त। CLAT में यह trap बहुत आता है।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-500"><p class="text-sm font-bold mb-1">&#128161; Tip 4 — Abettor समान रूप से Liable</p><p class="text-xs text-gray-500">IPC 107-108 / BNS 45-46। "मैंने नहीं किया" — बचाव नहीं।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-purple-500"><p class="text-sm font-bold mb-1">&#128161; Tip 5 — Attempt भी Punishable</p><p class="text-xs text-gray-500">IPC 511 / BNS 62। अपराध पूरा न हो — attempt दंडनीय है।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-500"><p class="text-sm font-bold mb-1">&#128161; Tip 6 — Legal vs Medical Insanity</p><p class="text-xs text-gray-500">IPC 84 / BNS 22 — medical illness alone काफी नहीं। उस exact moment, right-wrong का ज्ञान न होना ज़रूरी।</p></div>
+  </div>
+
+  <!-- Quick Reference -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+    <p class="text-sm font-bold mb-3">&#128203; Quick Reference — IPC बनाम BNS</p>
+    <div class="space-y-2">
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Private Defence</p><div class="flex gap-1"><span class="ib ri">IPC 96-97</span><span class="ib bi">BNS 34-35</span></div></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Insanity Defence</p><div class="flex gap-1"><span class="ib ri">IPC 84</span><span class="ib bi">BNS 22</span></div></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Abetment</p><div class="flex gap-1"><span class="ib ri">IPC 107-108</span><span class="ib bi">BNS 45-46</span></div></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Criminal Attempt</p><div class="flex gap-1"><span class="ib ri">IPC 511</span><span class="ib bi">BNS 62</span></div></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Mistake of Fact</p><div class="flex gap-1"><span class="ib ri">IPC 76</span><span class="ib bi">BNS 14</span></div></div>
+      <div class="flex justify-between items-center py-1.5"><p class="text-xs font-medium text-gray-700">Necessity</p><div class="flex gap-1"><span class="ib ri">IPC 81</span><span class="ib bi">BNS 19</span></div></div>
+    </div>
+  </div>
+
+  <div class="bg-red-600 rounded-2xl p-5 text-center text-white">
+    <p class="text-base font-bold mb-3">अन्य विषय भी देखें</p>
+    <div class="grid grid-cols-2 gap-2">
+      <a href="torts.html"        class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#FF6B35">&#9878;&#65039; Tort Law</a>
+      <a href="contracts.html"    class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#2563eb">&#128221; Contract Law</a>
+      <a href="constitution.html" class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#16a34a">&#127963;&#65039; Constitutional Law</a>
+      <a href="legal.html"        class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#6b7280">&#8592; Legal Hub</a>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 shadow-lg z-50">
+  <div class="flex justify-around items-center py-2">
+    <a href="../index.html"           class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#127968;</span><span class="text-xs text-gray-400">होम</span></a>
+    <a href="legal.html"              class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#9878;&#65039;</span><span class="text-xs text-gray-400">कानूनी</span></a>
+    <a href="../practice/quiz.html"   class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#9999;&#65039;</span><span class="text-xs text-gray-400">अभ्यास</span></a>
+    <a href="../bridge/passage.html"  class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#128292;</span><span class="text-xs text-gray-400">अंग्रेज़ी</span></a>
+    <a href="../downloads/index.html" class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#128229;</span><span class="text-xs text-gray-400">PDF</span></a>
+  </div>
+</nav>
+
+<script>
+  function showTab(n){
+    document.querySelectorAll(".tc").forEach(function(e){e.classList.add("hidden");});
+    document.querySelectorAll(".tb").forEach(function(b){
+      b.classList.remove("active");b.classList.add("text-gray-500");
+      b.style.background="";b.style.color="";b.style.borderColor="";
+    });
+    document.getElementById("tc-"+n).classList.remove("hidden");
+    var b=document.getElementById("tb-"+n);
+    b.classList.add("active");b.classList.remove("text-gray-500");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function acc(id){
+    document.getElementById("ab-"+id).classList.toggle("open");
+    document.getElementById("ai-"+id).classList.toggle("open");
+  }
+  function sol(qid,chosen,correct){
+    ["A","B","C","D"].forEach(function(l){
+      var b=document.getElementById(qid+"-"+l);
+      if(!b)return;b.disabled=true;
+      if(l===correct)b.classList.add("bg-green-100","border-green-400","text-green-800");
+      else if(l===chosen&&chosen!==correct)b.classList.add("bg-red-100","border-red-400","text-red-800");
+    });
+    document.getElementById(qid+"-exp").classList.remove("hidden");
+  }
+  window.addEventListener("scroll",function(){
+    var d=document.documentElement;
+    document.getElementById("rp").style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+"%";
+  });
+</script>
+</body>
+</html>
