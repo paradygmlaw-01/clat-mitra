@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Constitutional Law &#8211; CLAT मित्र</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;}
+    html{scroll-behavior:smooth;}
+    .accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .accordion-body.open{max-height:5000px;}
+    .accordion-icon{transition:transform .3s;}
+    .accordion-icon.open{transform:rotate(180deg);}
+    .tab-btn.active{background-color:#16a34a;color:#fff;border-color:#16a34a;}
+    #rp{position:fixed;top:0;left:0;height:3px;background:#16a34a;width:0;z-index:999;}
+    .ib{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;}
+    .ai{background:#dcfce7;color:#166534;}
+    .ab{background:#dbeafe;color:#1e40af;}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 max-w-md mx-auto">
+<div id="rp"></div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
+  <a href="legal.html" class="text-gray-400 text-xl">&#8592;</a>
+  <div class="flex-1">
+    <p class="text-xs text-gray-400">कानूनी तर्क</p>
+    <h1 class="text-base font-bold">&#127963;&#65039; संवैधानिक विधि</h1>
+  </div>
+  <a href="../practice/quiz.html?subject=constitution" class="bg-green-600 text-white text-xs font-bold px-3 py-2 rounded-xl">Quiz &#8594;</a>
+</header>
+
+<!-- HERO -->
+<section class="px-5 py-6" style="background:linear-gradient(135deg,#f0fdf4 0%,#fff 100%)">
+  <div class="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3 bg-green-100 text-green-700">कानूनी तर्क &middot; संवैधानिक विधि</div>
+  <h2 class="text-2xl font-bold text-gray-900 mb-2">&#127963;&#65039; संवैधानिक विधि</h2>
+  <p class="text-sm text-gray-500 leading-relaxed mb-3">Fundamental Rights, Writs, DPSP — CLAT Legal Reasoning के लिए।</p>
+  <div class="bg-green-50 border border-green-300 rounded-xl px-3 py-2.5 flex gap-2 items-start">
+    <span class="text-base shrink-0">&#128161;</span>
+    <div>
+      <p class="text-xs font-bold text-green-800 mb-0.5">CLAT का Golden Rule</p>
+      <p class="text-xs text-green-700">Principle &#8594; IF–THEN–UNLESS &#8594; Facts match &#8594; Best conclusion। बाहर का कानून मत जोड़ें।</p>
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section class="px-4 pt-4 mb-4">
+  <div class="flex gap-2 overflow-x-auto pb-1">
+    <button onclick="showTab('concepts')"   id="tb-concepts"   class="tb tab-btn active text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-green-600 transition">&#128214; Concepts</button>
+    <button onclick="showTab('principles')" id="tb-principles" class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#9878;&#65039; Principles</button>
+    <button onclick="showTab('solved')"     id="tb-solved"     class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#9989; Solved MCQs</button>
+    <button onclick="showTab('tips')"       id="tb-tips"       class="tb tab-btn text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap border border-gray-200 text-gray-500 transition">&#128161; Tips</button>
+  </div>
+</section>
+
+<!-- ===== TAB: Concepts ===== -->
+<div id="tc-concepts" class="px-4 pb-6 tc">
+  <p class="text-xs text-gray-400 mb-4">संवैधानिक विधि के मूल concepts।</p>
+
+  <!-- What is Constitution -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-500 mb-3">
+    <p class="text-sm font-bold mb-2">संविधान क्या है?</p>
+    <p class="text-xs text-gray-500 leading-relaxed">संविधान नियमों का <strong>सर्वोच्च दस्तावेज़</strong> है। यह राज्य/सरकार की संरचना बनाता है, शक्ति का बंटवारा करता है, और लोगों के अधिकारों की रक्षा करता है।</p>
+    <div class="mt-2 bg-green-50 rounded-xl p-2">
+      <p class="text-xs font-bold text-green-700">Core idea</p>
+      <p class="text-xs text-gray-600 mt-0.5">लोकतंत्र में संविधान सरकार की शक्ति को <strong>सीमित</strong> करता है और नागरिकों के अधिकारों की सुरक्षा करता है।</p>
+    </div>
+  </div>
+
+  <!-- Key Features -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-3">भारतीय संविधान — 5 मुख्य विशेषताएँ</p>
+    <div class="space-y-2">
+      <div class="flex gap-2 items-start bg-green-50 rounded-xl px-3 py-2">
+        <span class="text-green-600 font-bold text-xs shrink-0 mt-0.5">01</span>
+        <div><p class="text-xs font-bold text-gray-700">संविधान की सर्वोच्चता</p><p class="text-xs text-gray-500">सभी कानून और सरकारी कार्य संविधान के अनुरूप होने चाहिए।</p></div>
+      </div>
+      <div class="flex gap-2 items-start bg-green-50 rounded-xl px-3 py-2">
+        <span class="text-green-600 font-bold text-xs shrink-0 mt-0.5">02</span>
+        <div><p class="text-xs font-bold text-gray-700">Rule of Law (कानून का शासन)</p><p class="text-xs text-gray-500">कोई भी कानून से ऊपर नहीं — सरकार भी नहीं।</p></div>
+      </div>
+      <div class="flex gap-2 items-start bg-green-50 rounded-xl px-3 py-2">
+        <span class="text-green-600 font-bold text-xs shrink-0 mt-0.5">03</span>
+        <div><p class="text-xs font-bold text-gray-700">Democratic Republic (लोकतांत्रिक गणराज्य)</p><p class="text-xs text-gray-500">जनता प्रतिनिधि चुनती है — राजशाही नहीं।</p></div>
+      </div>
+      <div class="flex gap-2 items-start bg-green-50 rounded-xl px-3 py-2">
+        <span class="text-green-600 font-bold text-xs shrink-0 mt-0.5">04</span>
+        <div><p class="text-xs font-bold text-gray-700">Federal Structure (संघीय ढाँचा)</p><p class="text-xs text-gray-500">केंद्र और राज्य दोनों के पास शक्तियाँ — लेकिन केंद्र अक्सर अधिक शक्तिशाली।</p></div>
+      </div>
+      <div class="flex gap-2 items-start bg-green-50 rounded-xl px-3 py-2">
+        <span class="text-green-600 font-bold text-xs shrink-0 mt-0.5">05</span>
+        <div><p class="text-xs font-bold text-gray-700">Separation of Powers (शक्ति-विभाजन)</p><p class="text-xs text-gray-500">Legislature कानून बनाती है &bull; Executive लागू करती है &bull; Judiciary व्याख्या करती है।</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preamble -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-3">Preamble (प्रस्तावना) — 4 मूल मूल्य</p>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="bg-blue-50 rounded-xl p-3 text-center border border-blue-100">
+        <p class="text-base mb-1">&#9878;&#65039;</p>
+        <p class="text-xs font-bold text-blue-700">Justice (न्याय)</p>
+        <p class="text-xs text-gray-500 mt-0.5">सामाजिक, आर्थिक, राजनीतिक</p>
+      </div>
+      <div class="bg-purple-50 rounded-xl p-3 text-center border border-purple-100">
+        <p class="text-base mb-1">&#128308;</p>
+        <p class="text-xs font-bold text-purple-700">Liberty (स्वतंत्रता)</p>
+        <p class="text-xs text-gray-500 mt-0.5">विचार, अभिव्यक्ति, विश्वास, धर्म</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl p-3 text-center border border-yellow-100">
+        <p class="text-base mb-1">&#9878;</p>
+        <p class="text-xs font-bold text-yellow-700">Equality (समानता)</p>
+        <p class="text-xs text-gray-500 mt-0.5">दर्जा और अवसर</p>
+      </div>
+      <div class="bg-green-50 rounded-xl p-3 text-center border border-green-100">
+        <p class="text-base mb-1">&#129309;</p>
+        <p class="text-xs font-bold text-green-700">Fraternity (बंधुत्व)</p>
+        <p class="text-xs text-gray-500 mt-0.5">राष्ट्र की एकता और अखंडता</p>
+      </div>
+    </div>
+    <div class="mt-2 bg-yellow-50 rounded-xl p-2">
+      <p class="text-xs text-yellow-800"><strong>CLAT angle:</strong> answer हमेशा दिए हुए <strong>principle</strong> के अनुसार दें — सिर्फ Preamble values से नहीं।</p>
+    </div>
+  </div>
+
+  <!-- Fundamental Rights -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-1">Fundamental Rights — Articles at a Glance</p>
+    <p class="text-xs text-gray-400 mb-3">व्यक्ति को अन्यायपूर्ण State action से बचाते हैं।</p>
+    <div class="space-y-2">
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Equality Rights</p>
+          <div class="flex gap-1"><span class="ib ai">Art. 14</span><span class="ib ai">Art. 15</span><span class="ib ai">Art. 16</span></div>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">कानून के सामने समानता &bull; भेदभाव नहीं &bull; नौकरी में अवसर</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Freedom Rights</p>
+          <span class="ib ai">Art. 19</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">Speech, assembly, movement, profession — reasonable restrictions के साथ</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Life &amp; Personal Liberty</p>
+          <span class="ib ai">Art. 21</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">कानूनी प्रक्रिया के बिना life/liberty छीनी नहीं जा सकती। Dignity, privacy भी शामिल।</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Against Exploitation</p>
+          <div class="flex gap-1"><span class="ib ai">Art. 23</span><span class="ib ai">Art. 24</span></div>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">Trafficking, forced labour &bull; Child labour (hazardous)</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Freedom of Religion</p>
+          <div class="flex gap-1"><span class="ib ai">Art. 25</span><span class="ib ai">Art. 26-28</span></div>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">धर्म मानने/पालन की स्वतंत्रता — public order, morality, health के अधीन</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Cultural &amp; Educational Rights</p>
+          <div class="flex gap-1"><span class="ib ai">Art. 29</span><span class="ib ai">Art. 30</span></div>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">भाषा/संस्कृति बचाने का अधिकार &bull; Minorities को institutions चलाने का अधिकार</p>
+      </div>
+      <div class="bg-green-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-700">Constitutional Remedies</p>
+          <span class="ib ai">Art. 32</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-1">Supreme Court से writs द्वारा Fundamental Rights enforce कराने का अधिकार</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Writs -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-3">
+    <p class="text-sm font-bold mb-3">Writs (रिट) — 5 प्रकार</p>
+    <div class="space-y-2">
+      <div class="bg-blue-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-800">Habeas Corpus</p>
+          <span class="ib ab">&#128274; Detention</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-0.5">अवैध detention में व्यक्ति को court के सामने पेश करो</p>
+      </div>
+      <div class="bg-blue-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-800">Mandamus</p>
+          <span class="ib ab">&#128221; Duty</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-0.5">Public authority को उसका कर्तव्य निभाने का आदेश</p>
+      </div>
+      <div class="bg-blue-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-800">Prohibition</p>
+          <span class="ib ab">&#128683; Stop</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-0.5">Lower court/tribunal को अधिकार से बाहर जाने से रोकना</p>
+      </div>
+      <div class="bg-blue-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-800">Certiorari</p>
+          <span class="ib ab">&#10060; Quash</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-0.5">Lower court/tribunal का गलत/अवैध आदेश रद्द करना</p>
+      </div>
+      <div class="bg-blue-50 rounded-xl px-3 py-2.5">
+        <div class="flex justify-between items-center flex-wrap gap-1">
+          <p class="text-xs font-bold text-gray-800">Quo Warranto</p>
+          <span class="ib ab">&#10067; Authority</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-0.5">Public office पर व्यक्ति वैध रूप से बैठा है या नहीं — यह पूछना</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DPSP vs FD -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+    <p class="text-sm font-bold mb-3">DPSP बनाम Fundamental Duties</p>
+    <div class="grid grid-cols-2 gap-3">
+      <div class="bg-yellow-50 rounded-xl p-3 border border-yellow-200">
+        <p class="text-xs font-bold text-yellow-800 mb-1">DPSP (Part IV)</p>
+        <p class="text-xs text-gray-600">राज्य के welfare goals — सीधे enforceable नहीं।</p>
+        <p class="text-xs text-gray-400 mt-1 italic">Fundamental Rights को override नहीं करते — जब तक principle ऐसा न कहे।</p>
+      </div>
+      <div class="bg-green-50 rounded-xl p-3 border border-green-200">
+        <p class="text-xs font-bold text-green-800 mb-1">Fundamental Duties</p>
+        <p class="text-xs text-gray-600">नागरिकों के duties — संविधान सम्मान, पर्यावरण रक्षा आदि।</p>
+        <p class="text-xs text-gray-400 mt-1 italic">Direct punishment तभी जब law/principle में लिखा हो।</p>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="showTab('principles')" class="w-full bg-green-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: Principles &#8594;</button>
+</div>
+
+<!-- ===== TAB: Principles ===== -->
+<div id="tc-principles" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">प्रत्येक principle को IF-THEN-UNLESS में तोड़ें।</p>
+  <div class="space-y-3">
+
+    <!-- P1: Equality / Art 14 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('co1')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ai">Art. 14</span></div>
+          <p class="text-sm font-bold">Equality — No Arbitrary State Action</p>
+        </div>
+        <span id="ai-co1" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-co1" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-green-50 rounded-xl p-3 border-l-4 border-green-600">
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"राज्य किसी के साथ मनमाना (arbitrary) व्यवहार नहीं कर सकता। समान स्थिति वाले लोगों के साथ समान व्यवहार होना चाहिए।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">सरल शब्दों में</p>
+          <p class="text-xs text-gray-600">Article 14: Law के सामने equality + equal protection। सरकार का बिना कारण अलग व्यवहार = unconstitutional।</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> सरकार ने दो समान योग्य उम्मीदवारों में से एक को बिना कारण reject किया।<br/><strong>उत्तर:</strong> Article 14 का उल्लंघन — arbitrary action।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"Equality = सबको एक जैसा" — नहीं। Similarly placed persons को equal treatment। अलग-अलग situations में अलग नियम हो सकते हैं।</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">IF–THEN–UNLESS</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-blue-700">IF</p><p class="text-xs text-gray-600 mt-0.5">State का arbitrary / discriminatory action</p></div>
+            <div class="bg-green-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-green-700">THEN</p><p class="text-xs text-gray-600 mt-0.5">Art. 14 का उल्लंघन</p></div>
+            <div class="bg-red-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-red-700">UNLESS</p><p class="text-xs text-gray-600 mt-0.5">Reasonable classification का आधार हो</p></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P2: Art 19 Freedom of Speech -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('co2')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ai">Art. 19</span></div>
+          <p class="text-sm font-bold">Freedom — Reasonable Restrictions</p>
+        </div>
+        <span id="ai-co2" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-co2" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-green-50 rounded-xl p-3 border-l-4 border-green-600">
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"नागरिकों को speech, assembly, movement, profession की स्वतंत्रता है। लेकिन राज्य public order, morality, security के लिए reasonable restrictions लगा सकता है।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">सरल शब्दों में</p>
+          <p class="text-xs text-gray-600">Freedom absolute नहीं है — restriction <strong>reasonable और lawful</strong> होनी चाहिए।</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> सरकार ने एक speech पर ban लगाया — reason: national security।<br/><strong>उत्तर:</strong> Valid restriction — यदि restriction reasonable और principle के अनुसार हो।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"Free speech = कुछ भी बोलो" — गलत। Principle में restrictions दिए हों तो check ज़रूर करें।</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">IF–THEN–UNLESS</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-blue-700">IF</p><p class="text-xs text-gray-600 mt-0.5">State ने freedom restrict की</p></div>
+            <div class="bg-green-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-green-700">THEN</p><p class="text-xs text-gray-600 mt-0.5">Restriction valid</p></div>
+            <div class="bg-red-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-red-700">UNLESS</p><p class="text-xs text-gray-600 mt-0.5">Restriction unreasonable या बिना lawful ground</p></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P3: Art 21 Life & Liberty -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('co3')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ai">Art. 21</span></div>
+          <p class="text-sm font-bold">Life &amp; Personal Liberty — Fair Procedure</p>
+        </div>
+        <span id="ai-co3" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-co3" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-green-50 rounded-xl p-3 border-l-4 border-green-600">
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"किसी व्यक्ति को उसके जीवन या व्यक्तिगत स्वतंत्रता से तब तक वंचित नहीं किया जाएगा जब तक कानून द्वारा तय प्रक्रिया का पालन न हो।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">Modern Scope</p>
+          <p class="text-xs text-gray-600">Article 21 में अब <strong>dignity, privacy, fair trial, legal aid</strong> सब शामिल माने जाते हैं — अगर passage mention करे।</p>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">उदाहरण</p>
+          <p class="text-xs text-gray-600"><strong>Facts:</strong> पुलिस ने बिना किसी legal procedure के राम को 10 दिन हिरासत में रखा।<br/><strong>उत्तर:</strong> Article 21 का उल्लंघन — lawful procedure का पालन नहीं।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">"Detention हुआ = गलत" — नहीं। अगर lawful procedure follow हुई तो valid। Procedure check करें।</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-2">IF–THEN–UNLESS</p>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-blue-700">IF</p><p class="text-xs text-gray-600 mt-0.5">बिना lawful procedure detention / liberty छीनी</p></div>
+            <div class="bg-green-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-green-700">THEN</p><p class="text-xs text-gray-600 mt-0.5">Art. 21 उल्लंघन</p></div>
+            <div class="bg-red-100 rounded-lg p-2 text-center"><p class="text-xs font-bold text-red-700">UNLESS</p><p class="text-xs text-gray-600 mt-0.5">Valid legal procedure follow की गई हो</p></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P4: DPSP -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('co4')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <div class="flex gap-1 mb-1"><span class="ib ab">Part IV</span></div>
+          <p class="text-sm font-bold">DPSP — Welfare Goals (Not Directly Enforceable)</p>
+        </div>
+        <span id="ai-co4" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-co4" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-green-50 rounded-xl p-3 border-l-4 border-green-600">
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"राज्य के नीति-निर्देशक सिद्धांत राज्य के लिए welfare goals हैं — ये अपने आप enforceable नहीं हैं, और Fundamental Rights को override नहीं करते जब तक principle ऐसा न कहे।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">DPSP के themes (CLAT में)</p>
+          <div class="space-y-1">
+            <p class="text-xs text-gray-600">&#8226; Inequality कम करना</p>
+            <p class="text-xs text-gray-600">&#8226; Public health सुधारना</p>
+            <p class="text-xs text-gray-600">&#8226; Education, legal aid जैसे लक्ष्य</p>
+          </div>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Trap</p>
+          <p class="text-xs text-gray-600">DPSP = values हैं। ये अपने आप Fundamental Rights को override नहीं करते — जब तक principle ऐसा न कहे।</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- P5: Basic Structure -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="acc('co5')" class="w-full flex justify-between items-center px-4 py-4">
+        <div class="text-left">
+          <p class="text-xs font-semibold text-green-700 mb-0.5">Principle 05 — Amendment</p>
+          <p class="text-sm font-bold">Basic Structure — Limits on Amendment</p>
+        </div>
+        <span id="ai-co5" class="accordion-icon text-gray-400 text-lg">&#9660;</span>
+      </button>
+      <div id="ab-co5" class="accordion-body"><div class="px-4 pb-4 space-y-3">
+        <div class="bg-green-50 rounded-xl p-3 border-l-4 border-green-600">
+          <p class="text-xs font-bold mb-1">Principle</p>
+          <p class="text-xs italic text-gray-600">"संविधान में amendment हो सकते हैं, लेकिन कुछ core features (basic structure) को destroy नहीं किया जा सकता।"</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">Basic Structure में क्या आता है?</p>
+          <p class="text-xs text-gray-600">Rule of law, Separation of powers, Judicial independence, Fundamental Rights, Democratic republic — ये core features हैं।</p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-3">
+          <p class="text-xs font-bold mb-1">&#9888; CLAT Rule</p>
+          <p class="text-xs text-gray-600">Passage जो rule दे, वही मानिए। बाहर का doctrine मत जोड़ें।</p>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+  <button onclick="showTab('solved')" class="w-full mt-5 bg-green-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: Solved MCQs &#8594;</button>
+</div>
+
+<!-- ===== TAB: Solved MCQs ===== -->
+<div id="tc-solved" class="px-4 pb-6 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">विकल्प चुनें — तुरंत प्रतिक्रिया मिलेगी।</p>
+
+  <!-- Q1 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="coq1">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-50 text-green-700">Question 1 &middot; Art. 14</span>
+      <span class="text-xs text-gray-400">सरल</span>
+    </div>
+    <div class="bg-green-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">Principle:</p>
+      <p class="text-xs italic text-gray-600">राज्य समान स्थिति वाले व्यक्तियों के साथ बिना उचित कारण अलग व्यवहार नहीं कर सकता। मनमाना (arbitrary) State action अवैध है। (Art. 14)</p>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">Facts:</p>
+      <p class="text-xs text-gray-600">सरकारी विभाग ने दो उम्मीदवार — अनुज और विकास — को एक ही post के लिए shortlist किया। दोनों की qualification एकदम समान थी। विभाग ने बिना कोई कारण बताए अनुज को reject कर दिया।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">क्या अनुज को Article 14 का संरक्षण मिलेगा?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('coq1','A','C')" id="coq1-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) नहीं — सरकार को hiring का पूरा अधिकार है</button>
+      <button onclick="sol('coq1','B','C')" id="coq1-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) नहीं — Article 14 केवल courts पर लागू होता है</button>
+      <button onclick="sol('coq1','C','C')" id="coq1-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) हाँ — बिना कारण arbitrary rejection = Art. 14 उल्लंघन</button>
+      <button onclick="sol('coq1','D','C')" id="coq1-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) हाँ — क्योंकि Article 14 सभी situations में absolute right देता है</button>
+    </div>
+    <div id="coq1-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (C)</p><p class="text-xs text-green-600 mt-1">दोनों equally placed — बिना reason rejection = arbitrary = Art. 14 violation।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): सरकार को अधिकार है, पर arbitrary नहीं कर सकती।</p><p class="text-xs text-red-600 mb-0.5">(B): Art. 14 सभी State action पर लागू होता है।</p><p class="text-xs text-red-600">(D): Art. 14 absolute नहीं — reasonable classification allowed।</p></div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="coq2">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-50 text-green-700">Question 2 &middot; Art. 21 + Habeas Corpus</span>
+      <span class="ib ab">Art. 21 &amp; Art. 32</span>
+    </div>
+    <div class="bg-green-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">Principle:</p>
+      <p class="text-xs italic text-gray-600">किसी व्यक्ति को कानून द्वारा तय प्रक्रिया के बिना उसकी personal liberty से वंचित नहीं किया जाएगा। अवैध detention में court writ of Habeas Corpus जारी कर सकती है। (Art. 21, 32)</p>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">Facts:</p>
+      <p class="text-xs text-gray-600">पुलिस ने संदेह के आधार पर सुमित को गिरफ्तार किया और 15 दिन बिना किसी legal procedure, FIR, या court order के हिरासत में रखा। सुमित के परिवार ने Supreme Court में petition दायर की।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">Supreme Court को क्या करना चाहिए?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('coq2','A','B')" id="coq2-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) Petition dismiss — पुलिस को security matter में अधिकार है</button>
+      <button onclick="sol('coq2','B','B')" id="coq2-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) Habeas Corpus जारी करे — Art. 21 का उल्लंघन, lawful procedure नहीं</button>
+      <button onclick="sol('coq2','C','B')" id="coq2-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) Mandamus जारी करे — पुलिस को duty निभाने का आदेश</button>
+      <button onclick="sol('coq2','D','B')" id="coq2-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) Certiorari जारी करे — lower court का order रद्द करना</button>
+    </div>
+    <div id="coq2-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (B)</p><p class="text-xs text-green-600 mt-1">बिना lawful procedure detention = Art. 21 violation। Habeas Corpus = unlawful detention में person को court के सामने पेश करो।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(A): Security grounds भी lawful procedure exempt नहीं करते — principle के अनुसार।</p><p class="text-xs text-red-600 mb-0.5">(C): Mandamus = duty निभाने का आदेश — यहाँ लागू नहीं।</p><p class="text-xs text-red-600">(D): Certiorari = lower court order quash करना — यहाँ कोई court order नहीं था।</p></div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4" id="coq3">
+    <div class="flex justify-between items-start mb-3">
+      <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-50 text-green-700">Question 3 &middot; Art. 19</span>
+      <span class="ib ai">Art. 19</span>
+    </div>
+    <div class="bg-green-50 rounded-xl p-3 mb-2">
+      <p class="text-xs font-bold mb-1">Principle:</p>
+      <p class="text-xs italic text-gray-600">नागरिकों को speech की स्वतंत्रता है, लेकिन राज्य public order की रक्षा के लिए reasonable और lawful restrictions लगा सकता है। (Art. 19)</p>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-3 mb-3">
+      <p class="text-xs font-bold mb-1">Facts:</p>
+      <p class="text-xs text-gray-600">नेहा ने एक भाषण दिया जिसमें उसने किसी समुदाय के खिलाफ हिंसा के लिए उकसाया। सरकार ने उस भाषण पर ban लगाया — reason: public order।</p>
+    </div>
+    <p class="text-xs font-bold mb-2">क्या सरकार का ban वैध है?</p>
+    <div class="space-y-2 mb-3">
+      <button onclick="sol('coq3','A','A')" id="coq3-A" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(A) हाँ — restriction public order के लिए reasonable और lawful है</button>
+      <button onclick="sol('coq3','B','A')" id="coq3-B" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(B) नहीं — speech की freedom absolute है</button>
+      <button onclick="sol('coq3','C','A')" id="coq3-C" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(C) नहीं — सरकार speech पर कोई restriction नहीं लगा सकती</button>
+      <button onclick="sol('coq3','D','A')" id="coq3-D" class="w-full text-left text-xs px-3 py-2.5 rounded-xl border border-gray-200 bg-white">(D) हाँ — Art. 14 के तहत equality की रक्षा के लिए</button>
+    </div>
+    <div id="coq3-exp" class="hidden space-y-2">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3"><p class="text-xs font-bold text-green-700">सही: (A)</p><p class="text-xs text-green-600 mt-1">Principle: public order के लिए reasonable restriction valid। हिंसा उकसाना = valid ground।</p></div>
+      <div class="bg-red-50 rounded-xl p-3"><p class="text-xs font-bold text-red-700 mb-1">अन्य विकल्प गलत क्यों:</p><p class="text-xs text-red-600 mb-0.5">(B): Freedom absolute नहीं — principle में restrictions clearly दिए हैं।</p><p class="text-xs text-red-600 mb-0.5">(C): Art. 19 reasonable restriction explicitly allow करता है।</p><p class="text-xs text-red-600">(D): Art. 14 यहाँ apply नहीं — यह speech restriction का matter है।</p></div>
+    </div>
+  </div>
+
+  <button onclick="showTab('tips')" class="w-full bg-green-600 text-white py-3 rounded-2xl font-bold text-sm">अगला: Tips &#8594;</button>
+</div>
+
+<!-- ===== TAB: Tips ===== -->
+<div id="tc-tips" class="px-4 pb-28 tc hidden">
+  <p class="text-xs text-gray-400 mb-4">Constitutional Law के CLAT-विशिष्ट सुझाव।</p>
+  <div class="space-y-3 mb-5">
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-green-600"><p class="text-sm font-bold mb-1">&#128161; Tip 1 — Principle ही कानून है</p><p class="text-xs text-gray-500">Passage में जो principle दिया हो, वही apply करें। बाहर का Constitutional law मत जोड़ें।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-blue-500"><p class="text-sm font-bold mb-1">&#128161; Tip 2 — Equality = Similarly Placed</p><p class="text-xs text-gray-500">Art. 14: सबको एक जैसा नहीं — similarly placed persons को equal treatment। Reasonable classification allowed।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-yellow-500"><p class="text-sm font-bold mb-1">&#128161; Tip 3 — Freedom Absolute नहीं</p><p class="text-xs text-gray-500">Art. 19: Restrictions reasonable और lawful होने चाहिए। "Free speech = कुछ भी" — CLAT trap।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-orange-500"><p class="text-sm font-bold mb-1">&#128161; Tip 4 — Art. 21: Procedure Check करें</p><p class="text-xs text-gray-500">Detention हुआ = गलत नहीं। Lawful procedure follow हुई या नहीं — यह check करें।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-purple-500"><p class="text-sm font-bold mb-1">&#128161; Tip 5 — Writ की पहचान</p><p class="text-xs text-gray-500">Unlawful detention &#8594; Habeas Corpus। Public duty &#8594; Mandamus। Court order quash &#8594; Certiorari। Court को रोकना &#8594; Prohibition। Office authority &#8594; Quo Warranto।</p></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-red-500"><p class="text-sm font-bold mb-1">&#128161; Tip 6 — DPSP Trap</p><p class="text-xs text-gray-500">DPSP = welfare values, Fundamental Rights को override नहीं करते — जब तक principle ऐसा न कहे।</p></div>
+  </div>
+
+  <!-- Quick Reference: Writs -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+    <p class="text-sm font-bold mb-3">&#128203; Quick Reference — 5 Writs</p>
+    <div class="space-y-2">
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Habeas Corpus</p><span class="ib ab">Unlawful Detention</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Mandamus</p><span class="ib ab">Public Duty</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Prohibition</p><span class="ib ab">Stop Excess Jurisdiction</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Certiorari</p><span class="ib ab">Quash Wrong Order</span></div>
+      <div class="flex justify-between items-center py-1.5"><p class="text-xs font-medium text-gray-700">Quo Warranto</p><span class="ib ab">Office Authority</span></div>
+    </div>
+  </div>
+
+  <!-- Quick Reference: Articles -->
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+    <p class="text-sm font-bold mb-3">&#128203; Quick Reference — Key Articles</p>
+    <div class="space-y-2">
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Equality (No Discrimination)</p><div class="flex gap-1"><span class="ib ai">Art. 14</span><span class="ib ai">Art. 15</span><span class="ib ai">Art. 16</span></div></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Freedom of Speech/Movement</p><span class="ib ai">Art. 19</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Life &amp; Personal Liberty</p><span class="ib ai">Art. 21</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Against Forced Labour</p><span class="ib ai">Art. 23-24</span></div>
+      <div class="flex justify-between items-center py-1.5 border-b border-gray-100"><p class="text-xs font-medium text-gray-700">Freedom of Religion</p><span class="ib ai">Art. 25-28</span></div>
+      <div class="flex justify-between items-center py-1.5"><p class="text-xs font-medium text-gray-700">Constitutional Remedies (Writs)</p><span class="ib ai">Art. 32</span></div>
+    </div>
+  </div>
+
+  <!-- Mini Self-check -->
+  <div class="bg-green-50 border border-green-200 rounded-2xl p-4 mb-5">
+    <p class="text-sm font-bold text-green-800 mb-3">&#129504; Mini Self-check (notes से)</p>
+    <div class="space-y-3">
+      <div class="bg-white rounded-xl p-3">
+        <p class="text-xs font-bold text-gray-700 mb-1">Q1. State दो समान लोगों के साथ बिना कारण अलग व्यवहार करे?</p>
+        <p class="text-xs text-green-700 font-semibold">&#8594; Art. 14 — Arbitrary action, Equality violation।</p>
+      </div>
+      <div class="bg-white rounded-xl p-3">
+        <p class="text-xs font-bold text-gray-700 mb-1">Q2. अवैध detention — court के सामने पेश नहीं?</p>
+        <p class="text-xs text-green-700 font-semibold">&#8594; Habeas Corpus writ (Art. 21 + Art. 32)।</p>
+      </div>
+      <div class="bg-white rounded-xl p-3">
+        <p class="text-xs font-bold text-gray-700 mb-1">Q3. "Public order" के नाम पर restriction — क्या check करें?</p>
+        <p class="text-xs text-green-700 font-semibold">&#8594; Principle में restriction का ground reasonable और lawful है या नहीं।</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-green-600 rounded-2xl p-5 text-center text-white">
+    <p class="text-base font-bold mb-3">अन्य विषय भी देखें</p>
+    <div class="grid grid-cols-2 gap-2">
+      <a href="criminal.html"  class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#dc2626">&#128274; Criminal Law</a>
+      <a href="contracts.html" class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#2563eb">&#128221; Contract Law</a>
+      <a href="torts.html"     class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#FF6B35">&#9878;&#65039; Tort Law</a>
+      <a href="legal.html"     class="bg-white font-bold text-xs px-3 py-2 rounded-xl" style="color:#6b7280">&#8592; Legal Hub</a>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 shadow-lg z-50">
+  <div class="flex justify-around items-center py-2">
+    <a href="../index.html"           class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#127968;</span><span class="text-xs text-gray-400">होम</span></a>
+    <a href="legal.html"              class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#9878;&#65039;</span><span class="text-xs text-gray-400">कानूनी</span></a>
+    <a href="../practice/quiz.html"   class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#9999;&#65039;</span><span class="text-xs text-gray-400">अभ्यास</span></a>
+    <a href="../bridge/passage.html"  class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#128292;</span><span class="text-xs text-gray-400">अंग्रेज़ी</span></a>
+    <a href="../downloads/index.html" class="flex flex-col items-center gap-0.5 px-2 py-1"><span class="text-xl">&#128229;</span><span class="text-xs text-gray-400">PDF</span></a>
+  </div>
+</nav>
+
+<script>
+  function showTab(n){
+    document.querySelectorAll(".tc").forEach(function(e){e.classList.add("hidden");});
+    document.querySelectorAll(".tb").forEach(function(b){
+      b.classList.remove("active");b.classList.add("text-gray-500");
+      b.style.background="";b.style.color="";b.style.borderColor="";
+    });
+    document.getElementById("tc-"+n).classList.remove("hidden");
+    var b=document.getElementById("tb-"+n);
+    b.classList.add("active");b.classList.remove("text-gray-500");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function acc(id){
+    document.getElementById("ab-"+id).classList.toggle("open");
+    document.getElementById("ai-"+id).classList.toggle("open");
+  }
+  function sol(qid,chosen,correct){
+    ["A","B","C","D"].forEach(function(l){
+      var b=document.getElementById(qid+"-"+l);
+      if(!b)return;b.disabled=true;
+      if(l===correct)b.classList.add("bg-green-100","border-green-400","text-green-800");
+      else if(l===chosen&&chosen!==correct)b.classList.add("bg-red-100","border-red-400","text-red-800");
+    });
+    document.getElementById(qid+"-exp").classList.remove("hidden");
+  }
+  window.addEventListener("scroll",function(){
+    var d=document.documentElement;
+    document.getElementById("rp").style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+"%";
+  });
+</script>
+</body>
+</html>
