@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal Reasoning Quiz — CLAT Mitra</title>
+  <style>
+    :root {
+      --primary:   #e65c00;
+      --primary-d: #bf4a00;
+      --accent:    #f9a825;
+      --bg:        #fdfaf5;
+      --surface:   #ffffff;
+      --border:    #e8ddd0;
+      --text:      #1a1a1a;
+      --muted:     #6b6b6b;
+      --correct:   #2e7d32;
+      --wrong:     #c62828;
+      --correct-bg:#e8f5e9;
+      --wrong-bg:  #ffebee;
+      --radius:    12px;
+      --shadow:    0 2px 16px rgba(0,0,0,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg); color: var(--text);
+      min-height: 100vh; line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--primary); color: #fff;
+      padding: 0.75rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    nav a { color: #fff; text-decoration: none; font-size: 0.9rem; opacity: 0.85; }
+    nav a:hover { opacity: 1; }
+    nav .brand { font-weight: 700; font-size: 1.1rem; opacity: 1; margin-right: auto; }
+    nav .sep { opacity: 0.4; }
+
+    /* LAYOUT */
+    .page { max-width: 780px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+    /* HEADER */
+    .quiz-header { text-align: center; margin-bottom: 2rem; }
+    .quiz-header h1 { font-size: 1.6rem; color: var(--primary); margin-bottom: 0.4rem; }
+    .quiz-header p  { color: var(--muted); font-size: 0.95rem; }
+
+    /* FILTER BAR */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      justify-content: center; margin-bottom: 1.8rem;
+    }
+    .filter-btn {
+      border: 2px solid var(--border); background: var(--surface);
+      color: var(--muted); padding: 0.4rem 1rem; border-radius: 999px;
+      cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary); border-color: var(--primary); color: #fff;
+    }
+
+    /* PROGRESS */
+    .progress-wrap {
+      background: var(--border); border-radius: 999px;
+      height: 8px; margin-bottom: 0.5rem; overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px; transition: width 0.4s ease;
+    }
+    .progress-label {
+      text-align: right; font-size: 0.8rem;
+      color: var(--muted); margin-bottom: 1.5rem;
+    }
+
+    /* QUESTION CARD */
+    .q-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.6rem;
+      margin-bottom: 1.5rem; box-shadow: var(--shadow);
+    }
+    .q-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .badge {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 0.2rem 0.6rem; border-radius: 999px;
+      background: #fff3e0; color: var(--primary); border: 1px solid #ffe0b2;
+    }
+    .badge.topic { background: #e8eaf6; color: #3949ab; border-color: #c5cae9; }
+
+    /* PRINCIPLE / FACTS BOX */
+    .principle-box, .facts-box {
+      border-left: 3px solid var(--primary); background: #fff8f0;
+      padding: 0.8rem 1rem; border-radius: 0 8px 8px 0;
+      margin-bottom: 0.9rem; font-size: 0.9rem;
+    }
+    .facts-box { border-color: #f9a825; background: #fffde7; }
+    .box-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem;
+    }
+
+    /* QUESTION TEXT */
+    .q-text { font-weight: 600; font-size: 1rem; margin: 1rem 0 0.8rem; }
+
+    /* OPTIONS */
+    .options { display: flex; flex-direction: column; gap: 0.6rem; }
+    .option-btn {
+      text-align: left; background: var(--bg);
+      border: 2px solid var(--border); border-radius: 8px;
+      padding: 0.7rem 1rem; cursor: pointer; font-size: 0.92rem;
+      transition: all 0.18s; color: var(--text);
+    }
+    .option-btn:hover:not(:disabled) { border-color: var(--primary); background: #fff3e0; }
+    .option-btn.correct {
+      border-color: var(--correct); background: var(--correct-bg);
+      color: var(--correct); font-weight: 600;
+    }
+    .option-btn.wrong { border-color: var(--wrong); background: var(--wrong-bg); color: var(--wrong); }
+    .option-btn:disabled { cursor: default; }
+
+    /* EXPLANATION */
+    .explanation {
+      display: none; margin-top: 1rem;
+      background: #e8f5e9; border-left: 3px solid var(--correct);
+      padding: 0.8rem 1rem; border-radius: 0 8px 8px 0;
+      font-size: 0.88rem; color: #1b5e20;
+    }
+    .explanation.show { display: block; }
+    .explanation strong { display: block; margin-bottom: 0.3rem; color: var(--correct); }
+
+    /* SCORE BAR */
+    #score-bar {
+      display: none; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.5rem 1.6rem; margin-bottom: 2rem;
+      box-shadow: var(--shadow); text-align: center;
+    }
+    #score-bar h2 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.4rem; }
+    #score-bar .score-num { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+    #score-bar .score-msg { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+    .restart-btn {
+      margin-top: 1rem; background: var(--primary); color: #fff;
+      border: none; padding: 0.6rem 1.6rem; border-radius: 999px;
+      font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s;
+    }
+    .restart-btn:hover { background: var(--primary-d); }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center; padding: 3rem 1rem; color: var(--muted);
+    }
+    .empty-state .emoji { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .empty-state h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+    .empty-state p { font-size: 0.9rem; }
+
+    /* GLOSSARY */
+    #glossary-section { margin-top: 3rem; }
+    #glossary-section h2 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.3rem; }
+    #glossary-section > p { color: var(--muted); font-size: 0.88rem; margin-bottom: 1rem; }
+    .gloss-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.8rem;
+    }
+    .gloss-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 0.9rem 1rem;
+      cursor: pointer; transition: box-shadow 0.18s, border-color 0.18s;
+    }
+    .gloss-card:hover { box-shadow: var(--shadow); border-color: var(--primary); }
+    .gloss-term { font-weight: 700; font-size: 0.95rem; color: var(--primary); margin-bottom: 0.15rem; }
+    .gloss-subject { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .gloss-def {
+      font-size: 0.85rem; color: var(--text); display: none;
+      border-top: 1px dashed var(--border); padding-top: 0.5rem; margin-top: 0.3rem;
+    }
+    .gloss-card.open .gloss-def { display: block; }
+    .gloss-card.open { border-color: var(--primary); }
+
+    /* AUTO-TOOLTIP */
+    .gloss-tooltip {
+      border-bottom: 2px dotted var(--primary); color: var(--primary);
+      cursor: help; font-weight: 600; position: relative; display: inline;
+    }
+    .gloss-tooltip .tip-box {
+      display: none; position: absolute;
+      bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+      background: #1a1a1a; color: #fff; padding: 0.5rem 0.8rem;
+      border-radius: 8px; font-size: 0.78rem; font-weight: 400;
+      width: 220px; z-index: 100; line-height: 1.4;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25); pointer-events: none;
+    }
+    .gloss-tooltip .tip-box::after {
+      content: ''; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%); border: 6px solid transparent;
+      border-top-color: #1a1a1a;
+    }
+    .gloss-tooltip:hover .tip-box,
+    .gloss-tooltip:focus .tip-box { display: block; }
+
+    /* FOOTER */
+    footer { text-align: center; font-size: 0.8rem; color: var(--muted); padding: 2rem 1rem 1rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 540px) {
+      .page { padding: 1rem 0.75rem 3rem; }
+      .quiz-header h1 { font-size: 1.3rem; }
+      .q-card { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="brand">⚖️ CLAT Mitra</a>
+  <span class="sep">›</span>
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <span>Legal Reasoning Quiz</span>
+</nav>
+
+<div class="page">
+
+  <div class="quiz-header">
+    <h1>⚖️ Legal Reasoning Practice Quiz</h1>
+    <p>Principle → Facts → सही Conclusion चुनो | किसी भी underlined term पर hover करो — definition दिखेगी!</p>
+  </div>
+
+  <!-- QUIZ SUBJECT FILTER -->
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">🗂️ All</button>
+    <button class="filter-btn" data-filter="Legal Reasoning Basics">⚖️ Legal Reasoning</button>
+    <button class="filter-btn" data-filter="Contract">📝 Contract</button>
+    <button class="filter-btn" data-filter="Constitution">🏛️ Constitution</button>
+    <button class="filter-btn" data-filter="Torts">⚠️ Torts</button>
+    <button class="filter-btn" data-filter="Quantitative">🔢 Quant</button>
+    <button class="filter-btn" data-filter="Logical Reasoning">🧠 Logical Reasoning</button>
+    <button class="filter-btn" data-filter="GK">🌐 GK</button>
+    <button class="filter-btn" data-filter="English">📖 English</button>
+  </div>
+
+  <!-- SCORE BAR -->
+  <div id="score-bar">
+    <h2>🎉 Quiz Complete!</h2>
+    <div class="score-num" id="score-display">0 / 0</div>
+    <div class="score-msg" id="score-msg"></div>
+    <button class="restart-btn" onclick="restartQuiz()">🔁 फिर से करो</button>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap"><div class="progress-bar" id="prog-bar" style="width:0%"></div></div>
+  <div class="progress-label" id="prog-label">0 of 0 answered</div>
+
+  <!-- QUESTIONS -->
+  <div id="quiz-container"></div>
+
+  <!-- GLOSSARY -->
+  <div id="glossary-section">
+    <h2>📖 Glossary</h2>
+    <p>किसी भी term पर click करो — definition expand होगी।</p>
+    <div class="filter-bar" id="gloss-filter-bar">
+      <button class="filter-btn active" data-gfilter="all">All</button>
+      <button class="filter-btn" data-gfilter="Legal Reasoning Basics">⚖️ Legal Reasoning</button>
+      <button class="filter-btn" data-gfilter="Contract">📝 Contract</button>
+      <button class="filter-btn" data-gfilter="Constitution">🏛️ Constitution</button>
+      <button class="filter-btn" data-gfilter="Torts">⚠️ Torts</button>
+      <button class="filter-btn" data-gfilter="Quantitative">🔢 Quant</button>
+      <button class="filter-btn" data-gfilter="Logical Reasoning">🧠 Logical Reasoning</button>
+      <button class="filter-btn" data-gfilter="GK">🌐 GK</button>
+      <button class="filter-btn" data-gfilter="English">📖 English</button>
+    </div>
+    <div class="gloss-grid" id="gloss-grid"></div>
+  </div>
+
+</div>
+
+<footer>CLAT Mitra · बिल्कुल मुफ़्त · कोई sign-up नहीं</footer>
+
+<script src="../questionBank.js"></script>
+<script>
+// ── STATE ──
+let currentFilter = "all";
+let answers = {};
+let filtered = [];
+
+// ── HELPERS ──
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── AUTO-TOOLTIP ENGINE ──
+// Finds glossary terms inside text and wraps with hoverable tooltip span
+function buildTooltipHTML(text, glossaryArr) {
+  const sorted = [...glossaryArr].sort((a,b) => b.term.length - a.term.length);
+  let result = escHtml(text);
+  sorted.forEach(g => {
+    const safe = g.term.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+    const re = new RegExp('(?<![\w>])(' + safe + ')(?![\w<])', 'gi');
+    const defSafe = escHtml(g.definition);
+    result = result.replace(re,
+      `<span class="gloss-tooltip" tabindex="0">$1<span class="tip-box">${defSafe}</span></span>`
+    );
+  });
+  return result;
+}
+
+// ── RENDER QUIZ ──
+function renderQuiz() {
+  const { questions, glossary } = window.questionBank;
+  filtered = currentFilter === "all"
+    ? questions
+    : questions.filter(q => q.subject === currentFilter);
+
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  answers = {};
+  updateProgress();
+  document.getElementById('score-bar').style.display = 'none';
+
+  // Empty state for subjects with no questions yet
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="emoji">🚧</div>
+        <h3>Coming Soon!</h3>
+        <p>इस subject के questions जल्द आएंगे।<br>अभी दूसरा subject try करो।</p>
+      </div>`;
+    document.getElementById('prog-label').textContent = '0 of 0 answered';
+    document.getElementById('prog-bar').style.width = '0%';
+    return;
+  }
+
+  filtered.forEach((q, idx) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'qcard-' + q.id;
+    card.innerHTML = `
+      <div class="q-meta">
+        <span class="badge">${escHtml(q.subject)}</span>
+        <span class="badge topic">${escHtml(q.topic)}</span>
+        <span class="badge" style="background:#f3e5f5;color:#7b1fa2;border-color:#e1bee7;">Q${idx+1}</span>
+      </div>
+      <div class="principle-box">
+        <div class="box-label">📜 Principle</div>
+        <div>${buildTooltipHTML(q.principle, glossary)}</div>
+      </div>
+      <div class="facts-box">
+        <div class="box-label">📋 Facts</div>
+        <div>${buildTooltipHTML(q.facts, glossary)}</div>
+      </div>
+      <div class="q-text">${escHtml(q.question)}</div>
+      <div class="options" id="opts-${q.id}">
+        ${q.options.map(opt => {
+          const letter = opt.trim().charAt(0);
+          return `<button class="option-btn"
+            data-qid="${q.id}" data-letter="${letter}"
+            onclick="chooseAnswer('${q.id}','${letter}')">
+            ${escHtml(opt)}
+          </button>`;
+        }).join('')}
+      </div>
+      <div class="explanation" id="exp-${q.id}">
+        <strong>✅ Explanation</strong>
+        ${buildTooltipHTML(q.explanation, glossary)}
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+// ── ANSWER HANDLER ──
+function chooseAnswer(qid, letter) {
+  if (answers[qid]) return;
+  const q = window.questionBank.questions.find(x => x.id === qid);
+  answers[qid] = letter;
+
+  document.querySelectorAll('#opts-' + qid + ' .option-btn').forEach(btn => {
+    btn.disabled = true;
+    const l = btn.dataset.letter;
+    if (l === q.correctAnswer) btn.classList.add('correct');
+    else if (l === letter && letter !== q.correctAnswer) btn.classList.add('wrong');
+  });
+
+  const exp = document.getElementById('exp-' + qid);
+  if (exp) exp.classList.add('show');
+  updateProgress();
+  checkAllDone();
+}
+
+// ── PROGRESS ──
+function updateProgress() {
+  const total = filtered.length;
+  const done  = Object.keys(answers).length;
+  const pct   = total ? Math.round((done / total) * 100) : 0;
+  document.getElementById('prog-bar').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = done + ' of ' + total + ' answered';
+}
+
+// ── SCORE ──
+function checkAllDone() {
+  if (!filtered.length) return;
+  if (Object.keys(answers).length < filtered.length) return;
+  const correct = filtered.filter(q => answers[q.id] === q.correctAnswer).length;
+  const total   = filtered.length;
+  const bar     = document.getElementById('score-bar');
+  bar.style.display = 'block';
+  bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('score-display').textContent = correct + ' / ' + total;
+  const pct = Math.round((correct / total) * 100);
+  document.getElementById('score-msg').textContent =
+    pct === 100 ? '🌟 Perfect score! शानदार!' :
+    pct >= 75   ? '💪 बहुत अच्छा! Almost there.' :
+    pct >= 50   ? '📚 ठीक है — explanations दोबारा पढ़ो।' :
+                  '🔁 फिर से try करो — concepts review करो।';
+}
+
+function restartQuiz() {
+  renderQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── QUIZ FILTER ──
+document.getElementById('filter-bar').addEventListener('click', e => {
+  if (!e.target.matches('.filter-btn')) return;
+  currentFilter = e.target.dataset.filter;
+  document.querySelectorAll('#filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  renderQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ── RENDER GLOSSARY ──
+let glossaryFilter = "all";
+function renderGlossary() {
+  const { glossary } = window.questionBank;
+  const grid = document.getElementById('gloss-grid');
+  grid.innerHTML = '';
+  const list = glossaryFilter === "all"
+    ? glossary
+    : glossary.filter(g => g.subject === glossaryFilter);
+
+  if (list.length === 0) {
+    grid.innerHTML = '<p style="color:var(--muted);font-size:0.9rem;padding:1rem 0;">इस subject की glossary जल्द आएगी।</p>';
+    return;
+  }
+
+  list.forEach(g => {
+    const card = document.createElement('div');
+    card.className = 'gloss-card';
+    card.innerHTML = `
+      <div class="gloss-term">${escHtml(g.term)}</div>
+      <div class="gloss-subject">${escHtml(g.subject)}</div>
+      <div class="gloss-def">${escHtml(g.definition)}</div>`;
+    card.addEventListener('click', () => card.classList.toggle('open'));
+    grid.appendChild(card);
+  });
+}
+
+// ── GLOSSARY FILTER ──
+document.getElementById('gloss-filter-bar').addEventListener('click', e => {
+  if (!e.target.matches('.filter-btn')) return;
+  glossaryFilter = e.target.dataset.gfilter;
+  document.querySelectorAll('#gloss-filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  renderGlossary();
+});
+
+// ── INIT ──
+window.addEventListener('DOMContentLoaded', () => {
+  renderQuiz();
+  renderGlossary();
+});
+</script>
+</body>
+</html>
