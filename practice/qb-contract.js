@@ -87,4 +87,20 @@ window.qbContract = {
     }
   ]
 
-};
+},
+  {
+    id: "CON-03",                      // unique ID — just increment
+    subject: "Contract",               // must match dropdown exactly
+    topic: "Free Consent — Coercion",  // sub-topic label
+    principle: "A contract obtained by coercion is voidable at the option of the party whose consent was obtained by coercion.",
+    facts: "Rahul threatened to harm Suresh unless he signed a contract selling his car for Rs.10,000 below market value. Suresh signed. He now wants to cancel the contract.",
+    question: "Based on the Principle and Facts, which conclusion is correct?",
+    options: [
+      "A) The contract is void because coercion was used.",
+      "B) The contract is valid because Suresh signed it willingly.",
+      "C) The contract is voidable — Suresh can cancel it.",
+      "D) Rahul is liable for criminal breach of contract."
+    ],
+    correctAnswer: "C",
+    explanation: "The Principle states a contract obtained by coercion is voidable at the option of the aggrieved party. Suresh can choose to cancel it. Option A is wrong — it is voidable not void. Option B ignores the coercion. Option D introduces criminal liability not in the Principle."
+  },
