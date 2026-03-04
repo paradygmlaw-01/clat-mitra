@@ -145,6 +145,10 @@
 <footer>CLAT Mitra &nbsp;&#183;&nbsp; बिल्कुल मुफ़्त &nbsp;&#183;&nbsp; कोई sign-up नहीं</footer>
 
 <!-- ✅ questionBank.js is in the SAME folder (practice/) as quiz.html -->
+<script src="qb-legal-reasoning.js"></script>
+<script src="qb-contract.js"></script>
+<script src="qb-constitution.js"></script>
+<script src="qb-torts.js"></script>
 <script src="questionBank.js"></script>
 
 <script>
@@ -163,8 +167,11 @@ function buildTooltipHTML(text, gArr) {
   sorted.forEach(function(g) {
     var safe = g.term.replace(/[-.*+?^${}()|[\]\]/g,"\$&");
     var re   = new RegExp("(?<![\w>])(" + safe + ")(?![\w<])","gi");
-    result   = result.replace(re,
-      "<span class="gloss-tooltip" tabindex="0">$1<span class="tip-box">" + escHtml(g.definition) + "</span></span>"
+    result = result.replace(
+  re,
+  '<span class="gloss-tooltip" tabindex="0">$1' +
+  '<span class="tip-box">' + escHtml(g.definition) + '</span></span>'
+);
     );
   });
   return result;
