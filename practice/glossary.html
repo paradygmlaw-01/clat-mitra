@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glossary — CLAT Mitra</title>
+  <style>
+    :root {
+      --primary: #e65c00;
+      --accent:  #f9a825;
+      --bg:      #fdfaf5;
+      --surface: #ffffff;
+      --border:  #e8ddd0;
+      --text:    #1a1a1a;
+      --muted:   #6b6b6b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    nav { background: var(--primary); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1rem; }
+    nav span { color: rgba(255,255,255,0.6); }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+    h1 { text-align: center; color: var(--primary); font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .subtitle { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 1.8rem; }
+
+    .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+
+    .subject-select {
+      flex: 1; min-width: 200px; padding: 0.55rem 1rem; font-size: 0.95rem;
+      border: 2px solid var(--border); border-radius: 8px;
+      background: var(--surface); color: var(--text); cursor: pointer; outline: none;
+    }
+    .subject-select:focus { border-color: var(--primary); }
+
+    .btn-back {
+      white-space: nowrap; background: var(--surface); color: var(--primary);
+      border: 2px solid var(--primary); border-radius: 8px;
+      padding: 0.55rem 1.1rem; font-size: 0.9rem; font-weight: 700;
+      cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s;
+    }
+    .btn-back:hover { background: var(--primary); color: #fff; }
+
+    .search-box {
+      width: 100%; padding: 0.6rem 1rem; font-size: 0.95rem;
+      border: 2px solid var(--border); border-radius: 8px;
+      background: var(--surface); color: var(--text); outline: none;
+      margin-bottom: 1.5rem;
+    }
+    .search-box:focus { border-color: var(--primary); }
+
+    /* subject section headings */
+    .subject-heading {
+      font-size: 0.8rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--primary);
+      margin: 1.8rem 0 0.8rem; padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .gloss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.8rem; }
+
+    .gloss-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 0.9rem 1rem;
+      cursor: pointer; transition: box-shadow 0.18s, border-color 0.18s;
+    }
+    .gloss-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.09); border-color: var(--primary); }
+    .gloss-card.open  { border-color: var(--primary); }
+    .gloss-term    { font-weight: 700; font-size: 0.95rem; color: var(--primary); margin-bottom: 0.1rem; }
+    .gloss-subject { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .gloss-def     { font-size: 0.85rem; color: var(--text); display: none; border-top: 1px dashed var(--border); padding-top: 0.5rem; margin-top: 0.3rem; line-height: 1.6; }
+    .gloss-card.open .gloss-def { display: block; }
+
+    .empty-msg { text-align: center; padding: 3rem 1rem; color: var(--muted); font-size: 0.95rem; }
+
+    footer { text-align: center; font-size: 0.8rem; color: var(--muted); padding: 1.5rem 1rem; }
+
+    @media (max-width: 540px) {
+      .page { padding: 1rem 0.75rem 3rem; }
+      h1 { font-size: 1.3rem; }
+      .top-bar { flex-direction: column; align-items: stretch; }
+      .btn-back { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/clat-mitra/">&#9878;&#65039; CLAT Mitra</a>
+  <span>&#8250;</span>
+  <span style="color:#fff;opacity:0.9;">Glossary</span>
+</nav>
+
+<div class="page">
+
+  <h1>&#128218; Glossary</h1>
+  <p class="subtitle">किसी भी term पर click करो — definition expand होगी</p>
+
+  <div class="top-bar">
+    <select class="subject-select" id="subject-select" onchange="renderGlossary()">
+      <option value="all">&#128193; All Subjects</option>
+      <option value="Legal Reasoning Basics">&#9878;&#65039; Legal Reasoning</option>
+      <option value="Contract">&#128221; Contract</option>
+      <option value="Constitution">&#127963;&#65039; Constitution</option>
+      <option value="Torts">&#9888;&#65039; Torts</option>
+    </select>
+    <a class="btn-back" href="quiz.html">&#9654;&#65039; Back to Quiz</a>
+  </div>
+
+  <input class="search-box" id="search-box" type="text" placeholder="&#128269; Search a term..." oninput="renderGlossary()"/>
+
+  <div id="gloss-container"></div>
+
+</div>
+
+<footer>CLAT Mitra &nbsp;&#183;&nbsp; बिल्कुल मुफ़्त &nbsp;&#183;&nbsp; कोई sign-up नहीं</footer>
+
+<!-- Load subject files FIRST, master loader LAST -->
+<script src="qb-legal-reasoning.js"></script>
+<script src="qb-contract.js"></script>
+<script src="qb-constitution.js"></script>
+<script src="qb-torts.js"></script>
+<script src="questionBank.js"></script>
+
+<script>
+function renderGlossary() {
+  var container = document.getElementById("gloss-container");
+  container.innerHTML = "";
+
+  if (!window.questionBank || !window.questionBank.glossary) {
+    container.innerHTML = "<p class='empty-msg'>&#10060; Glossary load नहीं हुई। Check करो कि सभी qb-*.js files same folder में हैं।</p>";
+    return;
+  }
+
+  var subject = document.getElementById("subject-select").value;
+  var search  = document.getElementById("search-box").value.trim().toLowerCase();
+
+  var list = window.questionBank.glossary;
+  if (subject !== "all") list = list.filter(function(g){ return g.subject === subject; });
+  if (search) list = list.filter(function(g){
+    return g.term.toLowerCase().includes(search) || g.definition.toLowerCase().includes(search);
+  });
+
+  if (list.length === 0) {
+    container.innerHTML = "<p class='empty-msg'>&#128269; कोई term नहीं मिली। दूसरा keyword try करो।</p>";
+    return;
+  }
+
+  /* group by subject */
+  var groups = {};
+  list.forEach(function(g) {
+    if (!groups[g.subject]) groups[g.subject] = [];
+    groups[g.subject].push(g);
+  });
+
+  Object.keys(groups).forEach(function(subj) {
+    var heading = document.createElement("div");
+    heading.className = "subject-heading";
+    heading.textContent = subj;
+    container.appendChild(heading);
+
+    var grid = document.createElement("div");
+    grid.className = "gloss-grid";
+
+    groups[subj].forEach(function(g) {
+      var card = document.createElement("div");
+      card.className = "gloss-card";
+      card.innerHTML =
+        "<div class='gloss-term'>"    + esc(g.term)       + "</div>" +
+        "<div class='gloss-subject'>" + esc(g.subject)    + "</div>" +
+        "<div class='gloss-def'>"     + esc(g.definition) + "</div>";
+      card.addEventListener("click", function(){ card.classList.toggle("open"); });
+      grid.appendChild(card);
+    });
+
+    container.appendChild(grid);
+  });
+}
+
+function esc(str) {
+  return String(str)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+window.addEventListener("DOMContentLoaded", renderGlossary);
+</script>
+</body>
+</html>
