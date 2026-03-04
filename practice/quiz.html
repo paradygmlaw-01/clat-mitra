@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practice Quiz — CLAT Mitra</title>
+  <style>
+    :root {
+      --primary: #e65c00;
+      --accent:  #f9a825;
+      --bg:      #fdfaf5;
+      --surface: #ffffff;
+      --border:  #e8ddd0;
+      --text:    #1a1a1a;
+      --muted:   #6b6b6b;
+      --correct: #2e7d32;
+      --wrong:   #c62828;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    nav { background: var(--primary); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1rem; }
+    nav span { color: rgba(255,255,255,0.6); }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+    h1 { text-align: center; color: var(--primary); font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .subtitle { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 1.8rem; }
+
+    /* selector row */
+    .select-row {
+      display: flex; gap: 0.6rem; align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .subject-select {
+      flex: 1;
+      padding: 0.6rem 1rem; font-size: 0.95rem;
+      border: 2px solid var(--border); border-radius: 8px;
+      background: var(--surface); color: var(--text);
+      cursor: pointer; outline: none;
+    }
+    .subject-select:focus { border-color: var(--primary); }
+
+    .btn-go {
+      background: var(--primary); color: #fff;
+      border: none; border-radius: 8px;
+      padding: 0.6rem 1.4rem; font-size: 0.95rem;
+      font-weight: 700; cursor: pointer; transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-go:hover { background: #bf4a00; }
+
+    /* glossary link row */
+    .glossary-row {
+      text-align: right; margin-bottom: 1.6rem;
+    }
+    .btn-glossary {
+      background: var(--surface); color: var(--primary);
+      border: 2px solid var(--primary); border-radius: 8px;
+      padding: 0.45rem 1rem; font-size: 0.88rem; font-weight: 700;
+      cursor: pointer; text-decoration: none; display: inline-block;
+      transition: all 0.2s;
+    }
+    .btn-glossary:hover { background: var(--primary); color: #fff; }
+
+    /* progress */
+    .prog-wrap { background: var(--border); border-radius: 999px; height: 8px; margin-bottom: 0.4rem; }
+    .prog-bar  { height: 8px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 999px; transition: width 0.4s; }
+    .prog-text { text-align: right; font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+    /* cards */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem; margin-bottom: 1.5rem; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+    .q-num { font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+    .box { border-left: 3px solid var(--primary); background: #fff8f0; padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; margin-bottom: 0.8rem; font-size: 0.9rem; line-height: 1.6; }
+    .box.facts { border-color: var(--accent); background: #fffde7; }
+    .box-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.3rem; }
+    .q-text { font-weight: 600; font-size: 1rem; margin: 1rem 0 0.8rem; }
+    .options { display: flex; flex-direction: column; gap: 0.55rem; }
+    .opt { text-align: left; background: var(--bg); border: 2px solid var(--border); border-radius: 8px; padding: 0.65rem 1rem; cursor: pointer; font-size: 0.92rem; transition: all 0.15s; color: var(--text); }
+    .opt:hover:not(:disabled) { border-color: var(--primary); background: #fff3e0; }
+    .opt.correct { border-color: var(--correct); background: #e8f5e9; color: var(--correct); font-weight: 600; }
+    .opt.wrong   { border-color: var(--wrong);   background: #ffebee; color: var(--wrong); }
+    .opt:disabled { cursor: default; }
+    .explanation { display: none; margin-top: 1rem; background: #e8f5e9; border-left: 3px solid var(--correct); padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; font-size: 0.87rem; color: #1b5e20; line-height: 1.6; }
+    .explanation.show { display: block; }
+
+    /* score */
+    #score-box { display: none; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+    #score-box h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .big-score { font-size: 3rem; font-weight: 800; color: var(--primary); }
+    .score-msg { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
+    .btn-restart { margin-top: 1.2rem; background: var(--primary); color: #fff; border: none; padding: 0.65rem 1.8rem; border-radius: 999px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+    .btn-restart:hover { background: #bf4a00; }
+
+    /* state boxes */
+    .state-box { text-align: center; padding: 3rem 1rem; background: var(--surface); border-radius: 14px; border: 1px solid var(--border); }
+    .state-box .icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .state-box h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .state-box p  { color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
+    code { background: #f1f1f1; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.85rem; }
+
+    /* prompt to press Go */
+    .prompt-box { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: 0.95rem; }
+    .prompt-box .icon { font-size: 2rem; margin-bottom: 0.6rem; }
+
+    footer { text-align: center; font-size: 0.8rem; color: var(--muted); padding: 1.5rem 1rem; }
+
+    @media (max-width: 540px) {
+      .page { padding: 1rem 0.75rem 3rem; }
+      h1 { font-size: 1.3rem; }
+      .card { padding: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/clat-mitra/">&#9878;&#65039; CLAT Mitra</a>
+  <span>&#8250;</span>
+  <span style="color:#fff;opacity:0.9;">Practice Quiz</span>
+</nav>
+
+<div class="page">
+
+  <h1>Practice Quiz</h1>
+  <p class="subtitle">Subject चुनो → Go दबाओ → Quiz शुरू होगी</p>
+
+  <!-- Dropdown + Go button -->
+  <div class="select-row">
+    <select class="subject-select" id="subject-select">
+      <option value="all">&#128193; All Subjects</option>
+      <option value="Legal Reasoning Basics">&#9878;&#65039; Legal Reasoning</option>
+      <option value="Contract">&#128221; Contract</option>
+      <option value="Constitution">&#127963;&#65039; Constitution</option>
+      <option value="Torts">&#9888;&#65039; Torts</option>
+      <option value="Quantitative">&#128290; Quantitative (Math)</option>
+      <option value="Logical Reasoning">&#129504; Logical Reasoning</option>
+      <option value="GK">&#127758; General Knowledge</option>
+      <option value="English">&#128214; English</option>
+    </select>
+    <button class="btn-go" onclick="loadQuiz()">Go &#9654;</button>
+  </div>
+
+  <!-- Glossary button — separate row -->
+  <div class="glossary-row">
+    <a class="btn-glossary" href="glossary.html">&#128218; Open Glossary</a>
+  </div>
+
+  <!-- Score card -->
+  <div id="score-box">
+    <h2>&#127881; Quiz Complete!</h2>
+    <div class="big-score" id="score-num"></div>
+    <div class="score-msg"  id="score-msg"></div>
+    <button class="btn-restart" onclick="loadQuiz()">&#128260; फिर से करो</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog-wrap"><div class="prog-bar" id="prog-bar" style="width:0%"></div></div>
+  <div class="prog-text" id="prog-text"></div>
+
+  <!-- Questions rendered here -->
+  <div id="container">
+    <div class="prompt-box">
+      <div class="icon">&#9757;&#65039;</div>
+      Subject चुनो और <strong>Go</strong> दबाओ
+    </div>
+  </div>
+
+</div>
+
+<footer>CLAT Mitra &nbsp;&#183;&nbsp; बिल्कुल मुफ़्त &nbsp;&#183;&nbsp; कोई sign-up नहीं</footer>
+
+<!-- Load subject files FIRST, master loader LAST — never change this order -->
+<script src="qb-legal-reasoning.js"></script>
+<script src="qb-contract.js"></script>
+<script src="qb-constitution.js"></script>
+<script src="qb-torts.js"></script>
+<script src="questionBank.js"></script>
+
+<script>
+var questions = [];
+var answers   = {};
+
+function loadQuiz() {
+  answers = {};
+  document.getElementById("score-box").style.display = "none";
+  document.getElementById("container").innerHTML = "";
+  document.getElementById("prog-bar").style.width = "0%";
+  document.getElementById("prog-text").textContent = "";
+
+  var subject = document.getElementById("subject-select").value;
+
+  /* check bank loaded */
+  if (!window.questionBank || !window.questionBank.questions) {
+    document.getElementById("container").innerHTML =
+      "<div class='state-box'><div class='icon'>&#10060;</div>" +
+      "<h3>Questions load नहीं हुए</h3>" +
+      "<p>Check करो कि <code>questionBank.js</code> और सभी <code>qb-*.js</code> files<br>" +
+      "<code>quiz.html</code> के साथ same <code>practice/</code> folder में हैं।</p></div>";
+    return;
+  }
+
+  /* filter by subject */
+  var all = window.questionBank.questions;
+  questions = subject === "all"
+    ? all
+    : all.filter(function(q){ return q.subject === subject; });
+
+  /* coming soon */
+  var comingSoon = ["Quantitative","Logical Reasoning","GK","English"];
+  if (questions.length === 0) {
+    var msg = comingSoon.indexOf(subject) > -1
+      ? "<div class='state-box'><div class='icon'>&#128679;</div><h3>Coming Soon!</h3>" +
+        "<p>इस subject के questions जल्द add होंगे।<br>दूसरा subject try करो।</p></div>"
+      : "<div class='state-box'><div class='icon'>&#128203;</div><h3>No questions found</h3>" +
+        "<p>इस subject में अभी कोई question नहीं है।</p></div>";
+    document.getElementById("container").innerHTML = msg;
+    return;
+  }
+
+  updateProgress();
+  renderAll();
+  /* scroll to first question */
+  document.getElementById("container").scrollIntoView({ behavior:"smooth", block:"start" });
+}
+
+function renderAll() {
+  var container = document.getElementById("container");
+  container.innerHTML = "";
+  questions.forEach(function(q, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    card.id = "card-" + q.id;
+
+    var opts = q.options.map(function(opt) {
+      var letter = opt.trim().charAt(0);
+      return "<button class='opt' data-letter='" + letter + "'" +
+        " onclick='answer("" + q.id + "","" + letter + "")'>" + esc(opt) + "</button>";
+    }).join("");
+
+    card.innerHTML =
+      "<div class='q-num'>Q" + (idx+1) + " &nbsp;&#183;&nbsp; " + esc(q.subject) +
+      " &nbsp;&#183;&nbsp; " + esc(q.topic) + "</div>" +
+      "<div class='box'><div class='box-label'>&#128220; Principle</div>" + esc(q.principle) + "</div>" +
+      "<div class='box facts'><div class='box-label'>&#128203; Facts</div>" + esc(q.facts) + "</div>" +
+      "<div class='q-text'>" + esc(q.question) + "</div>" +
+      "<div class='options' id='opts-" + q.id + "'>" + opts + "</div>" +
+      "<div class='explanation' id='exp-" + q.id + "'>" +
+        "<strong style='display:block;margin-bottom:0.3rem;color:#2e7d32;'>&#9989; Explanation</strong>" +
+        esc(q.explanation) + "</div>";
+
+    container.appendChild(card);
+  });
+}
+
+function answer(qid, letter) {
+  if (answers[qid]) return;
+  var q = questions.filter(function(x){ return x.id === qid; })[0];
+  answers[qid] = letter;
+  document.querySelectorAll("#opts-" + qid + " .opt").forEach(function(btn) {
+    btn.disabled = true;
+    var l = btn.getAttribute("data-letter");
+    if (l === q.correctAnswer)                           btn.classList.add("correct");
+    else if (l === letter && letter !== q.correctAnswer) btn.classList.add("wrong");
+  });
+  var exp = document.getElementById("exp-" + qid);
+  if (exp) exp.classList.add("show");
+  updateProgress();
+  checkDone();
+}
+
+function updateProgress() {
+  var total = questions.length;
+  var done  = Object.keys(answers).length;
+  var pct   = total ? Math.round((done/total)*100) : 0;
+  document.getElementById("prog-bar").style.width = pct + "%";
+  document.getElementById("prog-text").textContent = done + " of " + total + " answered";
+}
+
+function checkDone() {
+  if (!questions.length || Object.keys(answers).length < questions.length) return;
+  var correct = questions.filter(function(q){ return answers[q.id] === q.correctAnswer; }).length;
+  var total   = questions.length;
+  var pct     = Math.round((correct/total)*100);
+  var box     = document.getElementById("score-box");
+  box.style.display = "block";
+  box.scrollIntoView({ behavior:"smooth", block:"start" });
+  document.getElementById("score-num").textContent = correct + " / " + total;
+  document.getElementById("score-msg").textContent =
+    pct===100 ? "&#127775; Perfect! शानदार!" :
+    pct>=75   ? "&#128170; बहुत अच्छा!" :
+    pct>=50   ? "&#128218; Explanations दोबारा पढ़ो।" :
+                "&#128260; फिर से try करो।";
+}
+
+function esc(str) {
+  return String(str)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+</script>
+</body>
+</html>
