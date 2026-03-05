@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contract Law Notes — CLAT Mitra</title>
+  <style>
+    :root {
+      --primary: #e65c00;
+      --accent:  #f9a825;
+      --bg:      #fdfaf5;
+      --surface: #ffffff;
+      --border:  #e8ddd0;
+      --text:    #1a1a1a;
+      --muted:   #6b6b6b;
+      --correct: #2e7d32;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    nav { background: var(--primary); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1rem; }
+    nav span { color: rgba(255,255,255,0.6); }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem 1rem 5rem; }
+
+    /* hero */
+    .hero { text-align: center; margin-bottom: 2.5rem; }
+    .hero h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .hero p  { color: var(--muted); font-size: 0.95rem; }
+    .badge { display: inline-block; background: #fff3e0; color: var(--primary); border: 1px solid var(--accent); border-radius: 999px; padding: 0.2rem 0.8rem; font-size: 0.78rem; font-weight: 700; margin-top: 0.5rem; }
+
+    /* sticky TOC */
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 2rem; }
+    .toc h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); margin-bottom: 0.7rem; }
+    .toc ol  { padding-left: 1.2rem; }
+    .toc li  { margin-bottom: 0.3rem; }
+    .toc a   { color: var(--primary); text-decoration: none; font-size: 0.9rem; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* section cards */
+    .section { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem 2rem; margin-bottom: 1.8rem; box-shadow: 0 2px 14px rgba(0,0,0,0.06); }
+    .section-title { font-size: 1.15rem; font-weight: 800; color: var(--primary); margin-bottom: 1.1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.5rem; }
+    .section-title .num { background: var(--primary); color: #fff; border-radius: 50%; width: 1.7rem; height: 1.7rem; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; }
+
+    h3.sub { font-size: 1rem; color: #333; margin: 1.2rem 0 0.5rem; }
+    p { margin-bottom: 0.8rem; font-size: 0.95rem; }
+
+    /* highlight boxes */
+    .box { border-left: 3px solid var(--primary); background: #fff8f0; padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; margin: 0.8rem 0; font-size: 0.92rem; }
+    .box.green  { border-color: var(--correct); background: #f1f8f1; }
+    .box.yellow { border-color: var(--accent);  background: #fffde7; }
+    .box-label  { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.3rem; }
+
+    /* lists */
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.8rem; font-size: 0.93rem; }
+    li { margin-bottom: 0.35rem; }
+
+    /* tags */
+    .tag { display: inline-block; background: #fff3e0; color: var(--primary); border-radius: 4px; padding: 0.1rem 0.5rem; font-size: 0.78rem; font-weight: 700; margin-right: 0.3rem; }
+    .tag.red  { background: #fdecea; color: #c62828; }
+    .tag.green{ background: #e8f5e9; color: #2e7d32; }
+
+    /* MCQ section */
+    .mcq-list { counter-reset: mcq; }
+    .mcq-item { counter-increment: mcq; background: #fafafa; border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 0.9rem; }
+    .mcq-item::before { content: "Q" counter(mcq) ". "; font-weight: 700; color: var(--primary); }
+    .mcq-q { font-weight: 600; font-size: 0.93rem; display: inline; }
+    .mcq-opts { list-style: none; padding-left: 0; margin: 0.5rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1rem; }
+    .mcq-opts li { font-size: 0.88rem; color: #444; }
+    .mcq-ans { font-size: 0.8rem; color: var(--correct); font-weight: 700; margin-top: 0.4rem; }
+
+    /* glossary table */
+    .gloss-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 0.5rem; }
+    .gloss-table th { background: var(--primary); color: #fff; padding: 0.55rem 0.8rem; text-align: left; font-size: 0.8rem; }
+    .gloss-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .gloss-table tr:nth-child(even) td { background: #fdf8f3; }
+    .gloss-table tr:hover td { background: #fff3e0; }
+
+    /* answer key */
+    .answer-key { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+    .ak-item { background: #e8f5e9; color: #1b5e20; border-radius: 6px; padding: 0.25rem 0.6rem; font-size: 0.82rem; font-weight: 700; }
+
+    /* back / quiz button */
+    .btn-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .btn { display: inline-block; padding: 0.55rem 1.2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+    .btn-outline { background: var(--surface); color: var(--primary); border: 2px solid var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .btn-fill { background: var(--primary); color: #fff; }
+    .btn-fill:hover { background: #bf4a00; }
+
+    footer { text-align: center; font-size: 0.8rem; color: var(--muted); padding: 1.5rem 1rem; }
+
+    @media (max-width: 600px) {
+      .section { padding: 1.2rem 1rem; }
+      .hero h1 { font-size: 1.4rem; }
+      .mcq-opts { grid-template-columns: 1fr; }
+      .gloss-table { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">&#9878;&#65039; CLAT Mitra</a>
+  <span>&#8250;</span>
+  <span style="color:#fff;opacity:0.9;">Contract Notes</span>
+</nav>
+
+<div class="page">
+
+  <div class="hero">
+    <h1>&#128221; भारतीय अनुबंध कानून</h1>
+    <p>Indian Contract Act, 1872 — CLAT Study Notes (Hindi)</p>
+    <span class="badge">&#128218; Study Notes &nbsp;|&nbsp; 30 MCQs &nbsp;|&nbsp; Glossary</span>
+  </div>
+
+  <div class="btn-row">
+    <a class="btn btn-outline" href="../practice/quiz.html">&#9654;&#65039; Practice Quiz</a>
+    <a class="btn btn-outline" href="../practice/glossary.html">&#128218; Glossary</a>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>&#128195; विषय-सूची (Table of Contents)</h3>
+    <ol>
+      <li><a href="#essentials">अनुबंध की अनिवार्यताएं और सहमति</a></li>
+      <li><a href="#consideration">प्रतिफल (Consideration)</a></li>
+      <li><a href="#legality">उद्देश्य की वैधता और सार्वजनिक नीति</a></li>
+      <li><a href="#breach">अनुबंध का उल्लंघन और उपचार</a></li>
+      <li><a href="#mcq">बहुविकल्पीय प्रश्न (30 MCQs)</a></li>
+      <li><a href="#answerkey">उत्तर कुंजी</a></li>
+      <li><a href="#glossary">शब्दावली (Glossary)</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="essentials">
+    <div class="section-title"><span class="num">1</span> अनुबंध की अनिवार्यताएं और सहमति (Essentials and Consent)</div>
+
+    <div class="box yellow">
+      <div class="box-label">&#128220; धारा 10 — Section 10</div>
+      एक वैध अनुबंध के लिए: <strong>स्वतंत्र सहमति</strong>, <strong>अनुबंध करने की क्षमता (Competence)</strong>, <strong>वैध प्रतिफल</strong> और <strong>वैध उद्देश्य</strong> आवश्यक हैं — तथा यह समझौता कानून द्वारा शून्य घोषित न हो।
+    </div>
+
+    <h3 class="sub">सहमति का अर्थ (Section 13)</h3>
+    <p>सहमति तब मानी जाती है जब दो या दो से अधिक व्यक्ति <strong>"एक ही वस्तु पर एक ही भाव में"</strong> सहमत होते हैं — इसे <em>Consensus ad idem</em> कहते हैं।</p>
+    <div class="box green">
+      <div class="box-label">&#9878;&#65039; landmark case</div>
+      <strong>Raffles v Wichelhaus</strong> — दो जहाजों के नाम 'Peerless' होने से भ्रम हुआ → कोई अनुबंध नहीं बना। Meeting of minds absent था।
+    </div>
+
+    <h3 class="sub">स्वतंत्र सहमति (Free Consent — Section 14)</h3>
+    <p>सहमति तब 'स्वतंत्र' होती है जब वह इन 5 कारकों से प्रभावित न हो:</p>
+    <ol>
+      <li><strong>Coercion (उत्पीड़न — Sec 15):</strong> IPC निषिद्ध कार्य या धमकी, या संपत्ति अवैध रूप से रोकना। <span class="tag red">Result: Voidable</span></li>
+      <li><strong>Undue Influence (अनुचित प्रभाव — Sec 16):</strong> Fiduciary relationship में एक पक्ष दूसरे की इच्छा पर हावी हो (डॉक्टर-मरीज, वकील-मुवक्किल)। <span class="tag red">Result: Voidable</span></li>
+      <li><strong>Fraud (कपट — Sec 17):</strong> धोखा देने के इरादे से जानबूझकर झूठा दावा या active concealment। <span class="tag red">Result: Voidable</span></li>
+      <li><strong>Misrepresentation (मिथ्या वर्णन — Sec 18):</strong> निर्दोषता से दिया गया गलत बयान — धोखे का इरादा नहीं। <span class="tag red">Result: Voidable</span></li>
+      <li><strong>Mistake (भूल — Sec 20, 21, 22):</strong> कानून की भूल (Sec 21) → void नहीं; दोनों पक्षों की तथ्य की भूल (Sec 20, Bilateral Mistake of Fact) → <span class="tag red">Void</span></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="consideration">
+    <div class="section-title"><span class="num">2</span> प्रतिफल (Consideration — Section 2(d))</div>
+
+    <div class="box yellow">
+      <div class="box-label">&#128220; परिभाषा</div>
+      <em>Quid pro quo</em> — "बदले में कुछ।" यह कोई अधिकार, हित, लाभ, संयम (Forbearance), हानि या उत्तरदायित्व हो सकता है।
+    </div>
+
+    <h3 class="sub">प्रतिफल के नियम</h3>
+    <ul>
+      <li>यह <strong>वचनदाता (Promisor)</strong> की इच्छा पर होना चाहिए।</li>
+      <li>भारत में consideration <strong>किसी अन्य व्यक्ति</strong> से भी आ सकता है।</li>
+      <li>यह <strong>भूतकाल / वर्तमान / भविष्य</strong> का हो सकता है।</li>
+      <li>यह <strong>वास्तविक (Real)</strong> होना चाहिए — भ्रामक नहीं।</li>
+    </ul>
+
+    <h3 class="sub">अपवाद — "No consideration, no contract" (Section 25)</h3>
+    <ol>
+      <li>लिखित + पंजीकृत समझौता जो <strong>Natural love and affection</strong> पर आधारित हो।</li>
+      <li>स्वेच्छा से किए गए <strong>पिछले कार्य</strong> के लिए मुआवजे का वादा।</li>
+      <li><strong>Time-barred debt</strong> — लिखित और हस्ताक्षरित वादा।</li>
+      <li><strong>Completed gifts</strong> (पूर्ण उपहार)।</li>
+      <li><strong>Agency का निर्माण</strong> — Section 185 (बिना consideration के भी)।</li>
+    </ol>
+
+    <div class="box green">
+      <div class="box-label">&#9878;&#65039; landmark case</div>
+      <strong>Chinnayya v Ramayya</strong> — India में "Stranger to Consideration" की अवधारणा — consideration किसी third party से भी move कर सकता है।
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="legality">
+    <div class="section-title"><span class="num">3</span> उद्देश्य की वैधता और सार्वजनिक नीति (Legality — Section 23)</div>
+
+    <h3 class="sub">अवैध उद्देश्य कब?</h3>
+    <ul>
+      <li>कानून द्वारा <strong>निषिद्ध (Forbidden by law)</strong> हो।</li>
+      <li>किसी कानून के प्रावधानों को <strong>विफल</strong> करता हो।</li>
+      <li><strong>धोखाधड़ी (Fraudulent)</strong> वाला हो।</li>
+      <li>किसी व्यक्ति या संपत्ति को <strong>चोट (Injury)</strong> पहुँचाना शामिल हो।</li>
+      <li>अदालत उसे <strong>अनैतिक या Public Policy</strong> के विरुद्ध माने।</li>
+    </ul>
+
+    <h3 class="sub">सार्वजनिक नीति के विरुद्ध समझौते</h3>
+    <ul>
+      <li><strong>Trading with Enemy</strong> — बिना अनुमति के दुश्मन देश से व्यापार।</li>
+      <li><strong>Stifling Prosecution</strong> — आपराधिक कार्यवाही रोकने का समझौता।</li>
+      <li><strong>Champerty and Maintenance</strong> — मुकदमे में सहायता के बदले जीत का हिस्सा; भारत में हमेशा void नहीं — अदालतें fairness देखती हैं।</li>
+      <li>सार्वजनिक <strong>पदों और पदवियों की बिक्री।</strong></li>
+      <li><strong>Restraint of Marriage</strong> — विवाह में बाधा।</li>
+      <li><strong>Marriage Brokerage Contracts</strong> — Void।</li>
+    </ul>
+
+    <div class="box">
+      <div class="box-label">&#9888;&#65039; महत्वपूर्ण नियम</div>
+      यदि अनुबंध आंशिक रूप से वैध और आंशिक रूप से अवैध है, और उन्हें <strong>अलग नहीं किया जा सकता</strong>, तो पूरा अनुबंध <strong>Void</strong> होगा।
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="breach">
+    <div class="section-title"><span class="num">4</span> अनुबंध का उल्लंघन और उपचार (Breach and Remedies)</div>
+
+    <h3 class="sub">उल्लंघन के प्रकार</h3>
+    <ul>
+      <li><strong>Anticipatory Breach (Sec 39):</strong> प्रदर्शन की तारीख से <em>पहले</em> मना कर देना। पीड़ित पक्ष तुरंत मुकदमा कर सकता है या तारीख तक इंतजार कर सकता है।</li>
+      <li><strong>Actual Breach:</strong> प्रदर्शन की नियत तारीख पर या दौरान उल्लंघन।</li>
+    </ul>
+
+    <h3 class="sub">हर्जाने के प्रकार (Section 73)</h3>
+    <ul>
+      <li><span class="tag">Ordinary</span> स्वाभाविक रूप से उल्लंघन से उत्पन्न — वसूल होता है।</li>
+      <li><span class="tag">Special</span> अनुबंध के समय विशेष परिस्थितियाँ बताई गई थीं — वसूल होता है।</li>
+      <li><span class="tag">Nominal</span> वास्तविक हानि नहीं, केवल अधिकार स्थापित करने के लिए।</li>
+      <li><span class="tag red">Remote/Indirect</span> दूरस्थ हानि — सामान्यतः वसूल <em>नहीं</em> होती।</li>
+    </ul>
+
+    <div class="box green">
+      <div class="box-label">&#9878;&#65039; landmark case — Damages</div>
+      <strong>Hadley v Baxendale</strong> — Damages वही मिलेंगे जो स्वाभाविक रूप से उत्पन्न हों, या जिनकी विशेष जानकारी अनुबंध के समय दी गई हो।
+    </div>
+
+    <h3 class="sub">Liquidated Damages vs Penalty (Section 74)</h3>
+    <div class="box yellow">
+      <div class="box-label">&#128220; नियम</div>
+      अदालत <strong>reasonable compensation</strong> देगी — अधिकतम तय राशि तक। यदि तय रकम हानि का उचित पूर्व-अनुमान है → <em>Liquidated Damages</em>। यदि डराने के लिए अत्यधिक है → <em>Penalty</em>।
+    </div>
+
+    <h3 class="sub">अन्य उपचार</h3>
+    <ul>
+      <li><strong>Rescission</strong> — अनुबंध रद्द करना।</li>
+      <li><strong>Quantum Meruit</strong> — जितना काम उतना दाम।</li>
+      <li><strong>Specific Performance</strong> — अनुबंध पूरा करने का न्यायालय आदेश।</li>
+      <li><strong>Injunction</strong> — उल्लंघन रोकने का आदेश।</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5 — MCQs -->
+  <div class="section" id="mcq">
+    <div class="section-title"><span class="num">5</span> बहुविकल्पीय प्रश्न — 30 MCQs</div>
+    <div class="mcq-list">
+
+      <div class="mcq-item"><span class="mcq-q">Section 13 के अनुसार 'Consent' का क्या अर्थ है?</span>
+        <ul class="mcq-opts"><li>A) लिखित अनुबंध पर हस्ताक्षर</li><li>B) एक ही बात पर एक ही भाव में सहमत होना</li><li>C) धमकी देना</li><li>D) पैसे देना</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">IPC निषिद्ध कार्य की धमकी देकर सहमति — क्या कहलाता है?</span>
+        <ul class="mcq-opts"><li>A) Fraud</li><li>B) Undue Influence</li><li>C) Coercion</li><li>D) Misrepresentation</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Fiduciary Relationship में सहमति प्राप्त करने में किसकी संभावना अधिक?</span>
+        <ul class="mcq-opts"><li>A) Coercion</li><li>B) Undue Influence</li><li>C) Mistake</li><li>D) Actual Breach</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">'Consensus ad idem' किस मामले में स्पष्ट हुआ?</span>
+        <ul class="mcq-opts"><li>A) Hadley v Baxendale</li><li>B) Raffles v Wichelhaus</li><li>C) Chinnayya v Ramayya</li><li>D) Durga Prasad v Baldeo</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Fraud और Misrepresentation में मुख्य अंतर?</span>
+        <ul class="mcq-opts"><li>A) राशि का अंतर</li><li>B) धोखा देने का इरादा</li><li>C) वकीलों की भागीदारी</li><li>D) गवाहों की उपस्थिति</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Bilateral Mistake of Fact (Sec 20) — अनुबंध की स्थिति?</span>
+        <ul class="mcq-opts"><li>A) Valid</li><li>B) Voidable</li><li>C) Void</li><li>D) Legal</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">'Quid pro quo' का अर्थ?</span>
+        <ul class="mcq-opts"><li>A) कानून का पालन</li><li>B) बदले में कुछ</li><li>C) अनुबंध समाप्त करना</li><li>D) धोखाधड़ी</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">भारत में Consideration किसके द्वारा दिया जा सकता है?</span>
+        <ul class="mcq-opts"><li>A) केवल Promisor</li><li>B) केवल Promisee</li><li>C) Promisee या कोई अन्य व्यक्ति</li><li>D) केवल सरकारी अधिकारी</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">'Stranger to a Contract' — सामान्य नियम?</span>
+        <ul class="mcq-opts"><li>A) लागू कर सकता है</li><li>B) लागू नहीं कर सकता (सामान्यतः)</li><li>C) हमेशा Consideration देता है</li><li>D) मुख्य हिस्सा होता है</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">No consideration, no contract — एक अपवाद?</span>
+        <ul class="mcq-opts"><li>A) व्यावसायिक सौदे</li><li>B) Natural love + registered agreement</li><li>C) जुए के समझौते</li><li>D) विदेशी मुद्रा</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">डूबते व्यक्ति को बचाया — बाद में इनाम देने का वादा — किस श्रेणी में?</span>
+        <ul class="mcq-opts"><li>A) Past Consideration</li><li>B) Future Consideration</li><li>C) Illegal Consideration</li><li>D) No Consideration</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: A</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Time-barred debt को वैध बनाने के लिए क्या आवश्यक?</span>
+        <ul class="mcq-opts"><li>A) मौखिक वादा</li><li>B) नया Consideration</li><li>C) लिखित और हस्ताक्षरित वादा</li><li>D) अदालती आदेश</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Sec 23 — कौन सा उद्देश्य अवैध?</span>
+        <ul class="mcq-opts"><li>A) व्यापार करना</li><li>B) कानून के प्रावधान विफल करना</li><li>C) उपहार देना</li><li>D) संपत्ति खरीदना</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">'Stifling Prosecution' का अर्थ?</span>
+        <ul class="mcq-opts"><li>A) नए कानून बनाना</li><li>B) आपराधिक कार्यवाही रोकने का समझौता</li><li>C) गवाहों की सुरक्षा</li><li>D) पुलिस सूचना</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Marriage Brokerage Contract — कानूनी स्थिति?</span>
+        <ul class="mcq-opts"><li>A) Valid</li><li>B) Voidable</li><li>C) Void</li><li>D) केवल भारत में मान्य</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Champerty का अर्थ?</span>
+        <ul class="mcq-opts"><li>A) शादी के लिए पैसे</li><li>B) मुकदमे में सहायता के बदले जीत का हिस्सा</li><li>C) सरकारी पद बेचना</li><li>D) विदेशी व्यापार</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">आंशिक वैध + आंशिक अवैध अनुबंध — अलग नहीं हो सकता — तो?</span>
+        <ul class="mcq-opts"><li>A) पूर्णतः वैध</li><li>B) पूर्णतः Void</li><li>C) दंडनीय</li><li>D) विदेशी कानून अधीन</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Alien Enemy के साथ अनुबंध (बिना अनुमति)?</span>
+        <ul class="mcq-opts"><li>A) हाँ, हमेशा वैध</li><li>B) नहीं — Public Policy के विरुद्ध</li><li>C) केवल लिखित में</li><li>D) केवल उपहारों के लिए</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Anticipatory Breach कब होता है?</span>
+        <ul class="mcq-opts"><li>A) प्रदर्शन के समय</li><li>B) अनुबंध पूरा होने के बाद</li><li>C) प्रदर्शन की तारीख से पहले</li><li>D) केवल भुगतान के समय</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Section 39 किससे संबंधित?</span>
+        <ul class="mcq-opts"><li>A) Actual Breach</li><li>B) Anticipatory Breach</li><li>C) No Breach</li><li>D) Mistake of Law</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Hadley v Baxendale किस विषय से?</span>
+        <ul class="mcq-opts"><li>A) स्वतंत्र सहमति</li><li>B) हर्जाने का मापन</li><li>C) Consideration की पर्याप्तता</li><li>D) शादी का वादा</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Nominal Damages कब?</span>
+        <ul class="mcq-opts"><li>A) बड़ी हानि हुई हो</li><li>B) वास्तविक हानि न हो, अधिकार स्थापित करना हो</li><li>C) अपराधी को जेल भेजना हो</li><li>D) विदेशी व्यापार में</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Penalty और Liquidated Damages में मुख्य अंतर?</span>
+        <ul class="mcq-opts"><li>A) केवल राशि का अंतर</li><li>B) इरादा — भरपाई बनाम डराना</li><li>C) वकीलों की फीस</li><li>D) भुगतान की विधि</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Vindictive/Exemplary Damages कब?</span>
+        <ul class="mcq-opts"><li>A) प्रतिष्ठा/मान-सम्मान को विशेष नुकसान हो</li><li>B) किराने की डिलीवरी न हो</li><li>C) साधारण कर्ज न चुके</li><li>D) बिजली बिल न भरे</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: A</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Section 73 — कौन सा हर्जाना वसूल नहीं?</span>
+        <ul class="mcq-opts"><li>A) Ordinary Damages</li><li>B) Special Damages</li><li>C) Remote/Indirect Loss</li><li>D) Natural Loss</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">'Quantum Meruit' का अर्थ?</span>
+        <ul class="mcq-opts"><li>A) जितना काम उतना दाम</li><li>B) अनुबंध का अंत</li><li>C) कानून की भूल</li><li>D) Consideration का अभाव</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: A</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">अनुबंध में तय राशि अत्यधिक हो — अदालत क्या देगी?</span>
+        <ul class="mcq-opts"><li>A) पूरी तय राशि</li><li>B) कुछ नहीं</li><li>C) Reasonable compensation, अधिकतम तय राशि तक</li><li>D) तय राशि का दोगुना</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Inadequacy of Consideration — अनुबंध कब प्रभावित?</span>
+        <ul class="mcq-opts"><li>A) हमेशा</li><li>B) कभी नहीं</li><li>C) जब Free Consent पर सवाल हो</li><li>D) केवल मौखिक अनुबंधों में</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: C</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">Sec 25(3) — Time-barred debt का वादा किसके द्वारा?</span>
+        <ul class="mcq-opts"><li>A) केवल लेनदार</li><li>B) कर्जदार या उसके एजेंट</li><li>C) सरपंच</li><li>D) स्थानीय पुलिस</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+      <div class="mcq-item"><span class="mcq-q">'Stranger to Consideration' — किस मामले पर आधारित?</span>
+        <ul class="mcq-opts"><li>A) Mohiri Bibee Case</li><li>B) Chinnayya v Ramayya</li><li>C) Carlill v Carbolic Smoke Ball</li><li>D) Balfour v Balfour</li></ul>
+        <div class="mcq-ans">&#9989; उत्तर: B</div></div>
+
+    </div>
+  </div>
+
+  <!-- ANSWER KEY -->
+  <div class="section" id="answerkey">
+    <div class="section-title"><span class="num">6</span> उत्तर कुंजी (Answer Key)</div>
+    <div class="answer-key">
+      <span class="ak-item">1-B</span><span class="ak-item">2-C</span><span class="ak-item">3-B</span><span class="ak-item">4-B</span><span class="ak-item">5-B</span>
+      <span class="ak-item">6-C</span><span class="ak-item">7-B</span><span class="ak-item">8-C</span><span class="ak-item">9-B</span><span class="ak-item">10-B</span>
+      <span class="ak-item">11-A</span><span class="ak-item">12-C</span><span class="ak-item">13-B</span><span class="ak-item">14-B</span><span class="ak-item">15-C</span>
+      <span class="ak-item">16-B</span><span class="ak-item">17-B</span><span class="ak-item">18-B</span><span class="ak-item">19-C</span><span class="ak-item">20-B</span>
+      <span class="ak-item">21-B</span><span class="ak-item">22-B</span><span class="ak-item">23-B</span><span class="ak-item">24-A</span><span class="ak-item">25-C</span>
+      <span class="ak-item">26-A</span><span class="ak-item">27-C</span><span class="ak-item">28-C</span><span class="ak-item">29-B</span><span class="ak-item">30-B</span>
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section" id="glossary">
+    <div class="section-title"><span class="num">7</span> शब्दावली (Glossary)</div>
+    <table class="gloss-table">
+      <thead><tr><th>English Term</th><th>Hindi Term</th><th>परिभाषा</th></tr></thead>
+      <tbody>
+        <tr><td>Agreement</td><td>समझौता</td><td>एक वादा या वादों का समूह जो एक-दूसरे के लिए प्रतिफल बनते हैं।</td></tr>
+        <tr><td>Anticipatory Breach</td><td>अग्रिम उल्लंघन</td><td>प्रदर्शन की नियत तिथि से पहले अनुबंध पूरा करने से इनकार।</td></tr>
+        <tr><td>Champerty</td><td>चम्पर्टी</td><td>मुकदमे में सहायता के बदले जीत का हिस्सा; भारत में हमेशा void नहीं।</td></tr>
+        <tr><td>Coercion</td><td>उत्पीड़न</td><td>IPC निषिद्ध कार्य/धमकी द्वारा सहमति लेना।</td></tr>
+        <tr><td>Consensus ad idem</td><td>मन का मिलन</td><td>एक ही विषय पर एक ही समझ के साथ सहमत होना।</td></tr>
+        <tr><td>Consideration</td><td>प्रतिफल</td><td>अनुबंध के बदले में दिया गया मूल्य/लाभ (Quid pro quo)।</td></tr>
+        <tr><td>Damages</td><td>हर्जाना</td><td>उल्लंघन से हुई हानि के लिए दिया जाने वाला मौद्रिक मुआवज़ा।</td></tr>
+        <tr><td>Fiduciary Relationship</td><td>विश्वासपूर्ण संबंध</td><td>भरोसे पर आधारित संबंध — वकील-मुवक्किल, डॉक्टर-मरीज।</td></tr>
+        <tr><td>Fraud</td><td>कपट</td><td>धोखा देने के इरादे से जानबूझकर झूठा दावा या active concealment।</td></tr>
+        <tr><td>Liquidated Damages</td><td>निर्धारित हर्जाना</td><td>नुकसान का उचित पूर्व-अनुमान; Section 74 के तहत reasonable compensation।</td></tr>
+        <tr><td>Misrepresentation</td><td>मिथ्या वर्णन</td><td>अनजाने में दिया गया गलत बयान — धोखे का इरादा नहीं।</td></tr>
+        <tr><td>Public Policy</td><td>सार्वजनिक नीति</td><td>समाज के कल्याण/हितों की रक्षा करने वाले सिद्धांत।</td></tr>
+        <tr><td>Quantum Meruit</td><td>जितना काम उतना दाम</td><td>आंशिक प्रदर्शन के लिए उचित मुआवज़े का दावा।</td></tr>
+        <tr><td>Quid pro quo</td><td>कुछ के बदले कुछ</td><td>प्रतिफल का सिद्धांत — बदले में दी गई वस्तु/लाभ।</td></tr>
+        <tr><td>Rescission</td><td>विखंडन</td><td>अनुबंध रद्द करना और पक्षकारों को मूल स्थिति में लौटाना।</td></tr>
+        <tr><td>Stifling Prosecution</td><td>अभियोजन रोकना</td><td>आपराधिक कार्यवाही रोकने का अवैध समझौता।</td></tr>
+        <tr><td>Undue Influence</td><td>अनुचित प्रभाव</td><td>अपनी स्थिति का उपयोग करके दूसरे की इच्छा पर हावी होना।</td></tr>
+        <tr><td>Void Agreement</td><td>शून्य समझौता</td><td>शुरू से ही कानून द्वारा लागू करने योग्य नहीं।</td></tr>
+        <tr><td>Voidable Contract</td><td>शून्यकरणीय अनुबंध</td><td>पीड़ित पक्ष की इच्छा पर लागू या रद्द किया जा सकता है।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="btn-row" style="margin-top:1rem;">
+    <a class="btn btn-fill" href="../practice/quiz.html">&#9654;&#65039; Practice Quiz पर जाओ</a>
+    <a class="btn btn-outline" href="../practice/glossary.html">&#128218; Full Glossary</a>
+  </div>
+
+</div>
+
+<footer>CLAT Mitra &nbsp;&#183;&nbsp; बिल्कुल मुफ़्त &nbsp;&#183;&nbsp; कोई sign-up नहीं</footer>
+</body>
+</html>
